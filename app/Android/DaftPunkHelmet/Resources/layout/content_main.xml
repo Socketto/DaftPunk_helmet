@@ -1,0 +1,121 @@
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main"
+	android:rowCount="9"
+    android:columnCount="4">
+
+    <TextView   
+        android:layout_row="0"
+        android:layout_column="0" 
+        android:layout_centerInParent="true"
+        android:text="COLOR" />
+    <Button   
+        android:layout_row="1"
+        android:layout_column="0" 
+		android:background = "#ff0000"
+        android:id="@+id/set_red"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="1"
+        android:layout_column="1" 
+		android:background =  "#0000ff"
+        android:id="@+id/set_blue"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="1"
+        android:layout_column="2" 
+		android:background =  "#00ff00"
+        android:id="@+id/set_green"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="1"
+        android:layout_column="3" 
+		android:background =  "#ff00ff"
+        android:id="@+id/set_violet"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="2"
+        android:layout_column="0" 
+		android:background =  "#ffff00"
+        android:id="@+id/set_yellow"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="2"
+        android:layout_column="1" 
+		android:background =  "#00ffff"
+        android:id="@+id/set_cian"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="2"
+        android:layout_column="2" 
+		android:background =  "#ffffff"
+        android:id="@+id/set_white"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="2"
+        android:layout_column="3" 
+		android:background =  "#000000"
+        android:id="@+id/set_black"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="3"
+        android:layout_column="0" 
+		android:text = "RND"
+        android:id="@+id/set_random"
+        android:clickable="true"/>
+    <TextView   
+        android:layout_row="4"
+        android:layout_column="0" 
+        android:layout_centerInParent="true"
+        android:text="BLINKING" />
+    <Button   
+        android:layout_row="5"
+        android:layout_column="0" 
+		android:text = "NONE"
+        android:id="@+id/set_blink_none"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="5"
+        android:layout_column="1" 
+		android:text = "SLOW"
+        android:id="@+id/set_blink_slow"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="5"
+        android:layout_column="2" 
+		android:text = "NORMAL"
+        android:id="@+id/set_blink_normal"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="5"
+        android:layout_column="3" 
+		android:text = "FAST"
+        android:id="@+id/set_blink_fast"
+        android:clickable="true"/>
+    <Button   
+        android:layout_row="6"
+        android:layout_column="0" 
+		android:text = "FLASH"
+        android:id="@+id/set_blink_flash"
+        android:clickable="true"/>
+    <TextView   
+        android:layout_row="7"
+        android:layout_column="0" 
+        android:layout_centerInParent="true"
+        android:text="DISPLAY TEXT" />
+    <EditText
+        android:layout_row="8"
+        android:layout_column="0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext"
+        android:imeOptions="actionGo"
+        android:inputType="text"
+        android:layout_columnSpan="4" />
+
+</GridLayout>

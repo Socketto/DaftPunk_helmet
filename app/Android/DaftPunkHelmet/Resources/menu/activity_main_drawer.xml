@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="Helmet">
+        <menu>
+          <item
+              android:id="@+id/nav_send"
+              android:icon="@drawable/ic_menu_send"
+              android:title="Connect" />
+          <item
+              android:id="@+id/nav_on"
+              android:icon="@drawable/blur"
+              android:title="Display ON" />
+          <item
+              android:id="@+id/nav_off"
+              android:icon="@drawable/blur_off"
+              android:title="Display OFF" />
+        </menu>
+    </item>
+
+</menu>
