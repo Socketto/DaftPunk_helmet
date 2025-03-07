@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: wpf-app
-          path: out
+          path: app/Windows/Test/WpfApp1/WpfApp1/out
