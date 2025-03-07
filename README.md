@@ -12,6 +12,7 @@ Additionally, a 24LC256 EEPROM is included to store phrases to be displayed, whi
 ## Programming and Interfaces
 
 The board is programmed using a PicKit via an ICSP connector and can interface with RS485 networks or via an HC-06 module (Bluetooth).
+  
 ![project1](images/board1.jpg) 
 
 ## Android App Integration
