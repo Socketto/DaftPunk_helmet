@@ -16,19 +16,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.0.x'
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Restore Dependencies
-        run: dotnet restore app/Windows/Test/WpfApp1/WpfApp1.sln
+        run: msbuild app/Windows/Test/WpfApp1/WpfApp1.sln /t:Restore
 
       - name: Build Solution
-        run: dotnet build app/Windows/Test/WpfApp1/WpfApp1.sln --configuration Release --no-restore
+        run: msbuild app/Windows/Test/WpfApp1/WpfApp1.sln /p:Configuration=Release
 
       - name: Publish Application
-        run: dotnet publish app/Windows/Test/WpfApp1/WpfApp1.sln -c Release -o out
+        run: msbuild app/Windows/Test/WpfApp1/WpfApp1.sln /p:Configuration=Release /p:DeployOnBuild=true /p:OutputPath=out
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
