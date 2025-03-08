@@ -93,6 +93,7 @@ extern char EarRandom;
 unsigned char Frase[100];
 unsigned char tempUnsignedChar;
 unsigned char EEPROM = 0;
+unsigned int idd = 0;
 unsigned short ShortTemp;
 void Init()
 {
@@ -100,8 +101,9 @@ void Init()
     TRISB = 0b00000011;//all output
     TRISC = 0b10000000;//PortC7 input RX
 	
-    
-    __delay_ms(500);
+    for (idd = 0; idd < 100; idd++) {
+        __delay_ms(5);
+    }
     
 	i2c_init(); 
     

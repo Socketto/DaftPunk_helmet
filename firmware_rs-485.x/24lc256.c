@@ -5,6 +5,7 @@
 
 #define I2C_EEPROM_ADDRESS  0xA0
 
+unsigned int iddl = 0;
 
 unsigned char EE_Init()
 {	
@@ -62,5 +63,8 @@ void EE_byte_write(unsigned short word,unsigned char data )
 	i2c_write(data); 
 	
 	i2c_stop(); 
-	__delay_ms(100);  //EEPROM WRITE DELAY
+	//__delay_ms(100);  //EEPROM WRITE DELAY
+    for (iddl = 0; iddl < 100; iddl++) {
+        __delay_ms(1);
+    }
 }
