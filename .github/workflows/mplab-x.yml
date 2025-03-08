@@ -30,4 +30,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: firmware-output
-          path: firmware_rs-485.X/dist/default/production/*.hex
+          path: firmware_rs-485.X/**/*.hex
