@@ -1,4 +1,4 @@
-name: Build XC8 project
+name: Build XC8 project firmware_rs-485
 on:
   push:
     branches:
