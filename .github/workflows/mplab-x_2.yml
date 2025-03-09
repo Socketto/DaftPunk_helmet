@@ -1,4 +1,4 @@
-name: Build
+name: Build XC8 project
 on:
   push:
     branches:
