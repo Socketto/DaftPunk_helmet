@@ -1,0 +1,32 @@
+name: Build MPLAB X Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up MPLAB X and XC8
+        run: |
+          docker pull ghcr.io/microchip-pic-avr-tools/pic-xc8-linux:2.0
+
+      - name: Build project
+        run: |
+          docker run --rm -v "$PWD":/workspace ghcr.io/microchip-pic-avr-tools/pic-xc8-linux:2.0 \
+          /opt/microchip/xc8/v2.0/bin/xc8-cc --project=firmware_rs-485.X --output=build/output.hex
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware-hex
+          path: build/output.hex
