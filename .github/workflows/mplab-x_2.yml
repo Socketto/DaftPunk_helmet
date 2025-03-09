@@ -16,14 +16,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up MPLAB X and XC8
+      - name: Download and Install MPLAB X and XC8
         run: |
-          docker pull ghcr.io/microchip-pic-avr-tools/pic-xc8-linux:2.0
+          wget https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/MPLABX-IDE/MPLABX-v5.40-linux-installer.tar 
+          tar -xf MPLABX-v5.40-linux-installer.tar
+          sudo ./MPLABX-v5.40-linux-installer.sh --mode unattended
+          wget https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/XC-Compiler/xc8-v2.00-linux-installer.run
+          chmod +x xc8-v2.00-linux-installer.run
+          sudo ./xc8-v2.00-linux-installer.run --mode unattended
 
       - name: Build project
         run: |
-          docker run --rm -v "$PWD":/workspace ghcr.io/microchip-pic-avr-tools/pic-xc8-linux:2.0 \
-          /opt/microchip/xc8/v2.0/bin/xc8-cc --project=firmware_rs-485.X --output=build/output.hex
+          /opt/microchip/xc8/v2.00/bin/xc8-cc --project=firmware_rs-485.x --output=build/output.hex
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
