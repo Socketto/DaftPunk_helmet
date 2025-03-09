@@ -1,36 +1,25 @@
-name: Build MPLAB X Project
-
+name: Build
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
+    name: Build the project
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Download and Install MPLAB X and XC8
-        run: |
-          wget https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/MPLABX-IDE/MPLABX-v5.40-linux-installer.tar 
-          tar -xf MPLABX-v5.40-linux-installer.tar
-          sudo ./MPLABX-v5.40-linux-installer.sh --mode unattended
-          wget https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/XC-Compiler/xc8-v2.00-linux-installer.run
-          chmod +x xc8-v2.00-linux-installer.run
-          sudo ./xc8-v2.00-linux-installer.run --mode unattended
-
-      - name: Build project
-        run: |
-          /opt/microchip/xc8/v2.00/bin/xc8-cc --project=firmware_rs-485.x --output=build/output.hex
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Build project with MPLAB X IDE
+        uses: aeraterta/mplab-xc8-action@v1.0.0
         with:
-          name: firmware-hex
-          path: build/output.hex
+          project: firmware_rs-485.x
+          packs: "ATtiny_DFP=3.1.260"
+          configuration: default
+          mplabx-version: 6.20
+          xc8-version: 2.50
