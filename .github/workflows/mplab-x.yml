@@ -20,6 +20,14 @@ jobs:
           chmod +x xc8-installer.run
           sudo ./xc8-installer.run --mode unattended --unattendedmodeui none --installdir /opt/microchip/xc8 --netservername localhost
           echo "/opt/microchip/xc8/bin" >> $GITHUB_PATH
+          export PATH=$PATH:/opt/microchip/xc8/bin
+          echo $PATH
+
+      - name: Check XC8 installation
+        run: |
+          ls /opt/microchip/xc8/bin
+          which xc8
+          xc8 --version
 
       - name: Compile with XC8 (Multiple .c Files)
         run: |
