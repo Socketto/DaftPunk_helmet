@@ -1,56 +1,32 @@
-name: Build XC8 project firmware_rs-485
+name: Build XC8 Project
+
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
 
 jobs:
   build:
-    name: Build the project
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Install XC8 Compiler
         run: |
-          sudo apt-get update
-          sudo apt-get install -y coreutils unzip
+          wget https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/MPLAB%20XC%20Compiler/xc8-v2.41-full-install-linux-x64-installer.run -O xc8-installer.run
+          chmod +x xc8-installer.run
+          sudo ./xc8-installer.run --mode unattended --unattendedmodeui none --installdir /opt/microchip/xc8
+          echo "/opt/microchip/xc8/bin" >> $GITHUB_PATH
 
-      - name: Ensure Device Pack is Installed
+      - name: Compile with XC8 (Multiple .c Files)
         run: |
-          PACK_DIR="/opt/microchip/mplabx/v6.20/packs"
-          PACK_NAME="ATtiny_DFP"
-          PACK_VERSION="3.1.260"
-          PACK_PATH="$PACK_DIR/$PACK_NAME/$PACK_VERSION"
-          
-          if [ ! -d "$PACK_PATH" ]; then
-            echo "Device Pack not found! Downloading..."
-            mkdir -p "$PACK_PATH"
-            wget -q "https://packs.download.microchip.com/$PACK_NAME/$PACK_VERSION.zip" -O "$PACK_PATH.zip"
-            unzip -q "$PACK_PATH.zip" -d "$PACK_DIR"
-            rm "$PACK_PATH.zip"
-          else
-            echo "Device Pack already installed."
-          fi
+          xc8 --chip=18F2550 firmware_rs-485.x/*.c -o firmware_rs-485.x/output.hex
 
-      - name: Verify MPLAB X and XC8 installation
-        run: |
-          /opt/microchip/mplabx/v6.20/mplab_platform/bin/prjMakefilesGenerator.sh --version
-          /opt/microchip/xc8/v2.50/bin/xc8-cc --version
-
-      - name: Fix gnumkdir issue in Makefile (if needed)
-        run: |
-          find firmware_rs-485.x/nbproject -type f -name 'Makefile-*.mk' -exec sed -i 's/gnumkdir/mkdir/g' {} \;
-
-      - name: Build project with MPLAB X IDE
-        uses: aeraterta/mplab-xc8-action@1.0
+      - name: Upload HEX file
+        uses: actions/upload-artifact@v4
         with:
-          project: firmware_rs-485.x
-          packs: "ATtiny_DFP=3.1.260"
-          configuration: default
-          mplabx-version: 6.20
-          xc8-version: 2.50
+          name: compiled-hex
+          path: firmware_rs-485.x/output.hex
