@@ -26,7 +26,7 @@ jobs:
       - name: Check XC8 installation
         run: |
           ls /opt/microchip/xc8/bin
-          which xc8
+          which xc8-cc
           xc8-cc --version
 
       - name: Compile with XC8 (Multiple .c Files)
