@@ -16,7 +16,7 @@ jobs:
 
       - name: Install XC8 Compiler
         run: |
-          wget https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/MPLAB%20XC%20Compiler/xc8-v2.41-full-install-linux-x64-installer.run -O xc8-installer.run
+          wget https://ww1.microchip.com/downloads/aemDocuments/documents/DEV/ProductDocuments/SoftwareTools/xc8-v3.00-full-install-linux-x64-installer.run -O xc8-installer.run
           chmod +x xc8-installer.run
           sudo ./xc8-installer.run --mode unattended --unattendedmodeui none --installdir /opt/microchip/xc8
           echo "/opt/microchip/xc8/bin" >> $GITHUB_PATH
