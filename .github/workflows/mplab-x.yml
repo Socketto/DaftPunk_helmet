@@ -18,7 +18,7 @@ jobs:
         run: |
           wget https://ww1.microchip.com/downloads/aemDocuments/documents/DEV/ProductDocuments/SoftwareTools/xc8-v3.00-full-install-linux-x64-installer.run -O xc8-installer.run
           chmod +x xc8-installer.run
-          sudo ./xc8-installer.run --mode unattended --unattendedmodeui none --installdir /opt/microchip/xc8 --accept-license
+          sudo ./xc8-installer.run --mode unattended --unattendedmodeui none --installdir /opt/microchip/xc8 --netservername localhost
           echo "/opt/microchip/xc8/bin" >> $GITHUB_PATH
 
       - name: Compile with XC8 (Multiple .c Files)
