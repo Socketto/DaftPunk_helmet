@@ -15,6 +15,37 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y coreutils unzip
+
+      - name: Ensure Device Pack is Installed
+        run: |
+          PACK_DIR="/opt/microchip/mplabx/v6.20/packs"
+          PACK_NAME="ATtiny_DFP"
+          PACK_VERSION="3.1.260"
+          PACK_PATH="$PACK_DIR/$PACK_NAME/$PACK_VERSION"
+          
+          if [ ! -d "$PACK_PATH" ]; then
+            echo "Device Pack not found! Downloading..."
+            mkdir -p "$PACK_PATH"
+            wget -q "https://packs.download.microchip.com/$PACK_NAME/$PACK_VERSION.zip" -O "$PACK_PATH.zip"
+            unzip -q "$PACK_PATH.zip" -d "$PACK_DIR"
+            rm "$PACK_PATH.zip"
+          else
+            echo "Device Pack already installed."
+          fi
+
+      - name: Verify MPLAB X and XC8 installation
+        run: |
+          /opt/microchip/mplabx/v6.20/mplab_platform/bin/prjMakefilesGenerator.sh --version
+          /opt/microchip/xc8/v2.50/bin/xc8-cc --version
+
+      - name: Fix gnumkdir issue in Makefile (if needed)
+        run: |
+          find firmware_rs-485.x/nbproject -type f -name 'Makefile-*.mk' -exec sed -i 's/gnumkdir/mkdir/g' {} \;
+
       - name: Build project with MPLAB X IDE
         uses: aeraterta/mplab-xc8-action@1.0
         with:
