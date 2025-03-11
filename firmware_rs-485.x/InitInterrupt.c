@@ -38,7 +38,7 @@ short TimeoutSeconds = 0;
 unsigned char AllowDisplayCommunication = 0;
 unsigned char PhoneConnected = 0;
 
-void interrupt tc_int(void)        // interrupt function 
+void __interrupt() tc_int(void)        // interrupt function 
 {
     if(INTCONbits.T0IF) 
     {                                     // if timer flag is set & interrupt enabled
