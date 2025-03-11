@@ -1,6 +1,7 @@
 # Project Overview
 
 This project consists of two interconnected boards using the I2C protocol. The main board, equipped with a PIC microcontroller, controls RGB LEDs (used in the mask project for the ears) and a series of MCP23017 IO extenders for the screen positioned in front of the eyes.
+![mask](images/Marco.gif) 
 ![project1](images/board5.jpg) 
 ![project1](images/board4.jpg) 
 ![project1](images/board0.jpg) 
