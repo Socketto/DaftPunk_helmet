@@ -1,0 +1,293 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F2550 ]
+[d frameptr 4065 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"492 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+"12 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"87 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\Main.c
+[v _Init Init `(v  1 e 1 0 ]
+"96
+[v _SetEarRandom SetEarRandom `(v  1 e 1 0 ]
+"120
+[v _main main `(v  1 e 1 0 ]
+"11 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\RGB.c
+[v _SetRGB SetRGB `(v  1 e 1 0 ]
+"21
+[v _SetLed SetLed `(v  1 e 1 0 ]
+"8 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\UART.c
+[v _UART_Init UART_Init `(uc  1 e 1 0 ]
+"33
+[v _UART_Data_Ready UART_Data_Ready `(uc  1 e 1 0 ]
+"37
+[v _UART_Read UART_Read `(uc  1 e 1 0 ]
+"45
+[v _UART_Write UART_Write `(v  1 e 1 0 ]
+"51
+[v _lock_RGB lock_RGB `(v  1 e 1 0 ]
+"59
+[v _UART_Write_Text UART_Write_Text `(v  1 e 1 0 ]
+"68
+[v _CheckChangeRGB CheckChangeRGB `(v  1 e 1 0 ]
+[s S53 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+]
+"2570 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f2550.h
+[s S61 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+]
+[u S69 . 1 `S53 1 . 1 0 `S61 1 . 1 0 ]
+[v _LATAbits LATAbits `VES69  1 e 1 @3977 ]
+[s S89 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"2780
+[s S96 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S103 . 1 `S89 1 . 1 0 `S96 1 . 1 0 ]
+[v _LATCbits LATCbits `VES103  1 e 1 @3979 ]
+"2835
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3033
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3255
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"4447
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"4459
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"4471
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"7798
+[v _BRGH BRGH `VEb  1 e 0 @32098 ]
+"7902
+[v _CREN CREN `VEb  1 e 0 @32092 ]
+"8644
+[v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"8708
+[v _SPEN SPEN `VEb  1 e 0 @32095 ]
+"8762
+[v _SYNC SYNC `VEb  1 e 0 @32100 ]
+"8912
+[v _TRISC6 TRISC6 `VEb  1 e 0 @31910 ]
+"8914
+[v _TRISC7 TRISC7 `VEb  1 e 0 @31911 ]
+"8916
+[v _TRMT TRMT `VEb  1 e 0 @32097 ]
+"8956
+[v _TXEN TXEN `VEb  1 e 0 @32101 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\rand.c
+[v _randx randx `l  1 s 4 randx ]
+"4 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\common.h
+[v _counter counter `ul  1 e 4 0 ]
+"5
+[v _limit limit `ul  1 e 4 0 ]
+"6
+[v _color color `uc  1 e 1 0 ]
+"65 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\UART.c
+[v _result result `i  1 e 2 0 ]
+"66
+[v _parola parola `[20]uc  1 e 20 0 ]
+"67
+[v _nome nome `[20]uc  1 e 20 0 ]
+"120 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\Main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"128
+} 0
+"96
+[v _SetEarRandom SetEarRandom `(v  1 e 1 0 ]
+{
+"118
+} 0
+"12 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+{
+"17
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 24 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 20 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 22 ]
+"53
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"11
+[v ___awmod@sign sign `uc  1 a 1 19 ]
+[v ___awmod@counter counter `uc  1 a 1 18 ]
+"8
+[v ___awmod@dividend dividend `i  1 p 2 14 ]
+[v ___awmod@divisor divisor `i  1 p 2 16 ]
+"35
+} 0
+"87 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\Main.c
+[v _Init Init `(v  1 e 1 0 ]
+{
+"94
+} 0
+"8 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\UART.c
+[v _UART_Init UART_Init `(uc  1 e 1 0 ]
+{
+"10
+[v UART_Init@baudrate baudrate `l  1 a 4 24 ]
+"11
+[v UART_Init@x x `ui  1 a 2 22 ]
+"30
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"11
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
+"12
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
+"8
+[v ___aldiv@dividend dividend `l  1 p 4 0 ]
+[v ___aldiv@divisor divisor `l  1 p 4 4 ]
+"42
+} 0
+"68 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\UART.c
+[v _CheckChangeRGB CheckChangeRGB `(v  1 e 1 0 ]
+{
+"106
+} 0
+"492 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+"530
+[v sprintf@cp cp `*.35Cuc  1 a 2 10 ]
+"494
+[v sprintf@ap ap `[1]*.39v  1 a 2 7 ]
+"499
+[v sprintf@c c `c  1 a 1 9 ]
+"508
+[v sprintf@flag flag `uc  1 a 1 6 ]
+"492
+[v sprintf@sp sp `*.39uc  1 p 2 0 ]
+[v sprintf@f f `*.25Cuc  1 p 2 2 ]
+"1541
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+{
+"15
+[v memset@p p `*.39uc  1 a 2 6 ]
+"8
+[v memset@p1 p1 `*.39v  1 p 2 0 ]
+[v memset@c c `i  1 p 2 2 ]
+[v memset@n n `ui  1 p 2 4 ]
+"22
+} 0
+"51 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\UART.c
+[v _lock_RGB lock_RGB `(v  1 e 1 0 ]
+{
+"56
+} 0
+"59
+[v _UART_Write_Text UART_Write_Text `(v  1 e 1 0 ]
+{
+"61
+[v UART_Write_Text@i i `i  1 a 2 3 ]
+"59
+[v UART_Write_Text@text text `*.39uc  1 p 2 1 ]
+"64
+} 0
+"45
+[v _UART_Write UART_Write `(v  1 e 1 0 ]
+{
+[v UART_Write@data data `uc  1 a 1 wreg ]
+[v UART_Write@data data `uc  1 a 1 wreg ]
+[v UART_Write@data data `uc  1 a 1 0 ]
+"49
+} 0
+"37
+[v _UART_Read UART_Read `(uc  1 e 1 0 ]
+{
+"41
+} 0
+"33
+[v _UART_Data_Ready UART_Data_Ready `(uc  1 e 1 0 ]
+{
+"36
+} 0
+"11 C:\Users\Marco\Documents\HelmetBoard\Firmware.X\RGB.c
+[v _SetRGB SetRGB `(v  1 e 1 0 ]
+{
+[v SetRGB@Color Color `ui  1 p 2 0 ]
+"19
+} 0
+"21
+[v _SetLed SetLed `(v  1 e 1 0 ]
+{
+[v SetLed@value value `uc  1 a 1 wreg ]
+[v SetLed@value value `uc  1 a 1 wreg ]
+"23
+[v SetLed@value value `uc  1 a 1 1 ]
+"24
+} 0

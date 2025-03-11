@@ -29,12 +29,22 @@ jobs:
           which xc8-cc
           xc8-cc --version
 
-      - name: Compile with XC8 (Multiple .c Files)
+      - name: Compile with XC8 (Multiple .c Files) firmware_rs-485.x
         run: |
           xc8-cc -mcpu=18F2550 --chip=18F2550 firmware_rs-485.x/*.c -o firmware_rs-485.x/output.hex
 
-      - name: Upload HEX file
+      - name: Compile with XC8 (Multiple .c Files) Firmware.X
+        run: |
+          xc8-cc -mcpu=18F2550 --chip=18F2550 Firmware.X/*.c -o Firmware.X/output.hex
+
+      - name: Upload HEX file firmware_rs-485
         uses: actions/upload-artifact@v4
         with:
-          name: compiled-hex
+          name: firmware_rs-485
           path: firmware_rs-485.x/output.hex
+
+      - name: Upload HEX file Firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: Firmware
+          path: Firmware.X/output.hex
