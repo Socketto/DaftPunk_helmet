@@ -122,8 +122,10 @@ void Init()
     
     interrupt_init();
 	
-    SetRGB_Blink(BLINK_NO);
-    SetRGB(BLACK);
+    //SetRGB_Blink(BLINK_NO);
+    //SetRGB(BLACK);
+	SetEarRandom();
+	SetRGB_Blink(BLINK_500_mSecond);
 }
 
 void SendByte()

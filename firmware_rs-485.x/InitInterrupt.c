@@ -35,7 +35,7 @@ void interrupt_init()
 short TimerSeconds = 0;
 long Seconds = 0;
 short TimeoutSeconds = 0;
-unsigned char AllowDisplayCommunication = 0;
+unsigned char AllowDisplayCommunication = 1;
 unsigned char PhoneConnected = 0;
 
 void __interrupt() tc_int(void)        // interrupt function 
