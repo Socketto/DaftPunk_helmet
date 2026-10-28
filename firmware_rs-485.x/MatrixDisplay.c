@@ -381,6 +381,7 @@ void StopScriviFrase()
 unsigned char ScriviFrase(unsigned char UseFrase)
 {
     unsigned char* FF = Frase;
+    unsigned char eepromByte;
     if(UseFrase > 0)
         FF = Frasi[UseFrase-1];
     timeOutDisplayRefreshScrivi--;
@@ -485,7 +486,14 @@ unsigned char ScriviFrase(unsigned char UseFrase)
         }
         if(CurrentValueChar!=-1)
         {
-            ShiftScreen((unsigned char)EE_byte_read(CurrentValueChar));
+            if(EE_byte_read((unsigned short)CurrentValueChar, &eepromByte))
+            {
+                ShiftScreen(eepromByte);
+            }
+            else
+            {
+                ShiftScreen(0);
+            }
         }
         else
         {

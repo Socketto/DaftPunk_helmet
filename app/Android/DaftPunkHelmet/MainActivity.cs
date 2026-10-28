@@ -1,6 +1,7 @@
 ﻿using Android;
 using Android.App;
 using Android.Bluetooth;
+using Android.Content;
 using Android.Media;
 using Android.OS;
 using Android.Support.Design.Widget;
@@ -10,20 +11,35 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
-using Java.IO;
 using Java.Util;
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace DaftPunkHelmet
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
+        private const int ReadMemoryRequestCode = 1001;
+        private const int WriteMemoryRequestCode = 1002;
+        private const int MemorySize = 1024;
+        private const int MemoryFrameDelayMilliseconds = 150;
+        private const int MemoryResponseToNextCommandDelayMilliseconds = 750;
+        private const int MemoryResponseTimeoutMilliseconds = 15000;
+        private const int MemoryReadMaxRetries = 8;
+        private const int MemoryReadRetryDelayMilliseconds = 1000;
+
         public MediaRecorder mRecorder;
         System.Timers.Timer tt;
+        private bool memoryOperationRunning;
+        private bool pendingTextWrite;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -144,7 +160,10 @@ namespace DaftPunkHelmet
         {
             lock (palla)
             {
-                requestpublic = request;
+                if (!this.memoryOperationRunning)
+                {
+                    requestpublic = request;
+                }
             }
         }
 
@@ -154,23 +173,16 @@ namespace DaftPunkHelmet
         {
             lock (palla)
             {
+                if (this.memoryOperationRunning)
+                {
+                    return;
+                }
+
                 if (this.btSocket?.IsConnected == true)
                 {
                     if (requestpublic != null)
                     {
-                        var timerDelay = 50;
-                        if (requestpublic.Length < 3)
-                            timerDelay = 10;
-                        this.btSocket.OutputStream.Write(new byte[] { (byte)requestpublic.Length }, 0, 1);
-                        this.btSocket.OutputStream.Flush();
-                        System.Threading.Thread.Sleep(timerDelay);
-
-                        foreach (byte bb in requestpublic)
-                        {
-                            this.btSocket.OutputStream.Write(new byte[] { bb }, 0, 1);
-                            this.btSocket.OutputStream.Flush();
-                            System.Threading.Thread.Sleep(timerDelay);
-                        }
+                        this.WriteBluetoothRequest(requestpublic, requestpublic.Length < 3 ? 10 : 50);
                         requestpublic = null;
                     }
                     else
@@ -267,9 +279,428 @@ namespace DaftPunkHelmet
                 }
             }
 
+            if (id == Resource.Id.nav_read_memory)
+            {
+                this.StartMemoryFilePicker(true, false);
+            }
+
+            if (id == Resource.Id.nav_write_memory_binary)
+            {
+                this.StartMemoryFilePicker(false, false);
+            }
+
+            if (id == Resource.Id.nav_write_memory_text)
+            {
+                this.StartMemoryFilePicker(false, true);
+            }
+
             DrawerLayout drawer = this.FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
+        }
+
+        private void StartMemoryFilePicker(bool readMemory, bool textFile)
+        {
+            if (this.btSocket?.IsConnected != true)
+            {
+                this.ShowMemoryMessage("Bluetooth error", "Connect to the helmet before transferring memory.");
+                return;
+            }
+
+            try
+            {
+                Intent intent;
+                int requestCode;
+                if (readMemory)
+                {
+                    intent = new Intent(Intent.ActionCreateDocument);
+                    intent.AddCategory(Intent.CategoryOpenable);
+                    intent.SetType("application/octet-stream");
+                    intent.PutExtra(Intent.ExtraTitle, "EEPROM_READ.bin");
+                    requestCode = ReadMemoryRequestCode;
+                }
+                else
+                {
+                    intent = new Intent(Intent.ActionOpenDocument);
+                    intent.AddCategory(Intent.CategoryOpenable);
+                    intent.SetType("*/*");
+                    this.pendingTextWrite = textFile;
+                    requestCode = WriteMemoryRequestCode;
+                }
+
+                this.StartActivityForResult(intent, requestCode);
+            }
+            catch (ActivityNotFoundException ex)
+            {
+                this.ShowMemoryMessage("File picker unavailable", ex.Message);
+            }
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (resultCode != Result.Ok || data == null || data.Data == null)
+            {
+                return;
+            }
+
+            Android.Net.Uri fileUri = data.Data;
+            if (requestCode == ReadMemoryRequestCode)
+            {
+                this.StartMemoryTransfer("Reading EEPROM", progress => this.ReadMemoryToFile(fileUri, progress));
+            }
+            else if (requestCode == WriteMemoryRequestCode)
+            {
+                bool isText = this.pendingTextWrite;
+                this.StartMemoryTransfer("Writing EEPROM", progress => this.WriteFileToMemory(fileUri, isText, progress));
+            }
+        }
+
+        private void StartMemoryTransfer(string title, Action<ProgressDialog> transfer)
+        {
+            lock (palla)
+            {
+                if (this.memoryOperationRunning)
+                {
+                    this.ShowMemoryMessage("Transfer in progress", "Wait for the current memory transfer to finish.");
+                    return;
+                }
+
+                if (this.btSocket?.IsConnected != true)
+                {
+                    this.ShowMemoryMessage("Bluetooth error", "The connection to the helmet is no longer active.");
+                    return;
+                }
+
+                this.memoryOperationRunning = true;
+                requestpublic = null;
+            }
+
+            ProgressDialog progress = new ProgressDialog(this);
+            progress.SetTitle(title);
+            progress.SetMessage("Preparing transfer...");
+            progress.SetProgressStyle(ProgressDialogStyle.Horizontal);
+            progress.Max = MemorySize;
+            progress.SetCancelable(false);
+            progress.Show();
+
+            Thread transferThread = new Thread(() =>
+            {
+                string errorMessage = null;
+                try
+                {
+                    transfer(progress);
+                }
+                catch (Exception ex)
+                {
+                    errorMessage = ex.Message;
+                }
+                finally
+                {
+                    lock (palla)
+                    {
+                        this.memoryOperationRunning = false;
+                    }
+
+                    this.RunOnUiThread(() =>
+                    {
+                        progress.Dismiss();
+                        if (errorMessage == null)
+                        {
+                            Toast.MakeText(this, "Memory transfer completed.", ToastLength.Long).Show();
+                        }
+                        else
+                        {
+                            this.ShowMemoryMessage("Memory transfer failed", errorMessage);
+                        }
+                    });
+                }
+            });
+            transferThread.IsBackground = true;
+            transferThread.Start();
+        }
+
+        private void ReadMemoryToFile(Android.Net.Uri fileUri, ProgressDialog progress)
+        {
+            this.RunMemoryProtocol(() =>
+            {
+                byte[] memory = new byte[MemorySize];
+                for (int address = 0; address < MemorySize; address++)
+                {
+                    try
+                    {
+                        memory[address] = this.ReadMemoryByteWithRetry(
+                            new byte[] { 0x10, 0x01, (byte)(address / 256), (byte)address },
+                            progress,
+                            address);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new IOException(
+                            "Failed to read EEPROM address 0x" + address.ToString("X4", CultureInfo.InvariantCulture) + ": " + ex.Message,
+                            ex);
+                    }
+
+                    this.UpdateMemoryProgress(progress, address + 1, "Reading memory...");
+                }
+
+                using (System.IO.Stream output = this.ContentResolver.OpenOutputStream(fileUri))
+                {
+                    if (output == null)
+                    {
+                        throw new IOException("The selected document cannot be opened for writing.");
+                    }
+
+                    output.Write(memory, 0, memory.Length);
+                    output.Flush();
+                }
+            });
+        }
+
+        private void WriteFileToMemory(Android.Net.Uri fileUri, bool isText, ProgressDialog progress)
+        {
+            byte[] memory;
+            using (System.IO.Stream input = this.ContentResolver.OpenInputStream(fileUri))
+            {
+                if (input == null)
+                {
+                    throw new IOException("The selected document cannot be opened for reading.");
+                }
+
+                if (isText)
+                {
+                    using (StreamReader reader = new StreamReader(input, System.Text.Encoding.UTF8))
+                    {
+                        memory = this.ParseTextMemory(reader.ReadToEnd());
+                    }
+                }
+                else
+                {
+                    using (MemoryStream buffer = new MemoryStream())
+                    {
+                        input.CopyTo(buffer);
+                        memory = buffer.ToArray();
+                    }
+                }
+            }
+
+            if (memory.Length == 0)
+            {
+                throw new InvalidDataException("The selected file contains no memory bytes.");
+            }
+
+            if (memory.Length > MemorySize)
+            {
+                throw new InvalidDataException("The selected file is larger than the 1024-byte EEPROM.");
+            }
+
+            this.RunMemoryProtocol(() =>
+            {
+                for (int address = 0; address < memory.Length; address++)
+                {
+                    this.SendMemoryCommand(new byte[] { 0x10, 0x02, (byte)(address / 256), (byte)address, memory[address] });
+                    this.ReadMemoryAcknowledgement();
+                    this.UpdateMemoryProgress(progress, address + 1, "Writing memory...");
+                }
+            });
+        }
+
+        private byte[] ParseTextMemory(string text)
+        {
+            string normalized = text.Replace("\r", "").Replace("\n", "\t").Replace(" ", "").Trim();
+            string[] values = normalized.Split(new[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            List<byte> bytes = new List<byte>(values.Length);
+            foreach (string value in values)
+            {
+                bytes.Add(byte.Parse(value, NumberStyles.HexNumber, CultureInfo.InvariantCulture));
+            }
+
+            return bytes.ToArray();
+        }
+
+        private void RunMemoryProtocol(Action transfer)
+        {
+            this.SendMemoryCommand(new byte[] { 0x10, 0x03 });
+            this.ReadMemoryAcknowledgement();
+            Thread.Sleep(200);
+            try
+            {
+                transfer();
+            }
+            finally
+            {
+                if (this.btSocket?.IsConnected == true)
+                {
+                    this.SendMemoryCommand(new byte[] { 0x10, 0x04 });
+                    this.ReadMemoryAcknowledgement();
+                    Thread.Sleep(200);
+                }
+            }
+        }
+
+        private void SendMemoryCommand(byte[] request)
+        {
+            lock (palla)
+            {
+                if (this.btSocket?.IsConnected != true)
+                {
+                    throw new IOException("The Bluetooth connection to the helmet was lost.");
+                }
+
+                this.WriteBluetoothRequest(request, 1);
+            }
+
+            Thread.Sleep(MemoryFrameDelayMilliseconds);
+        }
+
+        private void WriteBluetoothRequest(byte[] request, int delayMilliseconds)
+        {
+            this.btSocket.OutputStream.Write(new byte[] { (byte)request.Length }, 0, 1);
+            this.btSocket.OutputStream.Flush();
+            Thread.Sleep(delayMilliseconds);
+
+            foreach (byte value in request)
+            {
+                this.btSocket.OutputStream.Write(new byte[] { value }, 0, 1);
+                this.btSocket.OutputStream.Flush();
+                Thread.Sleep(delayMilliseconds);
+            }
+        }
+
+        private byte ReadMemoryByte()
+        {
+            byte[] response = this.ReadMemoryResponse();
+            if (response.Length != 2 || response[0] != 0x0A)
+            {
+                throw new IOException(
+                    "Unexpected response from the helmet while reading memory (length "
+                    + response.Length.ToString(CultureInfo.InvariantCulture)
+                    + ", payload "
+                    + BitConverter.ToString(response)
+                    + ").");
+            }
+
+            return response[1];
+        }
+
+        private byte ReadMemoryByteWithRetry(byte[] request, ProgressDialog progress, int address)
+        {
+            Exception lastException = null;
+
+            for (int attempt = 1; attempt <= MemoryReadMaxRetries; attempt++)
+            {
+                try
+                {
+                    this.UpdateMemoryProgress(
+                        progress,
+                        address,
+                        "Reading memory... address 0x"
+                        + address.ToString("X4", CultureInfo.InvariantCulture)
+                        + " (attempt "
+                        + attempt.ToString(CultureInfo.InvariantCulture)
+                        + "/"
+                        + MemoryReadMaxRetries.ToString(CultureInfo.InvariantCulture)
+                        + ")");
+                    this.SendMemoryCommand(request);
+                    return this.ReadMemoryByte();
+                }
+                catch (Exception ex)
+                {
+                    lastException = ex;
+                    if (attempt < MemoryReadMaxRetries)
+                    {
+                        Thread.Sleep(MemoryReadRetryDelayMilliseconds);
+                    }
+                }
+            }
+
+            throw new IOException(
+                "The memory address could not be read after "
+                + MemoryReadMaxRetries.ToString(CultureInfo.InvariantCulture)
+                + " attempts.", lastException);
+        }
+
+        private void ReadMemoryAcknowledgement()
+        {
+            byte[] response = this.ReadMemoryResponse();
+            if (response.Length != 1 || response[0] != 0x0A)
+            {
+                throw new IOException("Unexpected acknowledgement from the helmet.");
+            }
+        }
+
+        private byte[] ReadMemoryResponse()
+        {
+            byte[] responseLength = new byte[1];
+            this.ReadBluetoothBytes(responseLength, 0, responseLength.Length);
+            if (responseLength[0] == 0)
+            {
+                throw new IOException("The helmet returned an empty response.");
+            }
+
+            byte[] response = new byte[responseLength[0]];
+            this.ReadBluetoothBytes(response, 0, response.Length);
+            Thread.Sleep(MemoryResponseToNextCommandDelayMilliseconds);
+            return response;
+        }
+
+        private void ReadBluetoothBytes(byte[] buffer, int offset, int count)
+        {
+            int bytesReadTotal = 0;
+
+            while (bytesReadTotal < count)
+            {
+                if (this.btSocket?.IsConnected != true)
+                {
+                    throw new IOException("The Bluetooth connection to the helmet was lost while reading memory.");
+                }
+
+                System.IO.Stream input = this.btSocket.InputStream;
+                Task<int> readTask = Task.Run(
+                    () => input.Read(buffer, offset + bytesReadTotal, count - bytesReadTotal));
+                if (!readTask.Wait(MemoryResponseTimeoutMilliseconds))
+                {
+                    if (!readTask.IsCompleted)
+                    {
+                        if (this.btSocket != null)
+                        {
+                            this.btSocket.Close();
+                        }
+
+                        throw new TimeoutException("The helmet did not respond to a memory read command within "
+                            + MemoryResponseTimeoutMilliseconds + " ms.");
+                    }
+                }
+
+                int bytesRead = readTask.Result;
+                if (bytesRead <= 0)
+                {
+                    throw new IOException("The Bluetooth connection closed while reading memory.");
+                }
+
+                bytesReadTotal += bytesRead;
+            }
+        }
+
+        private void UpdateMemoryProgress(ProgressDialog progress, int completed, string message)
+        {
+            this.RunOnUiThread(() =>
+            {
+                progress.Progress = completed;
+                progress.SetMessage(message + " " + completed + "/" + MemorySize);
+            });
+        }
+
+        private void ShowMemoryMessage(string title, string message)
+        {
+            this.RunOnUiThread(() =>
+            {
+                new Android.App.AlertDialog.Builder(this)
+                    .SetTitle(title)
+                    .SetMessage(message)
+                    .SetPositiveButton("OK", (sender, args) => { })
+                    .Show();
+            });
         }
 
 
@@ -341,7 +772,7 @@ namespace DaftPunkHelmet
                 {
                     this.btSocket = btDevice.CreateRfcommSocketToServiceRecord(sppUuid);
                 }
-                catch (IOException ex)
+                catch (Java.IO.IOException ex)
                 {
                     this.sendLogMessage("Failed to create RfComm socket: " + ex.ToString());
                     requestConnection = false;
@@ -503,4 +934,3 @@ namespace DaftPunkHelmet
 
     }
 }
-

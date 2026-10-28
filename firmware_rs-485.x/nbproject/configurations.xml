@@ -14,6 +14,16 @@
       <itemPath>MCP23017.h</itemPath>
       <itemPath>MatrixDisplay.h</itemPath>
       <itemPath>UART_Common.h</itemPath>
+      <itemPath>USB_CDC.h</itemPath>
+      <itemPath>usb/usb_config.h</itemPath>
+      <itemPath>usb/system.h</itemPath>
+      <itemPath>usb/mla_usb/inc/usb.h</itemPath>
+      <itemPath>usb/mla_usb/inc/usb_common.h</itemPath>
+      <itemPath>usb/mla_usb/inc/usb_ch9.h</itemPath>
+      <itemPath>usb/mla_usb/inc/usb_device.h</itemPath>
+      <itemPath>usb/mla_usb/inc/usb_hal.h</itemPath>
+      <itemPath>usb/mla_usb/inc/usb_hal_pic18.h</itemPath>
+      <itemPath>usb/mla_usb/inc/usb_device_cdc.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -31,6 +41,9 @@
       <itemPath>MCP23017.c</itemPath>
       <itemPath>MatrixDisplay.c</itemPath>
       <itemPath>UART_Common.c</itemPath>
+      <itemPath>USB_CDC.c</itemPath>
+      <itemPath>usb/mla_usb/src/usb_device.c</itemPath>
+      <itemPath>usb/mla_usb/src/usb_device_cdc.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -88,7 +101,7 @@
         <property key="default-char-type" value="true"/>
         <property key="define-macros" value=""/>
         <property key="disable-optimizations" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories" value="usb;usb/mla_usb/inc"/>
         <property key="favor-optimization-for" value="-speed,+space"/>
         <property key="garbage-collect-data" value="true"/>
         <property key="garbage-collect-functions" value="true"/>

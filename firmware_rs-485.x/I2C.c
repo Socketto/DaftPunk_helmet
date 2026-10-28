@@ -4,8 +4,6 @@
 
 //https://electrosome.com/i2c-pic-microcontroller-mplab-xc8/
 
-#define I2C_WRITE_RETRY      3
-
 const unsigned long I2C_Baudrate = 100000;
 
 void i2c_init(void)
@@ -46,26 +44,20 @@ void i2c_start(void)
 
 unsigned char i2c_write(unsigned char data)
 {
-	unsigned char i2c_Retry = I2C_WRITE_RETRY;
 	SSPCON1 = 0x28;
-    L1: SSPBUF=data;                            //Input data to buffer
-    mssp_wait();	//Wait till completion of event
-	i2c_Retry--;
-	if(i2c_Retry == 0)
-		return 0;
-    if(ACKSTAT)                                 //check if acknowledgement signal received 
-    {
-        i2c_restart();                          //If no acknowledgement received, give restart signal and transmit data again
-        goto L1;
-    }
-	return 1;
+    SSPBUF=data;                                //Input data to buffer
+    mssp_wait();                                //Wait till completion of event
+    return (unsigned char)(ACKSTAT == 0);       //Check whether the slave acknowledged
 }
 
 unsigned char i2c_read( unsigned char ack )
 {
+    unsigned char data;
+
     RCEN=1;                                     //Enable reception in Master device 
-    while(!BF);                                 //Wait till buffer is full
+    mssp_wait();                                //Wait till the byte is received
     RCEN=0;                                     //Enable reception in Master device 
+    data = SSPBUF;                              //Read the byte and clear the buffer-full flag
     
     if ( ack )
     {
@@ -76,9 +68,9 @@ unsigned char i2c_read( unsigned char ack )
         ACKDT=1;
     }
     ACKEN=1;                                    //Send acknowledge sequence
+    mssp_wait();                                //Wait till the acknowledge sequence completes
     
-    return SSPBUF;                              //return received data
-    
+    return data;                                //return received data
 }
 /*
 void i2c_ack(void)
@@ -103,4 +95,3 @@ void i2c_stop(void)
     mssp_wait();                                //Wait till completion of event
     SSPEN=0;                                    //Disable I2C operation
 }
-

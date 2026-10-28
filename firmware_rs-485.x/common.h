@@ -1,4 +1,4 @@
-#define _XTAL_FREQ 20000000
+#define _XTAL_FREQ 48000000
 
 
 #define HC06   1

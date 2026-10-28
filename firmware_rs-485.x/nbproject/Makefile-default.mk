@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Main.c RGB.c CRC.c 24lc256.c InitInterrupt.c I2C.c MCP23017.c MatrixDisplay.c UART_Common.c
+SOURCEFILES_QUOTED_IF_SPACED=Main.c RGB.c CRC.c 24lc256.c InitInterrupt.c I2C.c MCP23017.c MatrixDisplay.c UART_Common.c USB_CDC.c usb/mla_usb/src/usb_device.c usb/mla_usb/src/usb_device_cdc.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Main.p1 ${OBJECTDIR}/RGB.p1 ${OBJECTDIR}/CRC.p1 ${OBJECTDIR}/24lc256.p1 ${OBJECTDIR}/InitInterrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23017.p1 ${OBJECTDIR}/MatrixDisplay.p1 ${OBJECTDIR}/UART_Common.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/Main.p1.d ${OBJECTDIR}/RGB.p1.d ${OBJECTDIR}/CRC.p1.d ${OBJECTDIR}/24lc256.p1.d ${OBJECTDIR}/InitInterrupt.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/MCP23017.p1.d ${OBJECTDIR}/MatrixDisplay.p1.d ${OBJECTDIR}/UART_Common.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Main.p1 ${OBJECTDIR}/RGB.p1 ${OBJECTDIR}/CRC.p1 ${OBJECTDIR}/24lc256.p1 ${OBJECTDIR}/InitInterrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23017.p1 ${OBJECTDIR}/MatrixDisplay.p1 ${OBJECTDIR}/UART_Common.p1 ${OBJECTDIR}/USB_CDC.p1 ${OBJECTDIR}/usb_device.p1 ${OBJECTDIR}/usb_device_cdc.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/Main.p1.d ${OBJECTDIR}/RGB.p1.d ${OBJECTDIR}/CRC.p1.d ${OBJECTDIR}/24lc256.p1.d ${OBJECTDIR}/InitInterrupt.p1.d ${OBJECTDIR}/I2C.p1.d ${OBJECTDIR}/MCP23017.p1.d ${OBJECTDIR}/MatrixDisplay.p1.d ${OBJECTDIR}/UART_Common.p1.d ${OBJECTDIR}/USB_CDC.p1.d ${OBJECTDIR}/usb_device.p1.d ${OBJECTDIR}/usb_device_cdc.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Main.p1 ${OBJECTDIR}/RGB.p1 ${OBJECTDIR}/CRC.p1 ${OBJECTDIR}/24lc256.p1 ${OBJECTDIR}/InitInterrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23017.p1 ${OBJECTDIR}/MatrixDisplay.p1 ${OBJECTDIR}/UART_Common.p1
+OBJECTFILES=${OBJECTDIR}/Main.p1 ${OBJECTDIR}/RGB.p1 ${OBJECTDIR}/CRC.p1 ${OBJECTDIR}/24lc256.p1 ${OBJECTDIR}/InitInterrupt.p1 ${OBJECTDIR}/I2C.p1 ${OBJECTDIR}/MCP23017.p1 ${OBJECTDIR}/MatrixDisplay.p1 ${OBJECTDIR}/UART_Common.p1 ${OBJECTDIR}/USB_CDC.p1 ${OBJECTDIR}/usb_device.p1 ${OBJECTDIR}/usb_device_cdc.p1
 
 # Source Files
-SOURCEFILES=Main.c RGB.c CRC.c 24lc256.c InitInterrupt.c I2C.c MCP23017.c MatrixDisplay.c UART_Common.c
+SOURCEFILES=Main.c RGB.c CRC.c 24lc256.c InitInterrupt.c I2C.c MCP23017.c MatrixDisplay.c UART_Common.c USB_CDC.c usb/mla_usb/src/usb_device.c usb/mla_usb/src/usb_device_cdc.c
 
 
 CFLAGS=
@@ -164,6 +164,30 @@ ${OBJECTDIR}/UART_Common.p1: UART_Common.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/UART_Common.p1 UART_Common.c 
 	@-${MV} ${OBJECTDIR}/UART_Common.d ${OBJECTDIR}/UART_Common.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/UART_Common.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+
+${OBJECTDIR}/USB_CDC.p1: USB_CDC.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}"
+	@${RM} ${OBJECTDIR}/USB_CDC.p1.d
+	@${RM} ${OBJECTDIR}/USB_CDC.p1
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c -D__DEBUG=1 -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF) -msummary=-psect,-class,+mem,-hex,-file -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD) -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto -Iusb -Iusb/mla_usb/inc -o ${OBJECTDIR}/USB_CDC.p1 USB_CDC.c
+	@-${MV} ${OBJECTDIR}/USB_CDC.d ${OBJECTDIR}/USB_CDC.p1.d
+	@${FIXDEPS} ${OBJECTDIR}/USB_CDC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../
+
+${OBJECTDIR}/usb_device.p1: usb/mla_usb/src/usb_device.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}"
+	@${RM} ${OBJECTDIR}/usb_device.p1.d
+	@${RM} ${OBJECTDIR}/usb_device.p1
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c -D__DEBUG=1 -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF) -msummary=-psect,-class,+mem,-hex,-file -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD) -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto -Iusb -Iusb/mla_usb/inc -o ${OBJECTDIR}/usb_device.p1 usb/mla_usb/src/usb_device.c
+	@-${MV} ${OBJECTDIR}/usb_device.d ${OBJECTDIR}/usb_device.p1.d
+	@${FIXDEPS} ${OBJECTDIR}/usb_device.p1.d $(SILENT) -rsi ${MP_CC_DIR}../
+
+${OBJECTDIR}/usb_device_cdc.p1: usb/mla_usb/src/usb_device_cdc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}"
+	@${RM} ${OBJECTDIR}/usb_device_cdc.p1.d
+	@${RM} ${OBJECTDIR}/usb_device_cdc.p1
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c -D__DEBUG=1 -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF) -msummary=-psect,-class,+mem,-hex,-file -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD) -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto -Iusb -Iusb/mla_usb/inc -o ${OBJECTDIR}/usb_device_cdc.p1 usb/mla_usb/src/usb_device_cdc.c
+	@-${MV} ${OBJECTDIR}/usb_device_cdc.d ${OBJECTDIR}/usb_device_cdc.p1.d
+	@${FIXDEPS} ${OBJECTDIR}/usb_device_cdc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../
 	
 else
 ${OBJECTDIR}/Main.p1: Main.c  nbproject/Makefile-${CND_CONF}.mk
@@ -237,6 +261,30 @@ ${OBJECTDIR}/UART_Common.p1: UART_Common.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/UART_Common.p1 UART_Common.c 
 	@-${MV} ${OBJECTDIR}/UART_Common.d ${OBJECTDIR}/UART_Common.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/UART_Common.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+
+${OBJECTDIR}/USB_CDC.p1: USB_CDC.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}"
+	@${RM} ${OBJECTDIR}/USB_CDC.p1.d
+	@${RM} ${OBJECTDIR}/USB_CDC.p1
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF) -msummary=-psect,-class,+mem,-hex,-file -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD) -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto -Iusb -Iusb/mla_usb/inc -o ${OBJECTDIR}/USB_CDC.p1 USB_CDC.c
+	@-${MV} ${OBJECTDIR}/USB_CDC.d ${OBJECTDIR}/USB_CDC.p1.d
+	@${FIXDEPS} ${OBJECTDIR}/USB_CDC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../
+
+${OBJECTDIR}/usb_device.p1: usb/mla_usb/src/usb_device.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}"
+	@${RM} ${OBJECTDIR}/usb_device.p1.d
+	@${RM} ${OBJECTDIR}/usb_device.p1
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF) -msummary=-psect,-class,+mem,-hex,-file -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD) -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto -Iusb -Iusb/mla_usb/inc -o ${OBJECTDIR}/usb_device.p1 usb/mla_usb/src/usb_device.c
+	@-${MV} ${OBJECTDIR}/usb_device.d ${OBJECTDIR}/usb_device.p1.d
+	@${FIXDEPS} ${OBJECTDIR}/usb_device.p1.d $(SILENT) -rsi ${MP_CC_DIR}../
+
+${OBJECTDIR}/usb_device_cdc.p1: usb/mla_usb/src/usb_device_cdc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}"
+	@${RM} ${OBJECTDIR}/usb_device_cdc.p1.d
+	@${RM} ${OBJECTDIR}/usb_device_cdc.p1
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c -fno-short-double -fno-short-float -memi=wordwrite -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF) -msummary=-psect,-class,+mem,-hex,-file -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -mc90lib $(COMPARISON_BUILD) -std=c90 -gdwarf-3 -mstack=compiled:auto:auto:auto -Iusb -Iusb/mla_usb/inc -o ${OBJECTDIR}/usb_device_cdc.p1 usb/mla_usb/src/usb_device_cdc.c
+	@-${MV} ${OBJECTDIR}/usb_device_cdc.d ${OBJECTDIR}/usb_device_cdc.p1.d
+	@${FIXDEPS} ${OBJECTDIR}/usb_device_cdc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../
 	
 endif
 

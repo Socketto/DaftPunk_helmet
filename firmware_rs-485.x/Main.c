@@ -9,12 +9,12 @@
 // 'C' source line config statements
   
 // CONFIG1L
-#pragma config PLLDIV = 1       // PLL Prescaler Selection bits (No prescale (4 MHz oscillator input drives PLL directly))
+#pragma config PLLDIV = 5       // PLL Prescaler Selection bits (20 MHz oscillator input divided by 5)
 #pragma config CPUDIV = OSC1_PLL2// System Clock Postscaler Selection bits ([Primary Oscillator Src: /1][96 MHz PLL Src: /2])
-#pragma config USBDIV = 1       // USB Clock Selection bit (used in Full-Speed USB mode only; UCFG:FSEN = 1) (USB clock source comes directly from the primary oscillator block with no postscale)
+#pragma config USBDIV = 2       // USB clock is 48 MHz (96 MHz PLL divided by 2)
 
 // CONFIG1H
-#pragma config FOSC = HS        // Oscillator Selection bits (HS oscillator (HS))
+#pragma config FOSC = HSPLL_HS  // Oscillator Selection bits (HS oscillator, PLL enabled)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor disabled)
 #pragma config IESO = OFF       // Internal/External Oscillator Switchover bit (Oscillator Switchover mode disabled)
 
@@ -22,7 +22,7 @@
 #pragma config PWRT = OFF       // Power-up Timer Enable bit (PWRT disabled)
 #pragma config BOR = ON         // Brown-out Reset Enable bits (Brown-out Reset enabled in hardware only (SBOREN is disabled))
 #pragma config BORV = 3         // Brown-out Reset Voltage bits (Minimum setting 2.05V)
-#pragma config VREGEN = OFF     // USB Voltage Regulator Enable bit (USB voltage regulator disabled)
+#pragma config VREGEN = ON      // USB Voltage Regulator Enable bit (USB voltage regulator enabled)
 
 // CONFIG2H
 #pragma config WDT = OFF        // Watchdog Timer Enable bit (WDT disabled (control is placed on the SWDTEN bit))
@@ -87,6 +87,7 @@
 #include "MCP23017.h"
 #include "MatrixDisplay.h"
 #include "24lc256.h"
+#include "USB_CDC.h"
 
 extern unsigned char CurrentExecution;
 extern char EarRandom;
@@ -100,6 +101,7 @@ void Init()
     TRISA = 0b00000000;//all output
     TRISB = 0b00000011;//all output
     TRISC = 0b10000000;//PortC7 input RX
+    TRISC |= 0b00110000;
 	
     for (idd = 0; idd < 100; idd++) {
         __delay_ms(5);
@@ -115,6 +117,7 @@ void Init()
     UART_Init(19200);
     LATCbits.LATC2 = 0; //for RS-485
 #endif
+    USB_CDC_Init();
     for(tempUnsignedChar = 0 ; tempUnsignedChar < MCP_COUNTS ; tempUnsignedChar++)
 	{
         Init_MCP(MCPAddresses[tempUnsignedChar]);
@@ -171,6 +174,11 @@ extern unsigned char PhoneConnected;
 unsigned char SignedError = 0;
 extern unsigned char AllowDisplayCommunication;
 void main(void) {
+    unsigned char commandFrame[BYTE_BUFFER_COM];
+    unsigned char commandResponse[BYTE_BUFFER_COM];
+    unsigned char commandFromUsb;
+    unsigned char responseLength;
+
     Init();
     
     /**/
@@ -180,6 +188,8 @@ void main(void) {
     Refresh();
     while(1)
     {
+        USB_CDC_Task();
+
         if(RCSTAbits.OERR)
         {
             RCSTAbits.CREN = 0;
@@ -201,12 +211,23 @@ void main(void) {
             SetLed(0);
         }
         
-		if(BancataRicevuta)
+		if(BancataRicevuta || USB_CDC_FrameReady())
 		{
-			BancataRicevuta = 0;
-            BuffTxCom[0] = 0x01;
-			BuffTxCom[1] = 0x0A;
-			switch(BuffRxCom[1])
+            commandFromUsb = 0;
+            if(BancataRicevuta)
+            {
+                BancataRicevuta = 0;
+                memcpy(commandFrame, BuffRxCom, BYTE_BUFFER_COM);
+            }
+            else
+            {
+                commandFromUsb = 1;
+                USB_CDC_GetFrame(commandFrame);
+            }
+
+            commandResponse[0] = 0x01;
+            commandResponse[1] = 0x0A;
+			switch(commandFrame[1])
 			{
 				case 0x00:
 					AllowDisplayCommunication = 1;
@@ -265,21 +286,28 @@ void main(void) {
                     SetRGB_Blink(BLINK_75_mSecond);
 				break;
                 case 0x10:
-                    switch(BuffRxCom[2])
+                    switch(commandFrame[2])
                     {
                         case 0x01:
-                            BuffTxCom[0] = 0x02;
-                            BuffTxCom[1] = 0x0A;
-                            ShortTemp = BuffRxCom[3];
+                            commandResponse[0] = 0x02;
+                            ShortTemp = commandFrame[3];
                             ShortTemp *= 0x0100;
-                            ShortTemp += BuffRxCom[4];
-                            BuffTxCom[2] = EE_byte_read(ShortTemp);
+                            ShortTemp += commandFrame[4];
+                            if(EE_byte_read(ShortTemp, &commandResponse[2]))
+                            {
+                                commandResponse[1] = 0x0A;
+                            }
+                            else
+                            {
+                                commandResponse[1] = 0x0B;
+                                commandResponse[2] = 0xFF;
+                            }
                             break;
                         case 0x02:
-                            ShortTemp = BuffRxCom[3];
+                            ShortTemp = commandFrame[3];
                             ShortTemp *= 0x0100;
-                            ShortTemp += BuffRxCom[4];
-                            EE_byte_write(ShortTemp,BuffRxCom[5]);
+                            ShortTemp += commandFrame[4];
+                            commandResponse[1] = EE_byte_write(ShortTemp, commandFrame[5]) ? 0x0A : 0x0B;
                             break;
                         case 0x03:
                             AllowDisplayCommunication = 0;
@@ -291,25 +319,25 @@ void main(void) {
                     break;
                 case 0xDC:
                     PhoneConnected = 5;
-					MusicValue= BuffRxCom[2];
+					MusicValue= commandFrame[2];
                     break;
                 case 0x20:
 					AllowDisplayCommunication = 1;
-                    switch(BuffRxCom[2])
+                    switch(commandFrame[2])
                     {
                         case 0x01:
-                            BuffTxCom[0] = 0x02;
-                            BuffTxCom[1] = 0x0A;
-                            BuffTxCom[2] = ReadColumn(BuffRxCom[3]);
+                            commandResponse[0] = 0x02;
+                            commandResponse[1] = 0x0A;
+                            commandResponse[2] = ReadColumn(commandFrame[3]);
                             break;
                         case 0x02:
-                            Write_Column(BuffRxCom[3],BuffRxCom[4]);
+                            Write_Column(commandFrame[3],commandFrame[4]);
                             break;
                         case 0x03:
                             ClearScreen();
                             break;
                         case 0x04:
-                            Write_Point(BuffRxCom[3],BuffRxCom[4]);
+                            Write_Point(commandFrame[3],commandFrame[4]);
                             break;
                         case 0x05:
                             InvertScreen();
@@ -321,14 +349,14 @@ void main(void) {
                 break;
 				case 0x50:
 					AllowDisplayCommunication = 1;
-                    switch(BuffRxCom[2])
+                    switch(commandFrame[2])
                     {
 						case 0x01:
 							StopScriviFrase();
 							memset(Frase,0x00,100);
-						    for(Frase[99] = 0 ; Frase[99] <= BuffRxCom[0] - 3 ; Frase[99]++)
+						    for(Frase[99] = 0 ; Frase[99] <= commandFrame[0] - 3 ; Frase[99]++)
 							{
-								Frase[Frase[99]] = (unsigned char)(BuffRxCom[(unsigned char) (2+BuffRxCom[2]+Frase[99])]);
+								Frase[Frase[99]] = (unsigned char)(commandFrame[(unsigned char) (2+commandFrame[2]+Frase[99])]);
 							}
                             CurrentExecution = 3;
 							/* to do */
@@ -337,9 +365,20 @@ void main(void) {
 					}
 				break;
 			}
-            TotTxCom = BuffTxCom[0];
-            TotTxCom += 1;
-			SendByte();  //for send first byte!
+            responseLength = (unsigned char)(commandResponse[0] + 1);
+            if(commandFromUsb)
+            {
+                if(!USB_CDC_Send(commandResponse, responseLength))
+                {
+                    SignedError = 100;
+                }
+            }
+            else
+            {
+                memcpy(BuffTxCom, commandResponse, responseLength);
+                TotTxCom = responseLength;
+                SendByte();  //for send first byte!
+            }
 		}
 		
 		

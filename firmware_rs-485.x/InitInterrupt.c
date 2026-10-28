@@ -15,19 +15,21 @@ void interrupt_init()
     INTCONbits.PEIE = 1;
     
     INTCON2bits.TMR0IP = 1;
-    
-    INTCONbits.TMR0IE = 1;
-    INTCONbits.TMR0IF = 0; 
-    
-    
-    T0CONbits.TMR0ON = 1;
+
+    T0CONbits.TMR0ON = 0;
 	T0CONbits.T08BIT = 0;
 	T0CONbits.T0CS = 0;
 	T0CONbits.T0SE = 0;
 	T0CONbits.PSA = 0;
 	T0CONbits.T0PS0 = 0;
-	T0CONbits.T0PS1 = 0;
+	T0CONbits.T0PS1 = 1;
 	T0CONbits.T0PS2 = 0;
+
+    TMR0H = 0x66;
+    TMR0L = 0x66;
+    INTCONbits.TMR0IF = 0;
+    INTCONbits.TMR0IE = 1;
+    T0CONbits.TMR0ON = 1;
     
     INTCONbits.GIE = 1;
 }
@@ -43,6 +45,8 @@ void __interrupt() tc_int(void)        // interrupt function
     if(INTCONbits.T0IF) 
     {                                     // if timer flag is set & interrupt enabled
         INTCONbits.T0IF = 0;                  // clear the interrupt flag
+        TMR0H = 0x66;
+        TMR0L = 0x66;
         TimerSeconds++;
         if(TimerSeconds == 38)
         {
@@ -118,4 +122,3 @@ void __interrupt() tc_int(void)        // interrupt function
     } 
 	
 }
-
