@@ -1,97 +1,216 @@
+#include "I2C.h"
 #include "common.h"
 #include <xc.h>
 #include <pic18f2550.h>
 
-//https://electrosome.com/i2c-pic-microcontroller-mplab-xc8/
+#define I2C_SDA_TRIS TRISBbits.TRISB0
+#define I2C_SCL_TRIS TRISBbits.TRISB1
+#define I2C_SDA_READ PORTBbits.RB0
+#define I2C_SCL_READ PORTBbits.RB1
+#define I2C_CLOCK_TIMEOUT_US 100
+#define I2C_HALF_PERIOD_US 5
 
-const unsigned long I2C_Baudrate = 100000;
+static void i2c_sda_low(void)
+{
+    I2C_SDA_TRIS = 0;
+}
+
+static void i2c_sda_release(void)
+{
+    I2C_SDA_TRIS = 1;
+}
+
+static void i2c_scl_low(void)
+{
+    I2C_SCL_TRIS = 0;
+}
+
+static void i2c_scl_release(void)
+{
+    I2C_SCL_TRIS = 1;
+}
+
+static unsigned char i2c_wait_scl_high(void)
+{
+    unsigned char timeout = I2C_CLOCK_TIMEOUT_US;
+
+    while(!I2C_SCL_READ && timeout > 0)
+    {
+        __delay_us(1);
+        timeout--;
+    }
+
+    return (unsigned char)(I2C_SCL_READ != 0);
+}
 
 void i2c_init(void)
 {
-    TRISB |= 0x03;                              //Configuring SDA and SCL as input pins
-    SSPCON1 = 0x28;                             //Configuring as I2C Master mode with SCL clock frequency= FOSC/(4 * (SSPADD + 1))
-    SSPADD = (_XTAL_FREQ/(4*I2C_Baudrate))-1;              //Setting SCL frequency with value in clock_freq ??(100k 0x31)??
-    SSPSTAT = 0x00;                             //Resetting SSPSTAT register
-    SSPIF = 0; 
+    LATBbits.LATB0 = 0;
+    LATBbits.LATB1 = 0;
+    i2c_sda_release();
+    i2c_scl_release();
 }
 
-void mssp_wait(void)
+unsigned char i2c_idle(void)
 {
-    while(!SSPIF);                              //wait till SSPIF flag is set
-    SSPIF=0;
+    i2c_sda_release();
+    i2c_scl_release();
+
+    if(!i2c_wait_scl_high())
+    {
+        return 0;
+    }
+
+    __delay_us(I2C_HALF_PERIOD_US);
+    return (unsigned char)(I2C_SDA_READ != 0);
 }
 
-void i2c_restart(void)
+unsigned char i2c_start(void)
 {
-    RSEN=1;                                     //Initiate restart condition
-    mssp_wait();                                //Wait till completion of event
+    if(!i2c_idle())
+    {
+        return 0;
+    }
+
+    i2c_sda_low();
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_scl_low();
+    __delay_us(I2C_HALF_PERIOD_US);
+    return 1;
 }
 
-void i2c_idle(void)
+unsigned char i2c_restart(void)
 {
-  // Wait for Status Idle (i.e. ACKEN, RCEN, PEN, RSEN, SEN) and I2C Bus stop detection
-  while (( SSPCON2 & 0x1F ) || ( SSPSTAT & 0x04 ));
-}
- 
- 
-void i2c_start(void)
-{
-	SSPCON1 = 0x28;
-    i2c_idle();                                 //Check if the I2C bus is idle
-    SEN=1;                                      //Initiate start condition
-    mssp_wait();                                //Wait till completion of event
+    i2c_sda_release();
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_scl_release();
+
+    if(!i2c_wait_scl_high())
+    {
+        i2c_scl_low();
+        return 0;
+    }
+
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_sda_low();
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_scl_low();
+    __delay_us(I2C_HALF_PERIOD_US);
+    return 1;
 }
 
 unsigned char i2c_write(unsigned char data)
 {
-	SSPCON1 = 0x28;
-    SSPBUF=data;                                //Input data to buffer
-    mssp_wait();                                //Wait till completion of event
-    return (unsigned char)(ACKSTAT == 0);       //Check whether the slave acknowledged
+    unsigned char bit;
+
+    for(bit = 0; bit < 8; bit++)
+    {
+        if(data & 0x80)
+        {
+            i2c_sda_release();
+        }
+        else
+        {
+            i2c_sda_low();
+        }
+
+        __delay_us(I2C_HALF_PERIOD_US);
+        i2c_scl_release();
+        if(!i2c_wait_scl_high())
+        {
+            i2c_scl_low();
+            i2c_sda_release();
+            return 0;
+        }
+
+        __delay_us(I2C_HALF_PERIOD_US);
+        i2c_scl_low();
+        data <<= 1;
+    }
+
+    i2c_sda_release();
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_scl_release();
+    if(!i2c_wait_scl_high())
+    {
+        i2c_scl_low();
+        return 0;
+    }
+
+    __delay_us(I2C_HALF_PERIOD_US);
+    bit = (unsigned char)(I2C_SDA_READ == 0);
+    i2c_scl_low();
+    return bit;
 }
 
-unsigned char i2c_read( unsigned char ack )
+unsigned char i2c_read(unsigned char ack, unsigned char *data)
 {
-    unsigned char data;
+    unsigned char bit;
+    unsigned char receivedData = 0;
 
-    RCEN=1;                                     //Enable reception in Master device 
-    mssp_wait();                                //Wait till the byte is received
-    RCEN=0;                                     //Enable reception in Master device 
-    data = SSPBUF;                              //Read the byte and clear the buffer-full flag
-    
-    if ( ack )
+    if(data == 0)
     {
-        ACKDT=0;
+        return 0;
+    }
+
+    i2c_sda_release();
+    for(bit = 0; bit < 8; bit++)
+    {
+        receivedData <<= 1;
+        i2c_scl_release();
+        if(!i2c_wait_scl_high())
+        {
+            i2c_scl_low();
+            return 0;
+        }
+
+        __delay_us(I2C_HALF_PERIOD_US);
+        if(I2C_SDA_READ)
+        {
+            receivedData |= 1;
+        }
+        i2c_scl_low();
+        __delay_us(I2C_HALF_PERIOD_US);
+    }
+
+    if(ack)
+    {
+        i2c_sda_low();
     }
     else
     {
-        ACKDT=1;
+        i2c_sda_release();
     }
-    ACKEN=1;                                    //Send acknowledge sequence
-    mssp_wait();                                //Wait till the acknowledge sequence completes
-    
-    return data;                                //return received data
+
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_scl_release();
+    if(!i2c_wait_scl_high())
+    {
+        i2c_scl_low();
+        i2c_sda_release();
+        return 0;
+    }
+
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_scl_low();
+    i2c_sda_release();
+    *data = receivedData;
+    return 1;
 }
-/*
-void i2c_ack(void)
+
+unsigned char i2c_stop(void)
 {
-    ACKDT=0;                                    //Set as acknowledgement
-    ACKEN=1;                                    //Initiate acknowledgement signal
-    mssp_wait();                                //Wait till completion of event
-}
- 
-void i2c_nack(void)
-{
-    ACKDT=1;                                    //Set as negative acknowledgement
-    ACKEN=1;                                    //Initiate negative acknowledgement signal
-    mssp_wait();                                //Wait till completion of event
-}
-*/
-void i2c_stop(void)
-{
-	i2c_idle();
-    PEN=1;                                      //Initiate Stop condition
-    while(PEN) {};
-    mssp_wait();                                //Wait till completion of event
-    SSPEN=0;                                    //Disable I2C operation
+    unsigned char clockReleased;
+
+    i2c_sda_low();
+    __delay_us(I2C_HALF_PERIOD_US);
+    i2c_scl_release();
+    clockReleased = i2c_wait_scl_high();
+    if(clockReleased)
+    {
+        __delay_us(I2C_HALF_PERIOD_US);
+    }
+    i2c_sda_release();
+    __delay_us(I2C_HALF_PERIOD_US);
+    return clockReleased;
 }

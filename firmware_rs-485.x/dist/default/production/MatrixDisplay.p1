@@ -1,0 +1,2131 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"9 ./MCP23017.h
+[v _MCPPresent `uc ~T0 @X0 -> 0 `x e ]
+"2
+[v _SetOutputs `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"8
+[v _MCPAddresses `uc ~T0 @X0 -> 0 `x e ]
+"29 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
+"22 MatrixDisplay.c
+[v _PhoneConnected `uc ~T0 @X0 0 e ]
+"21
+[v _MusicValue `uc ~T0 @X0 0 e ]
+"7
+[v _Frase `uc ~T0 @X0 -> 0 `x e ]
+"4 ./24lc256.h
+[v _EE_byte_read `(uc ~T0 @X0 0 ef2`us`*uc ]
+"33 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"52 C:\Program Files\Microchip\xc8\v3.00\pic\include\proc/pic18f2550.h
+[; <" UFRM equ 0F66h ;# ">
+"59
+[; <" UFRML equ 0F66h ;# ">
+"137
+[; <" UFRMH equ 0F67h ;# ">
+"177
+[; <" UIR equ 0F68h ;# ">
+"233
+[; <" UIE equ 0F69h ;# ">
+"289
+[; <" UEIR equ 0F6Ah ;# ">
+"340
+[; <" UEIE equ 0F6Bh ;# ">
+"391
+[; <" USTAT equ 0F6Ch ;# ">
+"451
+[; <" UCON equ 0F6Dh ;# ">
+"502
+[; <" UADDR equ 0F6Eh ;# ">
+"566
+[; <" UCFG equ 0F6Fh ;# ">
+"645
+[; <" UEP0 equ 0F70h ;# ">
+"753
+[; <" UEP1 equ 0F71h ;# ">
+"861
+[; <" UEP2 equ 0F72h ;# ">
+"969
+[; <" UEP3 equ 0F73h ;# ">
+"1077
+[; <" UEP4 equ 0F74h ;# ">
+"1185
+[; <" UEP5 equ 0F75h ;# ">
+"1293
+[; <" UEP6 equ 0F76h ;# ">
+"1401
+[; <" UEP7 equ 0F77h ;# ">
+"1509
+[; <" UEP8 equ 0F78h ;# ">
+"1585
+[; <" UEP9 equ 0F79h ;# ">
+"1661
+[; <" UEP10 equ 0F7Ah ;# ">
+"1737
+[; <" UEP11 equ 0F7Bh ;# ">
+"1813
+[; <" UEP12 equ 0F7Ch ;# ">
+"1889
+[; <" UEP13 equ 0F7Dh ;# ">
+"1965
+[; <" UEP14 equ 0F7Eh ;# ">
+"2041
+[; <" UEP15 equ 0F7Fh ;# ">
+"2117
+[; <" PORTA equ 0F80h ;# ">
+"2256
+[; <" PORTB equ 0F81h ;# ">
+"2366
+[; <" PORTC equ 0F82h ;# ">
+"2508
+[; <" PORTE equ 0F84h ;# ">
+"2547
+[; <" LATA equ 0F89h ;# ">
+"2647
+[; <" LATB equ 0F8Ah ;# ">
+"2759
+[; <" LATC equ 0F8Bh ;# ">
+"2837
+[; <" TRISA equ 0F92h ;# ">
+"2842
+[; <" DDRA equ 0F92h ;# ">
+"3035
+[; <" TRISB equ 0F93h ;# ">
+"3040
+[; <" DDRB equ 0F93h ;# ">
+"3257
+[; <" TRISC equ 0F94h ;# ">
+"3262
+[; <" DDRC equ 0F94h ;# ">
+"3411
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"3470
+[; <" PIE1 equ 0F9Dh ;# ">
+"3541
+[; <" PIR1 equ 0F9Eh ;# ">
+"3612
+[; <" IPR1 equ 0F9Fh ;# ">
+"3683
+[; <" PIE2 equ 0FA0h ;# ">
+"3754
+[; <" PIR2 equ 0FA1h ;# ">
+"3825
+[; <" IPR2 equ 0FA2h ;# ">
+"3896
+[; <" EECON1 equ 0FA6h ;# ">
+"3962
+[; <" EECON2 equ 0FA7h ;# ">
+"3969
+[; <" EEDATA equ 0FA8h ;# ">
+"3976
+[; <" EEADR equ 0FA9h ;# ">
+"3983
+[; <" RCSTA equ 0FABh ;# ">
+"3988
+[; <" RCSTA1 equ 0FABh ;# ">
+"4193
+[; <" TXSTA equ 0FACh ;# ">
+"4198
+[; <" TXSTA1 equ 0FACh ;# ">
+"4449
+[; <" TXREG equ 0FADh ;# ">
+"4454
+[; <" TXREG1 equ 0FADh ;# ">
+"4461
+[; <" RCREG equ 0FAEh ;# ">
+"4466
+[; <" RCREG1 equ 0FAEh ;# ">
+"4473
+[; <" SPBRG equ 0FAFh ;# ">
+"4478
+[; <" SPBRG1 equ 0FAFh ;# ">
+"4485
+[; <" SPBRGH equ 0FB0h ;# ">
+"4492
+[; <" T3CON equ 0FB1h ;# ">
+"4613
+[; <" TMR3 equ 0FB2h ;# ">
+"4620
+[; <" TMR3L equ 0FB2h ;# ">
+"4627
+[; <" TMR3H equ 0FB3h ;# ">
+"4634
+[; <" CMCON equ 0FB4h ;# ">
+"4724
+[; <" CVRCON equ 0FB5h ;# ">
+"4809
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4814
+[; <" CCP1AS equ 0FB6h ;# ">
+"4939
+[; <" ECCP1DEL equ 0FB7h ;# ">
+"4944
+[; <" CCP1DEL equ 0FB7h ;# ">
+"4979
+[; <" BAUDCON equ 0FB8h ;# ">
+"4984
+[; <" BAUDCTL equ 0FB8h ;# ">
+"5159
+[; <" CCP2CON equ 0FBAh ;# ">
+"5223
+[; <" CCPR2 equ 0FBBh ;# ">
+"5230
+[; <" CCPR2L equ 0FBBh ;# ">
+"5237
+[; <" CCPR2H equ 0FBCh ;# ">
+"5244
+[; <" CCP1CON equ 0FBDh ;# ">
+"5308
+[; <" CCPR1 equ 0FBEh ;# ">
+"5315
+[; <" CCPR1L equ 0FBEh ;# ">
+"5322
+[; <" CCPR1H equ 0FBFh ;# ">
+"5329
+[; <" ADCON2 equ 0FC0h ;# ">
+"5400
+[; <" ADCON1 equ 0FC1h ;# ">
+"5485
+[; <" ADCON0 equ 0FC2h ;# ">
+"5604
+[; <" ADRES equ 0FC3h ;# ">
+"5611
+[; <" ADRESL equ 0FC3h ;# ">
+"5618
+[; <" ADRESH equ 0FC4h ;# ">
+"5625
+[; <" SSPCON2 equ 0FC5h ;# ">
+"5687
+[; <" SSPCON1 equ 0FC6h ;# ">
+"5757
+[; <" SSPSTAT equ 0FC7h ;# ">
+"6005
+[; <" SSPADD equ 0FC8h ;# ">
+"6012
+[; <" SSPBUF equ 0FC9h ;# ">
+"6019
+[; <" T2CON equ 0FCAh ;# ">
+"6117
+[; <" PR2 equ 0FCBh ;# ">
+"6122
+[; <" MEMCON equ 0FCBh ;# ">
+"6227
+[; <" TMR2 equ 0FCCh ;# ">
+"6234
+[; <" T1CON equ 0FCDh ;# ">
+"6337
+[; <" TMR1 equ 0FCEh ;# ">
+"6344
+[; <" TMR1L equ 0FCEh ;# ">
+"6351
+[; <" TMR1H equ 0FCFh ;# ">
+"6358
+[; <" RCON equ 0FD0h ;# ">
+"6507
+[; <" WDTCON equ 0FD1h ;# ">
+"6535
+[; <" HLVDCON equ 0FD2h ;# ">
+"6540
+[; <" LVDCON equ 0FD2h ;# ">
+"6805
+[; <" OSCCON equ 0FD3h ;# ">
+"6888
+[; <" T0CON equ 0FD5h ;# ">
+"6958
+[; <" TMR0 equ 0FD6h ;# ">
+"6965
+[; <" TMR0L equ 0FD6h ;# ">
+"6972
+[; <" TMR0H equ 0FD7h ;# ">
+"6979
+[; <" STATUS equ 0FD8h ;# ">
+"7050
+[; <" FSR2 equ 0FD9h ;# ">
+"7057
+[; <" FSR2L equ 0FD9h ;# ">
+"7064
+[; <" FSR2H equ 0FDAh ;# ">
+"7071
+[; <" PLUSW2 equ 0FDBh ;# ">
+"7078
+[; <" PREINC2 equ 0FDCh ;# ">
+"7085
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"7092
+[; <" POSTINC2 equ 0FDEh ;# ">
+"7099
+[; <" INDF2 equ 0FDFh ;# ">
+"7106
+[; <" BSR equ 0FE0h ;# ">
+"7113
+[; <" FSR1 equ 0FE1h ;# ">
+"7120
+[; <" FSR1L equ 0FE1h ;# ">
+"7127
+[; <" FSR1H equ 0FE2h ;# ">
+"7134
+[; <" PLUSW1 equ 0FE3h ;# ">
+"7141
+[; <" PREINC1 equ 0FE4h ;# ">
+"7148
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"7155
+[; <" POSTINC1 equ 0FE6h ;# ">
+"7162
+[; <" INDF1 equ 0FE7h ;# ">
+"7169
+[; <" WREG equ 0FE8h ;# ">
+"7176
+[; <" FSR0 equ 0FE9h ;# ">
+"7183
+[; <" FSR0L equ 0FE9h ;# ">
+"7190
+[; <" FSR0H equ 0FEAh ;# ">
+"7197
+[; <" PLUSW0 equ 0FEBh ;# ">
+"7204
+[; <" PREINC0 equ 0FECh ;# ">
+"7211
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"7218
+[; <" POSTINC0 equ 0FEEh ;# ">
+"7225
+[; <" INDF0 equ 0FEFh ;# ">
+"7232
+[; <" INTCON3 equ 0FF0h ;# ">
+"7324
+[; <" INTCON2 equ 0FF1h ;# ">
+"7401
+[; <" INTCON equ 0FF2h ;# ">
+"7518
+[; <" PROD equ 0FF3h ;# ">
+"7525
+[; <" PRODL equ 0FF3h ;# ">
+"7532
+[; <" PRODH equ 0FF4h ;# ">
+"7539
+[; <" TABLAT equ 0FF5h ;# ">
+"7548
+[; <" TBLPTR equ 0FF6h ;# ">
+"7555
+[; <" TBLPTRL equ 0FF6h ;# ">
+"7562
+[; <" TBLPTRH equ 0FF7h ;# ">
+"7569
+[; <" TBLPTRU equ 0FF8h ;# ">
+"7578
+[; <" PCLAT equ 0FF9h ;# ">
+"7585
+[; <" PC equ 0FF9h ;# ">
+"7592
+[; <" PCL equ 0FF9h ;# ">
+"7599
+[; <" PCLATH equ 0FFAh ;# ">
+"7606
+[; <" PCLATU equ 0FFBh ;# ">
+"7613
+[; <" STKPTR equ 0FFCh ;# ">
+"7689
+[; <" TOS equ 0FFDh ;# ">
+"7696
+[; <" TOSL equ 0FFDh ;# ">
+"7703
+[; <" TOSH equ 0FFEh ;# ">
+"7710
+[; <" TOSU equ 0FFFh ;# ">
+[v F3479 `uc ~T0 @X0 -> 40 `i t ]
+"9 MatrixDisplay.c
+[v _Frasi `F3479 ~T0 @X0 -> 8 `i e ]
+[i _Frasi
+:U ..
+:U ..
+-> 126 `c
+-> 53 `c
+-> 76 `c
+-> 79 `c
+-> 86 `c
+-> 69 `c
+-> 126 `c
+-> 53 `c
+-> 0 `c
+..
+:U ..
+-> 126 `c
+-> 54 `c
+-> 73 `c
+-> 32 `c
+-> 108 `c
+-> 111 `c
+-> 118 `c
+-> 101 `c
+-> 32 `c
+-> 109 `c
+-> 117 `c
+-> 115 `c
+-> 105 `c
+-> 99 `c
+-> 126 `c
+-> 54 `c
+-> 0 `c
+..
+:U ..
+-> 68 `c
+-> 65 `c
+-> 70 `c
+-> 84 `c
+-> 80 `c
+-> 85 `c
+-> 78 `c
+-> 75 `c
+-> 0 `c
+..
+:U ..
+-> 126 `c
+-> 53 `c
+-> 67 `c
+-> 97 `c
+-> 109 `c
+-> 105 `c
+-> 108 `c
+-> 108 `c
+-> 97 `c
+-> 32 `c
+-> 105 `c
+-> 32 `c
+-> 108 `c
+-> 111 `c
+-> 118 `c
+-> 101 `c
+-> 32 `c
+-> 121 `c
+-> 111 `c
+-> 117 `c
+-> 33 `c
+-> 126 `c
+-> 53 `c
+-> 0 `c
+..
+:U ..
+-> 87 `c
+-> 79 `c
+-> 87 `c
+-> 0 `c
+..
+:U ..
+-> 126 `c
+-> 54 `c
+-> 68 `c
+-> 97 `c
+-> 102 `c
+-> 116 `c
+-> 32 `c
+-> 109 `c
+-> 117 `c
+-> 115 `c
+-> 105 `c
+-> 99 `c
+-> 33 `c
+-> 32 `c
+-> 126 `c
+-> 54 `c
+-> 0 `c
+..
+:U ..
+-> 83 `c
+-> 112 `c
+-> 101 `c
+-> 99 `c
+-> 105 `c
+-> 97 `c
+-> 108 `c
+-> 32 `c
+-> 104 `c
+-> 101 `c
+-> 108 `c
+-> 109 `c
+-> 101 `c
+-> 116 `c
+-> 0 `c
+..
+:U ..
+-> 65 `c
+-> 110 `c
+-> 110 `c
+-> 105 `c
+-> 32 `c
+-> 57 `c
+-> 48 `c
+-> 32 `c
+-> 102 `c
+-> 111 `c
+-> 114 `c
+-> 101 `c
+-> 118 `c
+-> 101 `c
+-> 114 `c
+-> 33 `c
+-> 0 `c
+..
+..
+]
+"19
+[v _Display `uc ~T0 @X0 -> 16 `i e ]
+"20
+[v _i `uc ~T0 @X0 1 e ]
+[v _count `uc ~T0 @X0 1 e ]
+[v _abit `uc ~T0 @X0 1 e ]
+"26
+[v _BarraVolume `(uc ~T0 @X0 1 ef1`uc ]
+"27
+{
+[e :U _BarraVolume ]
+"26
+[v _volume `uc ~T0 @X0 1 r1 ]
+"27
+[f ]
+"28
+[e $ ! != & -> _volume `i -> 128 `i -> 0 `i 355  ]
+"29
+[e ) -> -> 255 `i `uc ]
+[e $UE 354  ]
+[e :U 355 ]
+"30
+[e $ ! != & -> _volume `i -> 64 `i -> 0 `i 356  ]
+"31
+[e ) -> -> 127 `i `uc ]
+[e $UE 354  ]
+[e :U 356 ]
+"32
+[e $ ! != & -> _volume `i -> 32 `i -> 0 `i 357  ]
+"33
+[e ) -> -> 63 `i `uc ]
+[e $UE 354  ]
+[e :U 357 ]
+"34
+[e $ ! != & -> _volume `i -> 16 `i -> 0 `i 358  ]
+"35
+[e ) -> -> 31 `i `uc ]
+[e $UE 354  ]
+[e :U 358 ]
+"36
+[e $ ! != & -> _volume `i -> 8 `i -> 0 `i 359  ]
+"37
+[e ) -> -> 15 `i `uc ]
+[e $UE 354  ]
+[e :U 359 ]
+"38
+[e $ ! != & -> _volume `i -> 4 `i -> 0 `i 360  ]
+"39
+[e ) -> -> 7 `i `uc ]
+[e $UE 354  ]
+[e :U 360 ]
+"40
+[e $ ! != & -> _volume `i -> 2 `i -> 0 `i 361  ]
+"41
+[e ) -> -> 3 `i `uc ]
+[e $UE 354  ]
+[e :U 361 ]
+"42
+[e $ ! != & -> _volume `i -> 1 `i -> 0 `i 362  ]
+"43
+[e ) -> -> 1 `i `uc ]
+[e $UE 354  ]
+[e :U 362 ]
+"44
+[e ) -> -> 0 `i `uc ]
+[e $UE 354  ]
+"45
+[e :UE 354 ]
+}
+"46
+[v _BarraVolume2 `(uc ~T0 @X0 1 ef1`uc ]
+"47
+{
+[e :U _BarraVolume2 ]
+"46
+[v _volume `uc ~T0 @X0 1 r1 ]
+"47
+[f ]
+"48
+[e $ ! != & -> _volume `i -> 128 `i -> 0 `i 364  ]
+"49
+[e ) -> -> 255 `i `uc ]
+[e $UE 363  ]
+[e :U 364 ]
+"50
+[e $ ! != & -> _volume `i -> 64 `i -> 0 `i 365  ]
+"51
+[e ) -> -> 254 `i `uc ]
+[e $UE 363  ]
+[e :U 365 ]
+"52
+[e $ ! != & -> _volume `i -> 32 `i -> 0 `i 366  ]
+"53
+[e ) -> -> 126 `i `uc ]
+[e $UE 363  ]
+[e :U 366 ]
+"54
+[e $ ! != & -> _volume `i -> 16 `i -> 0 `i 367  ]
+"55
+[e ) -> -> 124 `i `uc ]
+[e $UE 363  ]
+[e :U 367 ]
+"56
+[e $ ! != & -> _volume `i -> 8 `i -> 0 `i 368  ]
+"57
+[e ) -> -> 60 `i `uc ]
+[e $UE 363  ]
+[e :U 368 ]
+"58
+[e $ ! != & -> _volume `i -> 4 `i -> 0 `i 369  ]
+"59
+[e ) -> -> 56 `i `uc ]
+[e $UE 363  ]
+[e :U 369 ]
+"60
+[e $ ! != & -> _volume `i -> 2 `i -> 0 `i 370  ]
+"61
+[e ) -> -> 24 `i `uc ]
+[e $UE 363  ]
+[e :U 370 ]
+"62
+[e $ ! != & -> _volume `i -> 1 `i -> 0 `i 371  ]
+"63
+[e ) -> -> 8 `i `uc ]
+[e $UE 363  ]
+[e :U 371 ]
+"64
+[e ) -> -> 0 `i `uc ]
+[e $UE 363  ]
+"65
+[e :UE 363 ]
+}
+"68
+[v _reverseByte `(uc ~T0 @X0 1 ef1`uc ]
+"69
+{
+[e :U _reverseByte ]
+"68
+[v _num `uc ~T0 @X0 1 r1 ]
+"69
+[f ]
+"70
+[v _output `uc ~T0 @X0 1 a ]
+"71
+{
+[e = _count -> -> 1 `i `uc ]
+[e $ <= -> _count `i -> 8 `i 373  ]
+[e $U 374  ]
+[e :U 373 ]
+"72
+{
+"73
+[e = _abit -> & -> _num `i -> 1 `i `uc ]
+"74
+[e = _num -> >> -> _num `i -> 1 `i `uc ]
+"75
+[e = _output -> << -> _output `i -> 1 `i `uc ]
+"76
+[e $ ! == -> _abit `i -> 1 `i 376  ]
+"77
+[e = _output -> + -> _output `i -> 1 `i `uc ]
+[e :U 376 ]
+"78
+}
+[e ++ _count -> -> 1 `i `uc ]
+[e $ <= -> _count `i -> 8 `i 373  ]
+[e :U 374 ]
+}
+"79
+[e ) _output ]
+[e $UE 372  ]
+"80
+[e :UE 372 ]
+}
+"82
+[v _Refresh `(v ~T0 @X0 1 ef ]
+"83
+{
+[e :U _Refresh ]
+[f ]
+"84
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 378  ]
+[e $U 379  ]
+[e :U 378 ]
+"85
+{
+"86
+[e $ ! != -> *U + &U _MCPPresent * -> _i `ux -> -> # *U &U _MCPPresent `ui `ux `i -> 0 `i 381  ]
+"87
+{
+"88
+[e ( _SetOutputs (3 , , *U + &U _MCPAddresses * -> _i `ux -> -> # *U &U _MCPAddresses `ui `ux *U + &U _Display * -> -> + * -> _i `i -> 2 `i -> 1 `i `uc `ux -> -> # *U &U _Display `ui `ux ( _reverseByte (1 *U + &U _Display * -> -> * -> _i `i -> 2 `i `uc `ux -> -> # *U &U _Display `ui `ux ]
+"89
+}
+[e :U 381 ]
+"90
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 378  ]
+[e :U 379 ]
+}
+"91
+[e :UE 377 ]
+}
+"93
+[v _Write_Point `(v ~T0 @X0 1 ef2`uc`uc ]
+"94
+{
+[e :U _Write_Point ]
+"93
+[v _X `uc ~T0 @X0 1 r1 ]
+[v _Y `uc ~T0 @X0 1 r2 ]
+"94
+[f ]
+"95
+[e =^ *U + &U _Display * -> _X `ux -> -> # *U &U _Display `ui `ux -> _Y `uc ]
+"96
+[e :UE 382 ]
+}
+"98
+[v _ReadColumn `(uc ~T0 @X0 1 ef1`uc ]
+"99
+{
+[e :U _ReadColumn ]
+"98
+[v _column `uc ~T0 @X0 1 r1 ]
+"99
+[f ]
+"100
+[e $ ! < -> _column `i -> 16 `i 384  ]
+"101
+{
+"102
+[e ) *U + &U _Display * -> _column `ux -> -> # *U &U _Display `ui `ux ]
+[e $UE 383  ]
+"103
+}
+[e :U 384 ]
+"104
+[e ) -> -> 0 `i `uc ]
+[e $UE 383  ]
+"105
+[e :UE 383 ]
+}
+"107
+[v _Write_Column `(v ~T0 @X0 1 ef2`uc`uc ]
+"108
+{
+[e :U _Write_Column ]
+"107
+[v _X `uc ~T0 @X0 1 r1 ]
+[v _Value `uc ~T0 @X0 1 r2 ]
+"108
+[f ]
+"109
+[e = *U + &U _Display * -> _X `ux -> -> # *U &U _Display `ui `ux _Value ]
+"110
+[e :UE 385 ]
+}
+"112
+[v _ShiftScreen `(v ~T0 @X0 1 ef1`uc ]
+"113
+{
+[e :U _ShiftScreen ]
+"112
+[v _Value `uc ~T0 @X0 1 r1 ]
+"113
+[f ]
+"114
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 15 `i 387  ]
+[e $U 388  ]
+[e :U 387 ]
+"115
+{
+"116
+[e = *U + &U _Display * -> _i `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"117
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 15 `i 387  ]
+[e :U 388 ]
+}
+"118
+[e = *U + &U _Display * -> -> -> 15 `i `ui `ux -> -> # *U &U _Display `ui `ux _Value ]
+"119
+[e :UE 386 ]
+}
+"121
+[v _ClearScreen `(v ~T0 @X0 1 ef ]
+"122
+{
+[e :U _ClearScreen ]
+[f ]
+"123
+[e ( _memset (3 , , -> &U _Display `*v -> 0 `i -> -> 16 `i `ui ]
+"124
+[e :UE 390 ]
+}
+"126
+[v _InvertScreen `(v ~T0 @X0 1 ef ]
+"127
+{
+[e :U _InvertScreen ]
+[f ]
+"128
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 392  ]
+[e $U 393  ]
+[e :U 392 ]
+"129
+{
+"130
+[e =^ *U + &U _Display * -> _i `ux -> -> # *U &U _Display `ui `ux -> -> 255 `i `uc ]
+"131
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 392  ]
+[e :U 393 ]
+}
+"132
+[e :UE 391 ]
+}
+"143
+[v _ColumnDraw `uc ~T0 @X0 1 e ]
+[i _ColumnDraw
+-> -> 0 `i `uc
+]
+[v _RowDraw `uc ~T0 @X0 1 e ]
+[i _RowDraw
+-> -> 0 `i `uc
+]
+[v _ColumnDrawandamento `uc ~T0 @X0 1 e ]
+[i _ColumnDrawandamento
+-> -> 0 `i `uc
+]
+[v _RowDrawandamento `uc ~T0 @X0 1 e ]
+[i _RowDrawandamento
+-> -> 0 `i `uc
+]
+"144
+[v _ColumnDraw2 `uc ~T0 @X0 1 e ]
+[i _ColumnDraw2
+-> -> 0 `i `uc
+]
+[v _RowDraw2 `uc ~T0 @X0 1 e ]
+[i _RowDraw2
+-> -> 0 `i `uc
+]
+[v _ColumnDrawandamento2 `uc ~T0 @X0 1 e ]
+[i _ColumnDrawandamento2
+-> -> 0 `i `uc
+]
+[v _RowDrawandamento2 `uc ~T0 @X0 1 e ]
+[i _RowDrawandamento2
+-> -> 0 `i `uc
+]
+"145
+[v _volteColumnDraw `us ~T0 @X0 1 e ]
+[i _volteColumnDraw
+-> -> 0 `i `us
+]
+"146
+[v _SuperCar `(uc ~T0 @X0 1 ef1`uc ]
+"147
+{
+[e :U _SuperCar ]
+"146
+[v _mode `uc ~T0 @X0 1 r1 ]
+"147
+[f ]
+"148
+[e ++ _volteColumnDraw -> -> 1 `i `us ]
+"149
+[e $ ! >= -> _volteColumnDraw `ui -> -> 500 `i `ui 396  ]
+"150
+{
+"151
+[e = _volteColumnDraw -> -> 0 `i `us ]
+"152
+[e ) -> -> 1 `i `uc ]
+[e $UE 395  ]
+"153
+}
+[e :U 396 ]
+"154
+[e $ ! == -> _ColumnDrawandamento `i -> 0 `i 397  ]
+"155
+{
+"156
+[e $ ! == -> _mode `i -> 2 `i 398  ]
+"157
+{
+"158
+[e = _ColumnDrawandamento -> -> 1 `i `uc ]
+"159
+[e = _ColumnDraw -> -> 15 `i `uc ]
+"160
+}
+[e :U 398 ]
+"161
+[e ++ _ColumnDraw -> -> 1 `i `uc ]
+"162
+[e $ ! == -> _ColumnDraw `i -> 15 `i 399  ]
+"163
+{
+"164
+[e = _ColumnDrawandamento -> -> 1 `i `uc ]
+"165
+}
+[e :U 399 ]
+"166
+}
+[e $U 400  ]
+"167
+[e :U 397 ]
+"168
+{
+"169
+[e $ ! == -> _mode `i -> 1 `i 401  ]
+"170
+{
+"171
+[e = _ColumnDrawandamento -> -> 0 `i `uc ]
+"172
+[e = _ColumnDraw -> -> 0 `i `uc ]
+"173
+}
+[e $U 402  ]
+"174
+[e :U 401 ]
+"175
+{
+"176
+[e -- _ColumnDraw -> -> 1 `i `uc ]
+"177
+[e $ ! == -> _ColumnDraw `i -> 0 `i 403  ]
+"178
+{
+"179
+[e = _ColumnDrawandamento -> -> 0 `i `uc ]
+"180
+}
+[e :U 403 ]
+"181
+}
+[e :U 402 ]
+"182
+}
+[e :U 400 ]
+"183
+[e $ ! == -> _mode `i -> 0 `i 404  ]
+"184
+[e ( _ClearScreen ..  ]
+[e :U 404 ]
+"185
+[e $ ! >= -> _mode `i -> 3 `i 405  ]
+"186
+{
+"187
+[e $ ! || == -> _mode `i -> 5 `i == -> _mode `i -> 6 `i 406  ]
+"188
+[e ( _ClearScreen ..  ]
+[e :U 406 ]
+"189
+[e $ ! != -> _PhoneConnected `i -> 0 `i 407  ]
+"190
+{
+"191
+[e $ ! == -> _mode `i -> 3 `i 408  ]
+"192
+[e ( _Write_Point (2 , _ColumnDraw ( _BarraVolume (1 _MusicValue ]
+[e :U 408 ]
+"193
+[e $ ! == -> _mode `i -> 4 `i 409  ]
+"194
+[e ( _Write_Point (2 , _ColumnDraw ( _BarraVolume2 (1 _MusicValue ]
+[e :U 409 ]
+"195
+[e $ ! == -> _mode `i -> 5 `i 410  ]
+"196
+[e ( _Write_Point (2 , _ColumnDraw ( _BarraVolume (1 _MusicValue ]
+[e :U 410 ]
+"197
+[e $ ! == -> _mode `i -> 6 `i 411  ]
+"198
+[e ( _Write_Point (2 , _ColumnDraw ( _BarraVolume2 (1 _MusicValue ]
+[e :U 411 ]
+"199
+}
+[e $U 412  ]
+"200
+[e :U 407 ]
+"201
+{
+"202
+[e ) -> -> 1 `i `uc ]
+[e $UE 395  ]
+"203
+}
+[e :U 412 ]
+"204
+}
+[e $U 413  ]
+"205
+[e :U 405 ]
+"206
+{
+"207
+[e ( _Write_Point (2 , _ColumnDraw -> -> 255 `i `uc ]
+"208
+}
+[e :U 413 ]
+"209
+[e ( _Refresh ..  ]
+"210
+[e ) -> -> 0 `i `uc ]
+[e $UE 395  ]
+"211
+[e :UE 395 ]
+}
+"215
+[v _internalCountExecution `ui ~T0 @X0 1 e ]
+[i _internalCountExecution
+-> -> 0 `i `ui
+]
+"216
+[v _TestWriteMusic `(uc ~T0 @X0 1 ef1`uc ]
+"217
+{
+[e :U _TestWriteMusic ]
+"216
+[v _mode `uc ~T0 @X0 1 r1 ]
+"217
+[f ]
+"218
+[e $ ! == -> _PhoneConnected `i -> 0 `i 415  ]
+"219
+{
+"220
+[e ) -> -> 1 `i `uc ]
+[e $UE 414  ]
+"221
+}
+[e :U 415 ]
+"222
+[e $ ! == _internalCountExecution -> -> 0 `i `ui 416  ]
+"223
+{
+"224
+[e ( _ClearScreen ..  ]
+"225
+}
+[e :U 416 ]
+"226
+[e $ ! == % _internalCountExecution -> -> 2 `i `ui -> -> 0 `i `ui 417  ]
+"227
+{
+"228
+[e = *U + &U _Display * -> -> -> 0 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 1 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"229
+[e = *U + &U _Display * -> -> -> 1 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 2 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"230
+[e = *U + &U _Display * -> -> -> 2 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"231
+[e = *U + &U _Display * -> -> -> 3 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 4 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"232
+[e = *U + &U _Display * -> -> -> 4 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 5 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"233
+[e = *U + &U _Display * -> -> -> 5 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 6 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"234
+[e = *U + &U _Display * -> -> -> 6 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 7 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"235
+[e = *U + &U _Display * -> -> -> 7 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 8 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"236
+[e = *U + &U _Display * -> -> -> 8 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 9 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"237
+[e = *U + &U _Display * -> -> -> 9 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 10 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"238
+[e = *U + &U _Display * -> -> -> 10 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 11 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"239
+[e = *U + &U _Display * -> -> -> 11 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 12 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"240
+[e = *U + &U _Display * -> -> -> 12 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 13 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"241
+[e = *U + &U _Display * -> -> -> 13 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 14 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"242
+[e = *U + &U _Display * -> -> -> 14 `i `ui `ux -> -> # *U &U _Display `ui `ux *U + &U _Display * -> -> -> 15 `i `ui `ux -> -> # *U &U _Display `ui `ux ]
+"243
+[e $ ! == -> _mode `i -> 0 `i 418  ]
+"244
+{
+"245
+[e = *U + &U _Display * -> -> -> 15 `i `ui `ux -> -> # *U &U _Display `ui `ux ( _BarraVolume (1 _MusicValue ]
+"246
+}
+[e :U 418 ]
+"247
+[e $ ! == -> _mode `i -> 1 `i 419  ]
+"248
+{
+"249
+[e = *U + &U _Display * -> -> -> 15 `i `ui `ux -> -> # *U &U _Display `ui `ux ( _BarraVolume2 (1 _MusicValue ]
+"250
+}
+[e :U 419 ]
+"251
+[e ( _Refresh ..  ]
+"252
+}
+[e :U 417 ]
+"253
+[e ++ _internalCountExecution -> -> 1 `i `ui ]
+"254
+[e $ ! > _internalCountExecution -> -> 600 `i `ui 420  ]
+"255
+{
+"256
+[e ( _ClearScreen ..  ]
+"257
+[e = _internalCountExecution -> -> 0 `i `ui ]
+"258
+[e ) -> -> 1 `i `uc ]
+[e $UE 414  ]
+"259
+}
+[e :U 420 ]
+"260
+[e ) -> -> 0 `i `uc ]
+[e $UE 414  ]
+"261
+[e :UE 414 ]
+}
+"263
+[v _BoingPoint `(uc ~T0 @X0 1 ef1`uc ]
+"264
+{
+[e :U _BoingPoint ]
+"263
+[v _p `uc ~T0 @X0 1 r1 ]
+"264
+[f ]
+"265
+[e ++ _volteColumnDraw -> -> 1 `i `us ]
+"266
+[e $ ! >= -> _volteColumnDraw `ui -> -> 500 `i `ui 422  ]
+"267
+{
+"268
+[e = _volteColumnDraw -> -> 0 `i `us ]
+"269
+[e ) -> -> 1 `i `uc ]
+[e $UE 421  ]
+"270
+}
+[e :U 422 ]
+"272
+[e $ ! == -> _ColumnDrawandamento `i -> 0 `i 423  ]
+"273
+{
+"274
+[e ++ _ColumnDraw -> -> 1 `i `uc ]
+"275
+[e $ ! == -> _ColumnDraw `i -> 15 `i 424  ]
+"276
+{
+"277
+[e = _ColumnDrawandamento -> -> 1 `i `uc ]
+"278
+}
+[e :U 424 ]
+"279
+}
+[e $U 425  ]
+"280
+[e :U 423 ]
+"281
+{
+"282
+[e -- _ColumnDraw -> -> 1 `i `uc ]
+"283
+[e $ ! == -> _ColumnDraw `i -> 0 `i 426  ]
+"284
+{
+"285
+[e = _ColumnDrawandamento -> -> 0 `i `uc ]
+"286
+}
+[e :U 426 ]
+"287
+}
+[e :U 425 ]
+"288
+[e $ ! == -> _RowDraw `i -> 0 `i 427  ]
+"289
+{
+"290
+[e = _RowDraw -> -> 1 `i `uc ]
+"291
+}
+[e $U 428  ]
+"292
+[e :U 427 ]
+"293
+{
+"294
+[e $ ! == -> _RowDrawandamento `i -> 0 `i 429  ]
+"295
+{
+"296
+[e = _RowDraw -> * -> _RowDraw `i -> 2 `i `uc ]
+"297
+[e $ ! == -> _RowDraw `i -> 128 `i 430  ]
+"298
+{
+"299
+[e = _RowDrawandamento -> -> 1 `i `uc ]
+"300
+}
+[e :U 430 ]
+"301
+}
+[e $U 431  ]
+"302
+[e :U 429 ]
+"303
+{
+"304
+[e = _RowDraw -> / -> _RowDraw `i -> 2 `i `uc ]
+"305
+[e $ ! == -> _RowDraw `i -> 0 `i 432  ]
+"306
+{
+"307
+[e = _RowDrawandamento -> -> 0 `i `uc ]
+"308
+}
+[e :U 432 ]
+"309
+}
+[e :U 431 ]
+"310
+}
+[e :U 428 ]
+"311
+[e $ ! > -> _p `i -> 0 `i 433  ]
+"312
+{
+"313
+[e $ ! == -> _ColumnDrawandamento2 `i -> 0 `i 434  ]
+"314
+{
+"315
+[e ++ _ColumnDraw2 -> -> 1 `i `uc ]
+"316
+[e $ ! == -> _ColumnDraw2 `i -> 15 `i 435  ]
+"317
+{
+"318
+[e = _ColumnDrawandamento2 -> -> 1 `i `uc ]
+"319
+}
+[e :U 435 ]
+"320
+}
+[e $U 436  ]
+"321
+[e :U 434 ]
+"322
+{
+"323
+[e -- _ColumnDraw2 -> -> 1 `i `uc ]
+"324
+[e $ ! == -> _ColumnDraw2 `i -> 0 `i 437  ]
+"325
+{
+"326
+[e = _ColumnDrawandamento2 -> -> 0 `i `uc ]
+"327
+}
+[e :U 437 ]
+"328
+}
+[e :U 436 ]
+"329
+[e $ ! == -> _RowDraw2 `i -> 0 `i 438  ]
+"330
+{
+"331
+[e = _RowDraw2 -> -> 1 `i `uc ]
+"332
+}
+[e $U 439  ]
+"333
+[e :U 438 ]
+"334
+{
+"335
+[e $ ! == -> _RowDrawandamento2 `i -> 0 `i 440  ]
+"336
+{
+"337
+[e = _RowDraw2 -> * -> _RowDraw2 `i -> 2 `i `uc ]
+"338
+[e $ ! == -> _RowDraw2 `i -> 128 `i 441  ]
+"339
+{
+"340
+[e = _RowDrawandamento2 -> -> 1 `i `uc ]
+"341
+}
+[e :U 441 ]
+"342
+}
+[e $U 442  ]
+"343
+[e :U 440 ]
+"344
+{
+"345
+[e = _RowDraw2 -> / -> _RowDraw2 `i -> 2 `i `uc ]
+"346
+[e $ ! == -> _RowDraw2 `i -> 0 `i 443  ]
+"347
+{
+"348
+[e = _RowDrawandamento2 -> -> 0 `i `uc ]
+"349
+}
+[e :U 443 ]
+"350
+}
+[e :U 442 ]
+"351
+}
+[e :U 439 ]
+"352
+[e $ ! == -> _ColumnDraw2 `i -> _ColumnDraw `i 444  ]
+"353
+{
+"354
+[e ( _Write_Point (2 , _ColumnDraw -> | -> _RowDraw `i -> _RowDraw2 `i `uc ]
+"355
+}
+[e $U 445  ]
+"356
+[e :U 444 ]
+"357
+{
+"358
+[e ( _Write_Point (2 , _ColumnDraw2 _RowDraw2 ]
+"359
+[e ( _Write_Point (2 , _ColumnDraw _RowDraw ]
+"360
+}
+[e :U 445 ]
+"361
+}
+[e $U 446  ]
+"362
+[e :U 433 ]
+"363
+{
+"364
+[e ( _Write_Point (2 , _ColumnDraw _RowDraw ]
+"365
+}
+[e :U 446 ]
+"366
+[e ( _Refresh ..  ]
+"367
+[e ) -> -> 0 `i `uc ]
+[e $UE 421  ]
+"368
+[e :UE 421 ]
+}
+"370
+[v _puntLecter `uc ~T0 @X0 1 e ]
+[i _puntLecter
+-> -> 0 `i `uc
+]
+"371
+[v _puntLecterEEPROM `uc ~T0 @X0 1 e ]
+[i _puntLecterEEPROM
+-> -> 0 `i `uc
+]
+"372
+[v _CurrentValueChar `ui ~T0 @X0 1 e ]
+[i _CurrentValueChar
+-> -> 0 `i `ui
+]
+"373
+[v _timeOutDisplayRefreshScrivi `uc ~T0 @X0 1 e ]
+[i _timeOutDisplayRefreshScrivi
+-> -> 3 `i `uc
+]
+"374
+[v _CurrentExecution `uc ~T0 @X0 1 e ]
+[i _CurrentExecution
+-> -> 0 `i `uc
+]
+"375
+[v _StopScriviFrase `(v ~T0 @X0 1 ef ]
+"376
+{
+[e :U _StopScriviFrase ]
+[f ]
+"377
+[e ( _ClearScreen ..  ]
+"378
+[e = _puntLecter -> -> 0 `i `uc ]
+"379
+[e = _puntLecterEEPROM -> -> 0 `i `uc ]
+"380
+[e = _CurrentValueChar -> -> 0 `i `ui ]
+"381
+[e = _timeOutDisplayRefreshScrivi -> -> 3 `i `uc ]
+"382
+[e :UE 447 ]
+}
+"384
+[v _ScriviFrase `(uc ~T0 @X0 1 ef1`uc ]
+"385
+{
+[e :U _ScriviFrase ]
+"384
+[v _UseFrase `uc ~T0 @X0 1 r1 ]
+"385
+[f ]
+"386
+[v _FF `*uc ~T0 @X0 1 a ]
+[e = _FF &U _Frase ]
+"387
+[v _eepromByte `uc ~T0 @X0 1 a ]
+"388
+[e $ ! > -> _UseFrase `i -> 0 `i 449  ]
+"389
+[e = _FF &U *U + &U _Frasi * -> -> - -> _UseFrase `i -> 1 `i `ui `ux -> * -> # *U &U *U &U _Frasi `ui -> -> 40 `i `ui `ux ]
+[e :U 449 ]
+"390
+[e -- _timeOutDisplayRefreshScrivi -> -> 1 `i `uc ]
+"391
+[e $ ! == -> _timeOutDisplayRefreshScrivi `i -> 0 `i 450  ]
+"392
+{
+"393
+[e = _timeOutDisplayRefreshScrivi -> -> 3 `i `uc ]
+"394
+[e $ ! && == -> _puntLecterEEPROM `i -> 6 `i != -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 0 `i 451  ]
+"395
+{
+"396
+[e = _puntLecterEEPROM -> -> 0 `i `uc ]
+"397
+[e ++ _puntLecter -> -> 1 `i `uc ]
+"398
+}
+[e :U 451 ]
+"400
+[e $ ! && == -> _puntLecter `i -> 0 `i == -> _puntLecterEEPROM `i -> 0 `i 452  ]
+"401
+{
+"402
+[e ( _ClearScreen ..  ]
+"403
+}
+[e :U 452 ]
+"404
+[e $ ! == -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 0 `i 453  ]
+"405
+{
+"406
+[e $ ! < -> _puntLecterEEPROM `i -> 16 `i 454  ]
+"407
+{
+"408
+[e ++ _puntLecterEEPROM -> -> 1 `i `uc ]
+"409
+[e ( _ShiftScreen (1 -> -> 0 `i `uc ]
+"410
+[e ( _Refresh ..  ]
+"411
+[e ) -> -> 0 `i `uc ]
+[e $UE 448  ]
+"412
+}
+[e $U 455  ]
+"413
+[e :U 454 ]
+"414
+{
+"415
+[e ) -> -> 1 `i `uc ]
+[e $UE 448  ]
+"416
+}
+[e :U 455 ]
+"417
+}
+[e :U 453 ]
+"418
+[e $ ! == -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `ui -> 126 `ui 456  ]
+"419
+{
+"420
+[e ++ _puntLecter -> -> 1 `i `uc ]
+"421
+[e ) -> -> 0 `i `uc ]
+[e $UE 448  ]
+"422
+}
+[e :U 456 ]
+"423
+[e $ ! && > -> _puntLecter `i -> 0 `i == -> *U + _FF * -> - -> _puntLecter `i -> 1 `i `x -> -> # *U _FF `i `x `ui -> 126 `ui 457  ]
+"424
+{
+"426
+[e $U 459  ]
+"427
+{
+"428
+[e :U 460 ]
+[e = _CurrentValueChar -> + * -> 72 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 458  ]
+"429
+[e :U 461 ]
+[e = _CurrentValueChar -> + * -> 73 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 458  ]
+"430
+[e :U 462 ]
+[e = _CurrentValueChar -> + * -> 75 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 458  ]
+"431
+[e :U 463 ]
+[e = _CurrentValueChar -> + * -> 76 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 458  ]
+"432
+[e :U 464 ]
+[e = _CurrentValueChar -> + * -> 79 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 458  ]
+"433
+[e :U 465 ]
+[e = _CurrentValueChar -> + * -> 81 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 458  ]
+"434
+[e :U 466 ]
+[e = _CurrentValueChar -> -U -> 1 `i `ui ]
+"435
+}
+[e $U 458  ]
+[e :U 459 ]
+[e [\ *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux , $ -> -> 49 `ui `i 460
+ , $ -> -> 50 `ui `i 461
+ , $ -> -> 51 `ui `i 462
+ , $ -> -> 52 `ui `i 463
+ , $ -> -> 53 `ui `i 464
+ , $ -> -> 54 `ui `i 465
+ 466 ]
+[e :U 458 ]
+"436
+}
+[e $U 467  ]
+"437
+[e :U 457 ]
+"438
+{
+"440
+[e $ ! && >= -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 65 `i <= -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 90 `i 468  ]
+"441
+{
+"443
+[e = _CurrentValueChar -> + * - -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 65 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+"444
+}
+[e $U 469  ]
+"445
+[e :U 468 ]
+"446
+{
+"447
+[e $ ! && >= -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 97 `i <= -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 122 `i 470  ]
+"448
+{
+"450
+[e = _CurrentValueChar -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `ui ]
+"451
+[e = _CurrentValueChar + _CurrentValueChar -> -> 26 `i `ui ]
+"452
+[e = _CurrentValueChar - _CurrentValueChar -> -> 97 `i `ui ]
+"453
+[e = _CurrentValueChar + * _CurrentValueChar -> -> 6 `i `ui -> _puntLecterEEPROM `ui ]
+"454
+}
+[e $U 471  ]
+"455
+[e :U 470 ]
+"456
+{
+"457
+[e $ ! && >= -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 49 `i <= -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `i -> 57 `i 472  ]
+"458
+{
+"460
+[e = _CurrentValueChar -> *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux `ui ]
+"461
+[e = _CurrentValueChar + _CurrentValueChar -> -> 52 `i `ui ]
+"462
+[e = _CurrentValueChar - _CurrentValueChar -> -> 49 `i `ui ]
+"463
+[e = _CurrentValueChar + * _CurrentValueChar -> -> 6 `i `ui -> _puntLecterEEPROM `ui ]
+"464
+}
+[e $U 473  ]
+"465
+[e :U 472 ]
+"466
+{
+"467
+[e $U 475  ]
+"468
+{
+"469
+[e :U 476 ]
+[e = _CurrentValueChar -> + * -> 61 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"470
+[e :U 477 ]
+[e = _CurrentValueChar -> + * -> 62 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"471
+[e :U 478 ]
+[e = _CurrentValueChar -> + * -> 63 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"472
+[e :U 479 ]
+[e = _CurrentValueChar -> + * -> 64 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"473
+[e :U 480 ]
+[e = _CurrentValueChar -> + * -> 65 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"474
+[e :U 481 ]
+[e = _CurrentValueChar -> + * -> 66 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"475
+[e :U 482 ]
+[e = _CurrentValueChar -> + * -> 67 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"476
+[e :U 483 ]
+[e = _CurrentValueChar -> + * -> 68 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"477
+[e :U 484 ]
+[e = _CurrentValueChar -> + * -> 69 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"478
+[e :U 485 ]
+[e = _CurrentValueChar -> + * -> 70 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"479
+[e :U 486 ]
+[e = _CurrentValueChar -> + * -> 74 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"480
+[e :U 487 ]
+[e = _CurrentValueChar -> + * -> 71 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"481
+[e :U 488 ]
+[e = _CurrentValueChar -> + * -> 80 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"482
+[e :U 489 ]
+[e = _CurrentValueChar -> + * -> 77 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"483
+[e :U 490 ]
+[e = _CurrentValueChar -> + * -> 78 `i -> 6 `i -> _puntLecterEEPROM `i `ui ]
+[e $U 474  ]
+"484
+[e :U 491 ]
+[e = _CurrentValueChar -> -U -> 1 `i `ui ]
+"485
+}
+[e $U 474  ]
+[e :U 475 ]
+[e [\ *U + _FF * -> _puntLecter `ux -> -> # *U _FF `ui `ux , $ -> -> 63 `ui `i 476
+ , $ -> -> 33 `ui `i 477
+ , $ -> -> 48 `ui `i 478
+ , $ -> -> 64 `ui `i 479
+ , $ -> -> 35 `ui `i 480
+ , $ -> -> 38 `ui `i 481
+ , $ -> -> 40 `ui `i 482
+ , $ -> -> 41 `ui `i 483
+ , $ -> -> 43 `ui `i 484
+ , $ -> -> 45 `ui `i 485
+ , $ -> -> 36 `ui `i 486
+ , $ -> -> 61 `ui `i 487
+ , $ -> -> 42 `ui `i 488
+ , $ -> -> 46 `ui `i 489
+ , $ -> -> 44 `ui `i 490
+ 491 ]
+[e :U 474 ]
+"486
+}
+[e :U 473 ]
+"487
+}
+[e :U 471 ]
+"488
+}
+[e :U 469 ]
+"489
+}
+[e :U 467 ]
+"490
+[e $ ! != _CurrentValueChar -> -U -> 1 `i `ui 492  ]
+"491
+{
+"492
+[e $ ! != -> ( _EE_byte_read (2 , -> _CurrentValueChar `us &U _eepromByte `i -> 0 `i 493  ]
+"493
+{
+"494
+[e ( _ShiftScreen (1 _eepromByte ]
+"495
+}
+[e $U 494  ]
+"496
+[e :U 493 ]
+"497
+{
+"498
+[e ( _ShiftScreen (1 -> -> 0 `i `uc ]
+"499
+}
+[e :U 494 ]
+"500
+}
+[e $U 495  ]
+"501
+[e :U 492 ]
+"502
+{
+"503
+[e ( _ShiftScreen (1 -> -> 0 `i `uc ]
+"504
+}
+[e :U 495 ]
+"505
+[e ( _Refresh ..  ]
+"506
+[e ++ _puntLecterEEPROM -> -> 1 `i `uc ]
+"507
+}
+[e :U 450 ]
+"508
+[e ) -> -> 0 `i `uc ]
+[e $UE 448  ]
+"509
+[e :UE 448 ]
+}
+"512
+[v _UpdateDisplay `(v ~T0 @X0 1 ef ]
+"513
+{
+[e :U _UpdateDisplay ]
+[f ]
+"515
+[e $U 498  ]
+"516
+{
+"517
+[e :U 499 ]
+"518
+[e ( _strcpy (2 , -> &U _Frase `*uc :s 1C ]
+"519
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"520
+[e $U 497  ]
+"521
+[e :U 500 ]
+"522
+[e $ ! == -> ( _ScriviFrase (1 -> -> 0 `i `uc `i -> 1 `i 501  ]
+"523
+{
+"524
+[e ( _StopScriviFrase ..  ]
+"525
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"526
+}
+[e :U 501 ]
+"527
+[e $U 497  ]
+"528
+[e :U 502 ]
+"529
+[e ( _strcpy (2 , -> &U _Frase `*uc :s 2C ]
+"530
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"531
+[e $U 497  ]
+"532
+[e :U 503 ]
+"533
+[e $ ! == -> ( _ScriviFrase (1 -> -> 0 `i `uc `i -> 1 `i 504  ]
+"534
+{
+"535
+[e ( _StopScriviFrase ..  ]
+"536
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"537
+}
+[e :U 504 ]
+"538
+[e $U 497  ]
+"539
+[e :U 505 ]
+"540
+[e $ ! == -> ( _SuperCar (1 -> -> 0 `i `uc `i -> 1 `i 506  ]
+"541
+{
+"542
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"543
+[e ( _ClearScreen ..  ]
+"544
+}
+[e :U 506 ]
+"545
+[e $U 497  ]
+"546
+[e :U 507 ]
+"547
+[e $ ! == -> ( _SuperCar (1 -> -> 1 `i `uc `i -> 1 `i 508  ]
+"548
+{
+"549
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"550
+[e ( _ClearScreen ..  ]
+"551
+}
+[e :U 508 ]
+"552
+[e $U 497  ]
+"553
+[e :U 509 ]
+"554
+[e $ ! == -> ( _TestWriteMusic (1 -> -> 0 `i `uc `i -> 1 `i 510  ]
+"555
+{
+"556
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"557
+[e ( _ClearScreen ..  ]
+"558
+}
+[e :U 510 ]
+"559
+[e $U 497  ]
+"560
+[e :U 511 ]
+"561
+[e $ ! == -> ( _TestWriteMusic (1 -> -> 1 `i `uc `i -> 1 `i 512  ]
+"562
+{
+"563
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"564
+[e ( _ClearScreen ..  ]
+"565
+}
+[e :U 512 ]
+"566
+[e $U 497  ]
+"567
+[e :U 513 ]
+"568
+[e $ ! == -> ( _ScriviFrase (1 -> -> 1 `i `uc `i -> 1 `i 514  ]
+"569
+{
+"570
+[e ( _StopScriviFrase ..  ]
+"571
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"572
+}
+[e :U 514 ]
+"573
+[e $U 497  ]
+"574
+[e :U 515 ]
+"575
+[e $ ! == -> ( _SuperCar (1 -> -> 2 `i `uc `i -> 1 `i 516  ]
+"576
+{
+"577
+[e ( _ClearScreen ..  ]
+"578
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"579
+}
+[e :U 516 ]
+"580
+[e $U 497  ]
+"581
+[e :U 517 ]
+"582
+[e $ ! == -> ( _ScriviFrase (1 -> -> 8 `i `uc `i -> 1 `i 518  ]
+"583
+{
+"584
+[e ( _StopScriviFrase ..  ]
+"585
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"586
+}
+[e :U 518 ]
+"587
+[e $U 497  ]
+"588
+[e :U 519 ]
+"589
+[e $ ! == -> ( _SuperCar (1 -> -> 3 `i `uc `i -> 1 `i 520  ]
+"590
+{
+"591
+[e ( _ClearScreen ..  ]
+"592
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"593
+}
+[e :U 520 ]
+"594
+[e $U 497  ]
+"595
+[e :U 521 ]
+"596
+[e $ ! == -> ( _ScriviFrase (1 -> -> 2 `i `uc `i -> 1 `i 522  ]
+"597
+{
+"598
+[e ( _StopScriviFrase ..  ]
+"599
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"600
+}
+[e :U 522 ]
+"601
+[e $U 497  ]
+"602
+[e :U 523 ]
+"603
+[e $ ! == -> ( _SuperCar (1 -> -> 4 `i `uc `i -> 1 `i 524  ]
+"604
+{
+"605
+[e ( _ClearScreen ..  ]
+"606
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"607
+}
+[e :U 524 ]
+"608
+[e $U 497  ]
+"609
+[e :U 525 ]
+"610
+[e $ ! == -> ( _ScriviFrase (1 -> -> 3 `i `uc `i -> 1 `i 526  ]
+"611
+{
+"612
+[e ( _StopScriviFrase ..  ]
+"613
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"614
+}
+[e :U 526 ]
+"615
+[e $U 497  ]
+"616
+[e :U 527 ]
+"617
+[e $ ! == -> ( _SuperCar (1 -> -> 5 `i `uc `i -> 1 `i 528  ]
+"618
+{
+"619
+[e ( _ClearScreen ..  ]
+"620
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"621
+}
+[e :U 528 ]
+"622
+[e $U 497  ]
+"623
+[e :U 529 ]
+"624
+[e $ ! == -> ( _ScriviFrase (1 -> -> 4 `i `uc `i -> 1 `i 530  ]
+"625
+{
+"626
+[e ( _StopScriviFrase ..  ]
+"627
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"628
+}
+[e :U 530 ]
+"629
+[e $U 497  ]
+"630
+[e :U 531 ]
+"631
+[e $ ! == -> ( _SuperCar (1 -> -> 6 `i `uc `i -> 1 `i 532  ]
+"632
+{
+"633
+[e ( _ClearScreen ..  ]
+"634
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"635
+}
+[e :U 532 ]
+"636
+[e $U 497  ]
+"637
+[e :U 533 ]
+"638
+[e $ ! == -> ( _ScriviFrase (1 -> -> 5 `i `uc `i -> 1 `i 534  ]
+"639
+{
+"640
+[e ( _StopScriviFrase ..  ]
+"641
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"642
+}
+[e :U 534 ]
+"643
+[e $U 497  ]
+"644
+[e :U 535 ]
+"645
+[e ( _ClearScreen ..  ]
+"646
+[e $ ! == -> ( _BoingPoint (1 -> -> 0 `i `uc `i -> 1 `i 536  ]
+"647
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+[e :U 536 ]
+"648
+[e $U 497  ]
+"649
+[e :U 537 ]
+"650
+[e $ ! == -> ( _ScriviFrase (1 -> -> 6 `i `uc `i -> 1 `i 538  ]
+"651
+{
+"652
+[e ( _StopScriviFrase ..  ]
+"653
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"654
+}
+[e :U 538 ]
+"655
+[e $U 497  ]
+"656
+[e :U 539 ]
+"657
+[e ( _ClearScreen ..  ]
+"658
+[e $ ! == -> ( _BoingPoint (1 -> -> 1 `i `uc `i -> 1 `i 540  ]
+"659
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+[e :U 540 ]
+"660
+[e $U 497  ]
+"661
+[e :U 541 ]
+"662
+[e $ ! == -> ( _BoingPoint (1 -> -> 0 `i `uc `i -> 1 `i 542  ]
+"663
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+[e :U 542 ]
+"664
+[e $U 497  ]
+"665
+[e :U 543 ]
+"666
+[e $ ! == -> ( _ScriviFrase (1 -> -> 7 `i `uc `i -> 1 `i 544  ]
+"667
+{
+"668
+[e ( _StopScriviFrase ..  ]
+"669
+[e ++ _CurrentExecution -> -> 1 `i `uc ]
+"670
+}
+[e :U 544 ]
+"671
+[e $U 497  ]
+"672
+[e :U 545 ]
+"673
+[e $ ! == -> ( _BoingPoint (1 -> -> 1 `i `uc `i -> 1 `i 546  ]
+"674
+[e = _CurrentExecution -> -> 3 `i `uc ]
+[e :U 546 ]
+"675
+[e $U 497  ]
+"676
+[e :U 547 ]
+"677
+[e = _CurrentExecution -> -> 3 `i `uc ]
+"678
+[e $U 497  ]
+"679
+}
+[e $U 497  ]
+[e :U 498 ]
+[e [\ _CurrentExecution , $ -> 0 `i 499
+ , $ -> 1 `i 500
+ , $ -> 2 `i 502
+ , $ -> 3 `i 503
+ , $ -> 4 `i 505
+ , $ -> 5 `i 507
+ , $ -> 6 `i 509
+ , $ -> 7 `i 511
+ , $ -> 8 `i 513
+ , $ -> 9 `i 515
+ , $ -> 10 `i 517
+ , $ -> 11 `i 519
+ , $ -> 12 `i 521
+ , $ -> 13 `i 523
+ , $ -> 14 `i 525
+ , $ -> 15 `i 527
+ , $ -> 16 `i 529
+ , $ -> 17 `i 531
+ , $ -> 18 `i 533
+ , $ -> 19 `i 535
+ , $ -> 20 `i 537
+ , $ -> 21 `i 539
+ , $ -> 22 `i 541
+ , $ -> 23 `i 543
+ , $ -> 24 `i 545
+ 547 ]
+[e :U 497 ]
+"680
+[e :UE 496 ]
+}
+[a 2C 68 97 102 116 32 80 117 110 107 32 72 101 108 109 101 116 32 112 114 111 106 101 99 116 33 44 32 98 121 32 83 97 109 98 105 110 0 ]
+[a 1C 83 89 83 84 69 77 32 79 78 76 73 78 69 0 ]

@@ -20,39 +20,69 @@
 #include "MCP23017.h"
 
 unsigned char MCPAddresses[MCP_COUNTS] = {0x40,0x42,0x44,0x46,0x48,0x4A,0x4C,0x4E};
+unsigned char MCPPresent[MCP_COUNTS] = {0};
 
-
-void Init_MCP(unsigned char Address)
+unsigned char Init_MCP(unsigned char Address)
 {
+    unsigned char index;
     unsigned char addrRW;
-    i2c_start(); // Send START condition
 
-    addrRW = Address; // 7 bit address + Write bit
+    for(index = 0; index < MCP_COUNTS; index++)
+    {
+        if(MCPAddresses[index] == Address)
+        {
+            MCPPresent[index] = 0;
+            break;
+        }
+    }
 
-    i2c_write(addrRW);
+    if(index == MCP_COUNTS || !i2c_start())
+    {
+        return 0;
+    }
 
-    // Configure port B as output - see MCP23017 data sheet
-    i2c_write(MCP23017_IODIRB); 
-    
-    i2c_write(0x00); // Send Output
+    addrRW = Address;
+    if(!i2c_write(addrRW))
+    {
+        i2c_stop();
+        return 0;
+    }
 
-    i2c_stop(); // Send STOP condition
-	
-	
-	
-    i2c_start(); // Send START condition
+    if(!i2c_stop())
+    {
+        return 0;
+    }
 
-    addrRW = Address; // 7 bit address + Write bit
+    if(!i2c_start())
+    {
+        return 0;
+    }
 
-    i2c_write(addrRW);
+    if(!i2c_write(addrRW) ||
+       !i2c_write(MCP23017_IODIRB) ||
+       !i2c_write(0x00) ||
+       !i2c_stop())
+    {
+        i2c_stop();
+        return 0;
+    }
 
-    // Configure port A as output - see MCP23017 data sheet
-    i2c_write(MCP23017_IODIRA); 
-    
-    i2c_write(0x00); // Send Output
+    if(!i2c_start())
+    {
+        return 0;
+    }
 
-    i2c_stop(); // Send STOP condition
-	
+    if(!i2c_write(addrRW) ||
+       !i2c_write(MCP23017_IODIRA) ||
+       !i2c_write(0x00) ||
+       !i2c_stop())
+    {
+        i2c_stop();
+        return 0;
+    }
+
+    MCPPresent[index] = 1;
+    return 1;
 }
 
 

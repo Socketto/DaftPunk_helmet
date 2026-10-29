@@ -1,0 +1,1009 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F2550 ]
+[d frameptr 4065 ]
+"71 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[e E224 . `ui
+EVENT_NONE 0
+EVENT_DEVICE_STACK_BASE 1
+EVENT_HOST_STACK_BASE 100
+EVENT_HUB_ATTACH 101
+EVENT_STALL 102
+EVENT_VBUS_SES_REQUEST 103
+EVENT_VBUS_OVERCURRENT 104
+EVENT_VBUS_REQUEST_POWER 105
+EVENT_VBUS_RELEASE_POWER 106
+EVENT_VBUS_POWER_AVAILABLE 107
+EVENT_UNSUPPORTED_DEVICE 108
+EVENT_CANNOT_ENUMERATE 109
+EVENT_CLIENT_INIT_ERROR 110
+EVENT_OUT_OF_MEMORY 111
+EVENT_UNSPECIFIED_ERROR 112
+EVENT_DETACH 113
+EVENT_TRANSFER 114
+EVENT_SOF 115
+EVENT_RESUME 116
+EVENT_SUSPEND 117
+EVENT_RESET 118
+EVENT_DATA_ISOC_READ 119
+EVENT_DATA_ISOC_WRITE 120
+EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION 121
+EVENT_1MS 122
+EVENT_ALT_INTERFACE 123
+EVENT_HOLD_BEFORE_CONFIGURATION 124
+EVENT_GENERIC_BASE 400
+EVENT_MSD_BASE 500
+EVENT_HID_BASE 600
+EVENT_PRINTER_BASE 700
+EVENT_CDC_BASE 800
+EVENT_CHARGER_BASE 900
+EVENT_AUDIO_BASE 1000
+EVENT_USER_BASE 10000
+EVENT_BUS_ERROR 32767
+]
+"83
+[e E484 . `uc
+EVENT_CONFIGURED 1
+EVENT_SET_DESCRIPTOR 2
+EVENT_EP0_REQUEST 3
+EVENT_ATTACH 4
+EVENT_TRANSFER_TERMINATED 5
+]
+"172
+[e E475 . `uc
+DETACHED_STATE 0
+ATTACHED_STATE 1
+POWERED_STATE 2
+DEFAULT_STATE 4
+ADR_PENDING_STATE 8
+ADDRESS_STATE 16
+CONFIGURED_STATE 32
+]
+"141 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[e E3402 . `uc
+DETACHED_STATE 0
+ATTACHED_STATE 1
+POWERED_STATE 2
+DEFAULT_STATE 4
+ADR_PENDING_STATE 8
+ADDRESS_STATE 16
+CONFIGURED_STATE 32
+]
+"717
+[e E3151 . `ui
+EVENT_NONE 0
+EVENT_DEVICE_STACK_BASE 1
+EVENT_HOST_STACK_BASE 100
+EVENT_HUB_ATTACH 101
+EVENT_STALL 102
+EVENT_VBUS_SES_REQUEST 103
+EVENT_VBUS_OVERCURRENT 104
+EVENT_VBUS_REQUEST_POWER 105
+EVENT_VBUS_RELEASE_POWER 106
+EVENT_VBUS_POWER_AVAILABLE 107
+EVENT_UNSUPPORTED_DEVICE 108
+EVENT_CANNOT_ENUMERATE 109
+EVENT_CLIENT_INIT_ERROR 110
+EVENT_OUT_OF_MEMORY 111
+EVENT_UNSPECIFIED_ERROR 112
+EVENT_DETACH 113
+EVENT_TRANSFER 114
+EVENT_SOF 115
+EVENT_RESUME 116
+EVENT_SUSPEND 117
+EVENT_RESET 118
+EVENT_DATA_ISOC_READ 119
+EVENT_DATA_ISOC_WRITE 120
+EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION 121
+EVENT_1MS 122
+EVENT_ALT_INTERFACE 123
+EVENT_HOLD_BEFORE_CONFIGURATION 124
+EVENT_GENERIC_BASE 400
+EVENT_MSD_BASE 500
+EVENT_HID_BASE 600
+EVENT_PRINTER_BASE 700
+EVENT_CDC_BASE 800
+EVENT_CHARGER_BASE 900
+EVENT_AUDIO_BASE 1000
+EVENT_USER_BASE 10000
+EVENT_BUS_ERROR 32767
+]
+"2021
+[e E3411 . `uc
+EVENT_CONFIGURED 1
+EVENT_SET_DESCRIPTOR 2
+EVENT_EP0_REQUEST 3
+EVENT_ATTACH 4
+EVENT_TRANSFER_TERMINATED 5
+]
+"425 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+[e E2983 . `ui
+EVENT_NONE 0
+EVENT_DEVICE_STACK_BASE 1
+EVENT_HOST_STACK_BASE 100
+EVENT_HUB_ATTACH 101
+EVENT_STALL 102
+EVENT_VBUS_SES_REQUEST 103
+EVENT_VBUS_OVERCURRENT 104
+EVENT_VBUS_REQUEST_POWER 105
+EVENT_VBUS_RELEASE_POWER 106
+EVENT_VBUS_POWER_AVAILABLE 107
+EVENT_UNSUPPORTED_DEVICE 108
+EVENT_CANNOT_ENUMERATE 109
+EVENT_CLIENT_INIT_ERROR 110
+EVENT_OUT_OF_MEMORY 111
+EVENT_UNSPECIFIED_ERROR 112
+EVENT_DETACH 113
+EVENT_TRANSFER 114
+EVENT_SOF 115
+EVENT_RESUME 116
+EVENT_SUSPEND 117
+EVENT_RESET 118
+EVENT_DATA_ISOC_READ 119
+EVENT_DATA_ISOC_WRITE 120
+EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION 121
+EVENT_1MS 122
+EVENT_ALT_INTERFACE 123
+EVENT_HOLD_BEFORE_CONFIGURATION 124
+EVENT_GENERIC_BASE 400
+EVENT_MSD_BASE 500
+EVENT_HID_BASE 600
+EVENT_PRINTER_BASE 700
+EVENT_CDC_BASE 800
+EVENT_CHARGER_BASE 900
+EVENT_AUDIO_BASE 1000
+EVENT_USER_BASE 10000
+EVENT_BUS_ERROR 32767
+]
+"443
+[e E3243 . `uc
+EVENT_CONFIGURED 1
+EVENT_SET_DESCRIPTOR 2
+EVENT_EP0_REQUEST 3
+EVENT_ATTACH 4
+EVENT_TRANSFER_TERMINATED 5
+]
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"281 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[v _USBDeviceInit USBDeviceInit `(v  1 e 1 0 ]
+"481
+[v _USBDeviceTasks USBDeviceTasks `(v  1 e 1 0 ]
+"882
+[v _USBEnableEndpoint USBEnableEndpoint `(v  1 e 1 0 ]
+"999
+[v _USBTransferOnePacket USBTransferOnePacket `(*.39v  1 e 2 0 ]
+"1420
+[v _USBCtrlEPAllowStatusStage USBCtrlEPAllowStatusStage `(v  1 e 1 0 ]
+"1492
+[v _USBCtrlEPAllowDataStage USBCtrlEPAllowDataStage `(v  1 e 1 0 ]
+"1547
+[v _USBConfigureEndpoint USBConfigureEndpoint `(v  1 s 1 USBConfigureEndpoint ]
+"1620
+[v _USBCtrlEPServiceComplete USBCtrlEPServiceComplete `(v  1 s 1 USBCtrlEPServiceComplete ]
+"1775
+[v _USBCtrlTrfTxService USBCtrlTrfTxService `(v  1 s 1 USBCtrlTrfTxService ]
+"1856
+[v _USBCtrlTrfRxService USBCtrlTrfRxService `(v  1 s 1 USBCtrlTrfRxService ]
+"1972
+[v _USBStdSetCfgHandler USBStdSetCfgHandler `(v  1 s 1 USBStdSetCfgHandler ]
+"2047
+[v _USBStdGetDscHandler USBStdGetDscHandler `(v  1 s 1 USBStdGetDscHandler ]
+"2133
+[v _USBStdGetStatusHandler USBStdGetStatusHandler `(v  1 s 1 USBStdGetStatusHandler ]
+"2209
+[v _USBStallHandler USBStallHandler `(v  1 s 1 USBStallHandler ]
+"2252
+[v _USBSuspend USBSuspend `(v  1 s 1 USBSuspend ]
+"2310
+[v _USBWakeFromSuspend USBWakeFromSuspend `(v  1 s 1 USBWakeFromSuspend ]
+"2379
+[v _USBCtrlEPService USBCtrlEPService `(v  1 s 1 USBCtrlEPService ]
+"2472
+[v _USBCtrlTrfSetupHandler USBCtrlTrfSetupHandler `(v  1 s 1 USBCtrlTrfSetupHandler ]
+"2545
+[v _USBCtrlTrfOutHandler USBCtrlTrfOutHandler `(v  1 s 1 USBCtrlTrfOutHandler ]
+"2599
+[v _USBCtrlTrfInHandler USBCtrlTrfInHandler `(v  1 s 1 USBCtrlTrfInHandler ]
+"2693
+[v _USBCheckStdRequest USBCheckStdRequest `(v  1 s 1 USBCheckStdRequest ]
+"2761
+[v _USBStdFeatureReqHandler USBStdFeatureReqHandler `(v  1 s 1 USBStdFeatureReqHandler ]
+"2998
+[v _USBIncrement1msInternalTimers USBIncrement1msInternalTimers `(v  1 e 1 0 ]
+"148 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+[v _USBCheckCDCRequest USBCheckCDCRequest `(v  1 e 1 0 ]
+"295
+[v _CDCInitEP CDCInitEP `(v  1 e 1 0 ]
+"486
+[v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
+"557
+[v _putUSBUSART putUSBUSART `(v  1 e 1 0 ]
+"837
+[v _CDCTxService CDCTxService `(v  1 e 1 0 ]
+"71 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(a  1 e 1 0 ]
+"88
+[v _ResetCommunicationState ResetCommunicationState `(v  1 s 1 ResetCommunicationState ]
+"100
+[v _QueueReceivedBytes QueueReceivedBytes `(v  1 s 1 QueueReceivedBytes ]
+"116
+[v _DequeueReceivedByte DequeueReceivedByte `(uc  1 s 1 DequeueReceivedByte ]
+"130
+[v _ParseReceivedBytes ParseReceivedBytes `(v  1 s 1 ParseReceivedBytes ]
+"164
+[v _USB_CDC_Init USB_CDC_Init `(v  1 e 1 0 ]
+"175
+[v _USB_CDC_Task USB_CDC_Task `(v  1 e 1 0 ]
+"219
+[v _USB_CDC_FrameReady USB_CDC_FrameReady `(uc  1 e 1 0 ]
+"43 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+[v _main main `(v  1 e 1 0 ]
+"175 C:\Program Files\Microchip\xc8\v3.00\pic\include\proc/pic18f2550.h
+[v _UIR UIR `VEuc  1 e 1 @3944 ]
+[s S517 . 1 `uc 1 URSTIF 1 0 :1:0 
+`uc 1 UERRIF 1 0 :1:1 
+`uc 1 ACTVIF 1 0 :1:2 
+`uc 1 TRNIF 1 0 :1:3 
+`uc 1 IDLEIF 1 0 :1:4 
+`uc 1 STALLIF 1 0 :1:5 
+`uc 1 SOFIF 1 0 :1:6 
+]
+"191
+[u S525 . 1 `S517 1 . 1 0 ]
+[v _UIRbits UIRbits `VES525  1 e 1 @3944 ]
+"231
+[v _UIE UIE `VEuc  1 e 1 @3945 ]
+[s S565 . 1 `uc 1 URSTIE 1 0 :1:0 
+`uc 1 UERRIE 1 0 :1:1 
+`uc 1 ACTVIE 1 0 :1:2 
+`uc 1 TRNIE 1 0 :1:3 
+`uc 1 IDLEIE 1 0 :1:4 
+`uc 1 STALLIE 1 0 :1:5 
+`uc 1 SOFIE 1 0 :1:6 
+]
+"247
+[u S573 . 1 `S565 1 . 1 0 ]
+[v _UIEbits UIEbits `VES573  1 e 1 @3945 ]
+"287
+[v _UEIR UEIR `VEuc  1 e 1 @3946 ]
+"338
+[v _UEIE UEIE `VEuc  1 e 1 @3947 ]
+"389
+[v _USTAT USTAT `VEuc  1 e 1 @3948 ]
+"449
+[v _UCON UCON `VEuc  1 e 1 @3949 ]
+[s S130 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 SUSPND 1 0 :1:1 
+`uc 1 RESUME 1 0 :1:2 
+`uc 1 USBEN 1 0 :1:3 
+`uc 1 PKTDIS 1 0 :1:4 
+`uc 1 SE0 1 0 :1:5 
+`uc 1 PPBRST 1 0 :1:6 
+]
+"465
+[u S138 . 1 `S130 1 . 1 0 ]
+[v _UCONbits UCONbits `VES138  1 e 1 @3949 ]
+"500
+[v _UADDR UADDR `VEuc  1 e 1 @3950 ]
+"564
+[v _UCFG UCFG `VEuc  1 e 1 @3951 ]
+"643
+[v _UEP0 UEP0 `VEuc  1 e 1 @3952 ]
+[s S680 . 1 `uc 1 EPSTALL 1 0 :1:0 
+`uc 1 EPINEN 1 0 :1:1 
+`uc 1 EPOUTEN 1 0 :1:2 
+`uc 1 EPCONDIS 1 0 :1:3 
+`uc 1 EPHSHK 1 0 :1:4 
+]
+"671
+[s S686 . 1 `uc 1 EP0STALL 1 0 :1:0 
+`uc 1 EP0INEN 1 0 :1:1 
+`uc 1 EP0OUTEN 1 0 :1:2 
+`uc 1 EP0CONDIS 1 0 :1:3 
+`uc 1 EP0HSHK 1 0 :1:4 
+]
+[s S692 . 1 `uc 1 EPSTALL0 1 0 :1:0 
+`uc 1 EPINEN0 1 0 :1:1 
+`uc 1 EPOUTEN0 1 0 :1:2 
+`uc 1 EPCONDIS0 1 0 :1:3 
+`uc 1 EPHSHK0 1 0 :1:4 
+]
+[u S698 . 1 `S680 1 . 1 0 `S686 1 . 1 0 `S692 1 . 1 0 ]
+[v _UEP0bits UEP0bits `VES698  1 e 1 @3952 ]
+"751
+[v _UEP1 UEP1 `VEuc  1 e 1 @3953 ]
+"2835
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3033
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"3255
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S469 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR3IE 1 0 :1:1 
+`uc 1 HLVDIE 1 0 :1:2 
+`uc 1 BCLIE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 USBIE 1 0 :1:5 
+`uc 1 CMIE 1 0 :1:6 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"3702
+[s S478 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIE 1 0 :1:2 
+]
+[u S481 . 1 `S469 1 . 1 0 `S478 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES481  1 e 1 @4000 ]
+[s S537 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR3IF 1 0 :1:1 
+`uc 1 HLVDIF 1 0 :1:2 
+`uc 1 BCLIF 1 0 :1:3 
+`uc 1 EEIF 1 0 :1:4 
+`uc 1 USBIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"3773
+[s S546 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIF 1 0 :1:2 
+]
+[u S549 . 1 `S537 1 . 1 0 `S546 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES549  1 e 1 @4001 ]
+"141 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[v _USBDeviceState USBDeviceState `E475  1 e 1 0 ]
+"142
+[v _USBActiveConfiguration USBActiveConfiguration `uc  1 e 1 0 ]
+"143
+[v _USBAlternateInterface USBAlternateInterface `[2]uc  1 e 2 0 ]
+[s S258 . 1 `uc 1 BC8 1 0 :1:0 
+`uc 1 BC9 1 0 :1:1 
+`uc 1 BSTALL 1 0 :1:2 
+`uc 1 DTSEN 1 0 :1:3 
+`uc 1 INCDIS 1 0 :1:4 
+`uc 1 KEN 1 0 :1:5 
+`uc 1 DTS 1 0 :1:6 
+`uc 1 UOWN 1 0 :1:7 
+]
+"144
+[s S267 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID0 1 0 :1:2 
+`uc 1 PID1 1 0 :1:3 
+`uc 1 PID2 1 0 :1:4 
+`uc 1 PID3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+]
+[s S274 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID 1 0 :4:2 
+`uc 1 . 1 0 :2:6 
+]
+[u S278 _BD_STAT 1 `uc 1 Val 1 0 `S258 1 . 1 0 `S267 1 . 1 0 `S274 1 . 1 0 ]
+[s S283 . 4 `S278 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S288 . 4 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`us 1 ADR 2 2 ]
+[u S292 __BDT 4 `S283 1 . 4 0 `S288 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v _pBDTEntryEP0OutCurrent pBDTEntryEP0OutCurrent `*.39VES292  1 e 2 0 ]
+"145
+[v _pBDTEntryEP0OutNext pBDTEntryEP0OutNext `*.39VES292  1 e 2 0 ]
+"146
+[v _pBDTEntryOut pBDTEntryOut `[3]*.39VES292  1 e 6 0 ]
+"147
+[v _pBDTEntryIn pBDTEntryIn `[3]*.39VES292  1 e 6 0 ]
+"148
+[v _shortPacketStatus shortPacketStatus `uc  1 e 1 0 ]
+"149
+[v _controlTransferState controlTransferState `uc  1 e 1 0 ]
+[u S297 . 2 `*.35uc 1 bRam 2 0 `*.39Cuc 1 bRom 2 0 `*.39us 1 wRam 2 0 `*.39Cus 1 wRom 2 0 ]
+"150
+[s S302 . 1 `uc 1 ctrl_trf_mem 1 0 :1:0 
+`uc 1 reserved 1 0 :5:1 
+`uc 1 includeZero 1 0 :1:6 
+`uc 1 busy 1 0 :1:7 
+]
+[u S307 . 1 `S302 1 bits 1 0 `uc 1 Val 1 0 ]
+[s S310 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[u S313 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S310 1 byte 2 0 ]
+[s S317 . 5 `S297 1 pSrc 2 0 `S307 1 info 1 2 `S313 1 wCount 2 3 ]
+[v _inPipes inPipes `[1]S317  1 e 5 0 ]
+[u S321 . 2 `*.30uc 1 bRam 1 0 `*.39us 1 wRam 2 0 ]
+"151
+[s S324 . 1 `uc 1 reserved 1 0 :7:0 
+`uc 1 busy 1 0 :1:7 
+]
+[u S327 . 1 `S324 1 bits 1 0 `uc 1 Val 1 0 ]
+[s S331 . 7 `S321 1 pDst 2 0 `S327 1 info 1 2 `S313 1 wCount 2 3 `*.37(v 1 pFunc 2 5 ]
+[v _outPipes outPipes `[1]S331  1 e 7 0 ]
+"152
+[v _pDst pDst `*.39uc  1 e 2 0 ]
+"153
+[v _RemoteWakeup RemoteWakeup `a  1 e 1 0 ]
+"154
+[v _USBBusIsSuspended USBBusIsSuspended `a  1 e 1 0 ]
+[s S336 . 1 `uc 1 filler1 1 0 :1:0 
+`uc 1 ping_pong 1 0 :1:1 
+`uc 1 direction 1 0 :1:2 
+`uc 1 endpoint_number 1 0 :4:3 
+]
+"155
+[u S341 __USTAT 1 `S336 1 . 1 0 `uc 1 Val 1 0 ]
+[v _USTATcopy USTATcopy `S341  1 e 1 0 ]
+"156
+[v _endpoint_number endpoint_number `uc  1 e 1 0 ]
+"157
+[v _BothEP0OutUOWNsSet BothEP0OutUOWNsSet `a  1 e 1 0 ]
+[s S344 . 1 `uc 1 ping_pong_state 1 0 :1:0 
+`uc 1 transfer_terminated 1 0 :1:1 
+]
+"158
+[u S347 . 1 `S344 1 bits 1 0 `uc 1 Val 1 0 ]
+[v _ep_data_in ep_data_in `[3]S347  1 e 3 0 ]
+"159
+[v _ep_data_out ep_data_out `[3]S347  1 e 3 0 ]
+"161
+[v _USBDeferStatusStagePacket USBDeferStatusStagePacket `VEa  1 e 1 0 ]
+"162
+[v _USBStatusStageEnabledFlag1 USBStatusStageEnabledFlag1 `VEa  1 e 1 0 ]
+"163
+[v _USBStatusStageEnabledFlag2 USBStatusStageEnabledFlag2 `VEa  1 e 1 0 ]
+"164
+[v _USBDeferINDataStagePackets USBDeferINDataStagePackets `VEa  1 e 1 0 ]
+"165
+[v _USBDeferOUTDataStagePackets USBDeferOUTDataStagePackets `VEa  1 e 1 0 ]
+"166
+[v _USB1msTickCount USB1msTickCount `ul  1 e 4 0 ]
+"167
+[v _USBTicksSinceSuspendEnd USBTicksSinceSuspendEnd `uc  1 e 1 0 ]
+"174
+[v _BDT BDT `VE[6]S292  1 e 24 @1024 ]
+[s S350 . 8 `uc 1 bmRequestType 1 0 `uc 1 bRequest 1 1 `us 1 wValue 2 2 `us 1 wIndex 2 4 `us 1 wLength 2 6 ]
+"179
+[s S377 . 8 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`S313 1 W_Value 2 2 `S313 1 W_Index 2 4 `S313 1 W_Length 2 6 ]
+[s S383 . 8 `uc 1 Recipient 1 0 :5:0 
+`uc 1 RequestType 1 0 :2:5 
+`uc 1 DataDir 1 0 :1:7 
+`uc 1 . 1 1 :8:0 
+`uc 1 bFeature 1 2 `uc 1 . 1 3 :8:0 
+`uc 1 . 1 4 :8:0 
+`uc 1 . 1 5 :8:0 
+`uc 1 . 1 6 :8:0 
+`uc 1 . 1 7 :8:0 
+]
+[s S394 . 1 `uc 1 recipient 1 0 :5:0 
+`uc 1 type 1 0 :2:5 
+`uc 1 direction 1 0 :1:7 
+]
+[u S398 . 1 `uc 1 bmRequestType 1 0 `S394 1 . 1 0 ]
+[s S401 . 1 `S398 1 requestInfo 1 0 ]
+[s S403 . 8 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`uc 1 bDscIndex 1 2 `uc 1 bDescriptorType 1 3 `us 1 wLangID 2 4 `uc 1 . 1 6 :8:0 
+`uc 1 . 1 7 :8:0 
+]
+[s S411 . 8 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`uc 1 bDevADR 1 2 `uc 1 bDevADRH 1 3 `uc 1 . 1 4 :8:0 
+`uc 1 . 1 5 :8:0 
+`uc 1 . 1 6 :8:0 
+`uc 1 . 1 7 :8:0 
+]
+[s S420 . 8 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`uc 1 bConfigurationValue 1 2 `uc 1 bCfgRSD 1 3 `uc 1 . 1 4 :8:0 
+`uc 1 . 1 5 :8:0 
+`uc 1 . 1 6 :8:0 
+`uc 1 . 1 7 :8:0 
+]
+[s S429 . 8 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`uc 1 bAltID 1 2 `uc 1 bAltID_H 1 3 `uc 1 bIntfID 1 4 `uc 1 bIntfID_H 1 5 `uc 1 . 1 6 :8:0 
+`uc 1 . 1 7 :8:0 
+]
+[s S438 . 8 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`uc 1 . 1 2 :8:0 
+`uc 1 . 1 3 :8:0 
+`uc 1 bEPID 1 4 `uc 1 bEPID_H 1 5 `uc 1 . 1 6 :8:0 
+`uc 1 . 1 7 :8:0 
+]
+[s S447 . 8 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`uc 1 . 1 2 :8:0 
+`uc 1 . 1 3 :8:0 
+`uc 1 EPNum 1 4 :4:0 
+`uc 1 . 1 4 :3:4 
+`uc 1 EPDir 1 4 :1:7 
+`uc 1 . 1 5 :8:0 
+`uc 1 . 1 6 :8:0 
+`uc 1 . 1 7 :8:0 
+]
+[u S458 . 8 `S350 1 . 8 0 `S377 1 . 8 0 `S383 1 . 8 0 `S401 1 . 1 0 `S403 1 . 8 0 `S411 1 . 8 0 `S420 1 . 8 0 `S429 1 . 8 0 `S438 1 . 8 0 `S447 1 . 8 0 ]
+[v _SetupPkt SetupPkt `VES458  1 e 8 @1048 ]
+"180
+[v _CtrlTrfData CtrlTrfData `VE[64]uc  1 e 64 @1112 ]
+"66 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+[v _cdc_data_tx cdc_data_tx `VE[64]uc  1 e 64 0 ]
+"67
+[v _cdc_data_rx cdc_data_rx `VE[64]uc  1 e 64 0 ]
+[s S1702 . 7 `[7]uc 1 _byte 7 0 ]
+"77
+[s S1704 . 7 `ul 1 dwDTERate 4 0 `uc 1 bCharFormat 1 4 `uc 1 bParityType 1 5 `uc 1 bDataBits 1 6 ]
+[u S1709 _LINE_CODING 7 `S1702 1 . 7 0 `S1704 1 . 7 0 ]
+[v _line_coding line_coding `S1709  1 e 7 0 ]
+"84
+[v _cdc_rx_len cdc_rx_len `uc  1 e 1 0 ]
+"85
+[v _cdc_trf_state cdc_trf_state `uc  1 e 1 0 ]
+[s S1716 . 2 `uc 1 bLow 1 0 `uc 1 bHigh 1 1 ]
+"86
+[u S1719 _POINTER 2 `S1716 1 . 2 0 `us 1 _word 2 0 `*.39uc 1 bRam 2 0 `*.39us 1 wRam 2 0 `*.39Cuc 1 bRom 2 0 `*.39Cus 1 wRom 2 0 ]
+[v _pCDCSrc pCDCSrc `S1719  1 e 2 0 ]
+"87
+[v _pCDCDst pCDCDst `S1719  1 e 2 0 ]
+"88
+[v _cdc_tx_len cdc_tx_len `uc  1 e 1 0 ]
+"89
+[v _cdc_mem_type cdc_mem_type `uc  1 e 1 0 ]
+"91
+[v _CDCDataOutHandle CDCDataOutHandle `*.39v  1 e 2 0 ]
+"92
+[v _CDCDataInHandle CDCDataInHandle `*.39v  1 e 2 0 ]
+[s S1726 . 1 `uc 1 DTE_PRESENT 1 0 :1:0 
+`uc 1 CARRIER_CONTROL 1 0 :1:1 
+]
+"95
+[u S1729 _CONTROL_SIGNAL_BITMAP 1 `uc 1 _byte 1 0 `S1726 1 . 1 0 ]
+[v _control_signal_bitmap control_signal_bitmap `S1729  1 e 1 0 ]
+"111
+[v _dummy_encapsulated_cmd_response dummy_encapsulated_cmd_response `[8]uc  1 e 8 0 ]
+[s S47 _USB_DEVICE_DESCRIPTOR 18 `uc 1 bLength 1 0 `uc 1 bDescriptorType 1 1 `us 1 bcdUSB 2 2 `uc 1 bDeviceClass 1 4 `uc 1 bDeviceSubClass 1 5 `uc 1 bDeviceProtocol 1 6 `uc 1 bMaxPacketSize0 1 7 `us 1 idVendor 2 8 `us 1 idProduct 2 10 `us 1 bcdDevice 2 12 `uc 1 iManufacturer 1 14 `uc 1 iProduct 1 15 `uc 1 iSerialNumber 1 16 `uc 1 bNumConfigurations 1 17 ]
+"10 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[v _device_dsc device_dsc `CS47  1 e 18 0 ]
+"28
+[v _configurationDescriptor configurationDescriptor `C[67]uc  1 s 67 configurationDescriptor ]
+"42
+[v _languageDescriptor languageDescriptor `C[4]uc  1 s 4 languageDescriptor ]
+"47
+[v _USB_CD_Ptr USB_CD_Ptr `C[1]*.31Cuc  1 e 1 0 ]
+"52
+[v _USB_SD_Ptr USB_SD_Ptr `C[1]*.31Cuc  1 e 1 0 ]
+"57
+[v _streamBuffer streamBuffer `[128]uc  1 s 128 streamBuffer ]
+"58
+[v _streamHead streamHead `uc  1 s 1 streamHead ]
+"59
+[v _streamTail streamTail `uc  1 s 1 streamTail ]
+"60
+[v _streamCount streamCount `uc  1 s 1 streamCount ]
+"61
+[v _receiveFrame receiveFrame `[50]uc  1 s 50 receiveFrame ]
+"62
+[v _receiveFrameLength receiveFrameLength `uc  1 s 1 receiveFrameLength ]
+"63
+[v _expectedFrameLength expectedFrameLength `uc  1 s 1 expectedFrameLength ]
+"64
+[v _readyFrameLength readyFrameLength `uc  1 s 1 readyFrameLength ]
+"65
+[v _frameReady frameReady `uc  1 s 1 frameReady ]
+"66
+[v _transmitPending transmitPending `uc  1 s 1 transmitPending ]
+"67
+[v _transmitBuffer transmitBuffer `[50]uc  1 s 50 transmitBuffer ]
+"68
+[v _transmitLength transmitLength `uc  1 s 1 transmitLength ]
+"69
+[v _packetBuffer packetBuffer `[64]uc  1 s 64 packetBuffer ]
+"43 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+[v _main main `(v  1 e 1 0 ]
+{
+"45
+[v main@startupDelay startupDelay `ui  1 a 2 32 ]
+"62
+} 0
+"175 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[v _USB_CDC_Task USB_CDC_Task `(v  1 e 1 0 ]
+{
+"177
+[v USB_CDC_Task@receivedLength receivedLength `uc  1 a 1 30 ]
+"217
+} 0
+"557 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+[v _putUSBUSART putUSBUSART `(v  1 e 1 0 ]
+{
+[v putUSBUSART@data data `*.39uc  1 p 2 0 ]
+[v putUSBUSART@length length `uc  1 p 1 2 ]
+"588
+} 0
+"486
+[v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
+{
+[v getsUSBUSART@buffer buffer `*.39uc  1 p 2 7 ]
+[v getsUSBUSART@len len `uc  1 p 1 9 ]
+"515
+} 0
+"481 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[v _USBDeviceTasks USBDeviceTasks `(v  1 e 1 0 ]
+{
+"483
+[v USBDeviceTasks@i i `uc  1 a 1 27 ]
+"831
+} 0
+"2310
+[v _USBWakeFromSuspend USBWakeFromSuspend `(v  1 s 1 USBWakeFromSuspend ]
+{
+"2356
+} 0
+"2252
+[v _USBSuspend USBSuspend `(v  1 s 1 USBSuspend ]
+{
+"2293
+} 0
+"2209
+[v _USBStallHandler USBStallHandler `(v  1 s 1 USBStallHandler ]
+{
+"2234
+} 0
+"2998
+[v _USBIncrement1msInternalTimers USBIncrement1msInternalTimers `(v  1 e 1 0 ]
+{
+"3016
+} 0
+"2379
+[v _USBCtrlEPService USBCtrlEPService `(v  1 s 1 USBCtrlEPService ]
+{
+"2430
+} 0
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+"8
+[v memcpy@s s `*.39Cuc  1 a 2 8 ]
+"7
+[v memcpy@d d `*.39uc  1 a 2 6 ]
+"9
+[v memcpy@tmp tmp `uc  1 a 1 10 ]
+"4
+[v memcpy@d1 d1 `*.39v  1 p 2 0 ]
+[v memcpy@s1 s1 `*.39Cv  1 p 2 2 ]
+[v memcpy@n n `ui  1 p 2 4 ]
+"18
+} 0
+"2472 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[v _USBCtrlTrfSetupHandler USBCtrlTrfSetupHandler `(v  1 s 1 USBCtrlTrfSetupHandler ]
+{
+"2522
+} 0
+"1620
+[v _USBCtrlEPServiceComplete USBCtrlEPServiceComplete `(v  1 s 1 USBCtrlEPServiceComplete ]
+{
+"1752
+} 0
+"1492
+[v _USBCtrlEPAllowDataStage USBCtrlEPAllowDataStage `(v  1 e 1 0 ]
+{
+"1522
+} 0
+"2693
+[v _USBCheckStdRequest USBCheckStdRequest `(v  1 s 1 USBCheckStdRequest ]
+{
+"2740
+} 0
+"1972
+[v _USBStdSetCfgHandler USBStdSetCfgHandler `(v  1 s 1 USBStdSetCfgHandler ]
+{
+"1974
+[v USBStdSetCfgHandler@i i `uc  1 a 1 18 ]
+"2028
+} 0
+"2133
+[v _USBStdGetStatusHandler USBStdGetStatusHandler `(v  1 s 1 USBStdGetStatusHandler ]
+{
+[s S258 . 1 `uc 1 BC8 1 0 :1:0 
+`uc 1 BC9 1 0 :1:1 
+`uc 1 BSTALL 1 0 :1:2 
+`uc 1 DTSEN 1 0 :1:3 
+`uc 1 INCDIS 1 0 :1:4 
+`uc 1 KEN 1 0 :1:5 
+`uc 1 DTS 1 0 :1:6 
+`uc 1 UOWN 1 0 :1:7 
+]
+"2166
+[s S267 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID0 1 0 :1:2 
+`uc 1 PID1 1 0 :1:3 
+`uc 1 PID2 1 0 :1:4 
+`uc 1 PID3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+]
+[s S274 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID 1 0 :4:2 
+`uc 1 . 1 0 :2:6 
+]
+[u S278 _BD_STAT 1 `uc 1 Val 1 0 `S258 1 . 1 0 `S267 1 . 1 0 `S274 1 . 1 0 ]
+[s S283 . 4 `S278 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S288 . 4 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`us 1 ADR 2 2 ]
+[u S292 __BDT 4 `S283 1 . 4 0 `S288 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBStdGetStatusHandler@p p `*.39S292  1 a 2 0 ]
+"2191
+} 0
+"2047
+[v _USBStdGetDscHandler USBStdGetDscHandler `(v  1 s 1 USBStdGetDscHandler ]
+{
+"2116
+} 0
+"2761
+[v _USBStdFeatureReqHandler USBStdFeatureReqHandler `(v  1 s 1 USBStdFeatureReqHandler ]
+{
+[s S258 . 1 `uc 1 BC8 1 0 :1:0 
+`uc 1 BC9 1 0 :1:1 
+`uc 1 BSTALL 1 0 :1:2 
+`uc 1 DTSEN 1 0 :1:3 
+`uc 1 INCDIS 1 0 :1:4 
+`uc 1 KEN 1 0 :1:5 
+`uc 1 DTS 1 0 :1:6 
+`uc 1 UOWN 1 0 :1:7 
+]
+"2763
+[s S267 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID0 1 0 :1:2 
+`uc 1 PID1 1 0 :1:3 
+`uc 1 PID2 1 0 :1:4 
+`uc 1 PID3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+]
+[s S274 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID 1 0 :4:2 
+`uc 1 . 1 0 :2:6 
+]
+[u S278 _BD_STAT 1 `uc 1 Val 1 0 `S258 1 . 1 0 `S267 1 . 1 0 `S274 1 . 1 0 ]
+[s S283 . 4 `S278 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S288 . 4 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`us 1 ADR 2 2 ]
+[u S292 __BDT 4 `S283 1 . 4 0 `S288 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBStdFeatureReqHandler@p p `*.39S292  1 a 2 23 ]
+"2768
+[v USBStdFeatureReqHandler@pUEP pUEP `*.39uc  1 a 2 20 ]
+[s S344 . 1 `uc 1 ping_pong_state 1 0 :1:0 
+`uc 1 transfer_terminated 1 0 :1:1 
+]
+"2764
+[u S347 . 1 `S344 1 bits 1 0 `uc 1 Val 1 0 ]
+[v USBStdFeatureReqHandler@current_ep_data current_ep_data `S347  1 a 1 22 ]
+"2953
+} 0
+"71 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(a  1 e 1 0 ]
+{
+[v USER_USB_CALLBACK_EVENT_HANDLER@event event `E224  1 p 2 10 ]
+[v USER_USB_CALLBACK_EVENT_HANDLER@pdata pdata `*.39v  1 p 2 12 ]
+[v USER_USB_CALLBACK_EVENT_HANDLER@size size `us  1 p 2 14 ]
+"86
+} 0
+"148 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+[v _USBCheckCDCRequest USBCheckCDCRequest `(v  1 e 1 0 ]
+{
+"261
+} 0
+"295
+[v _CDCInitEP CDCInitEP `(v  1 e 1 0 ]
+{
+"348
+} 0
+"882 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[v _USBEnableEndpoint USBEnableEndpoint `(v  1 e 1 0 ]
+{
+[v USBEnableEndpoint@ep ep `uc  1 p 1 wreg ]
+"884
+[v USBEnableEndpoint@p p `*.39uc  1 a 2 7 ]
+"882
+[v USBEnableEndpoint@ep ep `uc  1 p 1 wreg ]
+[v USBEnableEndpoint@options options `uc  1 p 1 6 ]
+"888
+[v USBEnableEndpoint@ep ep `uc  1 p 1 9 ]
+"906
+} 0
+"1547
+[v _USBConfigureEndpoint USBConfigureEndpoint `(v  1 s 1 USBConfigureEndpoint ]
+{
+[v USBConfigureEndpoint@EPNum EPNum `uc  1 p 1 wreg ]
+[s S258 . 1 `uc 1 BC8 1 0 :1:0 
+`uc 1 BC9 1 0 :1:1 
+`uc 1 BSTALL 1 0 :1:2 
+`uc 1 DTSEN 1 0 :1:3 
+`uc 1 INCDIS 1 0 :1:4 
+`uc 1 KEN 1 0 :1:5 
+`uc 1 DTS 1 0 :1:6 
+`uc 1 UOWN 1 0 :1:7 
+]
+"1549
+[s S267 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID0 1 0 :1:2 
+`uc 1 PID1 1 0 :1:3 
+`uc 1 PID2 1 0 :1:4 
+`uc 1 PID3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+]
+[s S274 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID 1 0 :4:2 
+`uc 1 . 1 0 :2:6 
+]
+[u S278 _BD_STAT 1 `uc 1 Val 1 0 `S258 1 . 1 0 `S267 1 . 1 0 `S274 1 . 1 0 ]
+[s S283 . 4 `S278 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S288 . 4 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`us 1 ADR 2 2 ]
+[u S292 __BDT 4 `S283 1 . 4 0 `S288 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBConfigureEndpoint@handle handle `*.39VES292  1 a 2 4 ]
+"1547
+[v USBConfigureEndpoint@EPNum EPNum `uc  1 p 1 wreg ]
+[v USBConfigureEndpoint@direction direction `uc  1 p 1 0 ]
+"1553
+[v USBConfigureEndpoint@EPNum EPNum `uc  1 p 1 3 ]
+"1589
+} 0
+"2545
+[v _USBCtrlTrfOutHandler USBCtrlTrfOutHandler `(v  1 s 1 USBCtrlTrfOutHandler ]
+{
+"2574
+} 0
+"1856
+[v _USBCtrlTrfRxService USBCtrlTrfRxService `(v  1 s 1 USBCtrlTrfRxService ]
+{
+"1858
+[v USBCtrlTrfRxService@byteToRead byteToRead `uc  1 a 1 1 ]
+"1859
+[v USBCtrlTrfRxService@i i `uc  1 a 1 0 ]
+"1951
+} 0
+"1420
+[v _USBCtrlEPAllowStatusStage USBCtrlEPAllowStatusStage `(v  1 e 1 0 ]
+{
+"1463
+} 0
+"2599
+[v _USBCtrlTrfInHandler USBCtrlTrfInHandler `(v  1 s 1 USBCtrlTrfInHandler ]
+{
+"2601
+[v USBCtrlTrfInHandler@lastDTS lastDTS `uc  1 a 1 1 ]
+"2674
+} 0
+"1775
+[v _USBCtrlTrfTxService USBCtrlTrfTxService `(v  1 s 1 USBCtrlTrfTxService ]
+{
+"1777
+[v USBCtrlTrfTxService@byteToSend byteToSend `uc  1 a 1 0 ]
+"1829
+} 0
+"100 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[v _QueueReceivedBytes QueueReceivedBytes `(v  1 s 1 QueueReceivedBytes ]
+{
+"102
+[v QueueReceivedBytes@index index `uc  1 a 1 3 ]
+"100
+[v QueueReceivedBytes@data data `*.39Cuc  1 p 2 0 ]
+[v QueueReceivedBytes@length length `uc  1 p 1 2 ]
+"114
+} 0
+"130
+[v _ParseReceivedBytes ParseReceivedBytes `(v  1 s 1 ParseReceivedBytes ]
+{
+"132
+[v ParseReceivedBytes@value value `uc  1 a 1 1 ]
+"162
+} 0
+"116
+[v _DequeueReceivedByte DequeueReceivedByte `(uc  1 s 1 DequeueReceivedByte ]
+{
+"118
+[v DequeueReceivedByte@value value `uc  1 a 1 0 ]
+"128
+} 0
+"837 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+[v _CDCTxService CDCTxService `(v  1 e 1 0 ]
+{
+"839
+[v CDCTxService@byte_to_send byte_to_send `uc  1 a 1 8 ]
+"840
+[v CDCTxService@i i `uc  1 a 1 7 ]
+"933
+} 0
+"999 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[v _USBTransferOnePacket USBTransferOnePacket `(*.39v  1 e 2 0 ]
+{
+[v USBTransferOnePacket@ep ep `uc  1 p 1 wreg ]
+[s S258 . 1 `uc 1 BC8 1 0 :1:0 
+`uc 1 BC9 1 0 :1:1 
+`uc 1 BSTALL 1 0 :1:2 
+`uc 1 DTSEN 1 0 :1:3 
+`uc 1 INCDIS 1 0 :1:4 
+`uc 1 KEN 1 0 :1:5 
+`uc 1 DTS 1 0 :1:6 
+`uc 1 UOWN 1 0 :1:7 
+]
+"1001
+[s S267 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID0 1 0 :1:2 
+`uc 1 PID1 1 0 :1:3 
+`uc 1 PID2 1 0 :1:4 
+`uc 1 PID3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+]
+[s S274 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID 1 0 :4:2 
+`uc 1 . 1 0 :2:6 
+]
+[u S278 _BD_STAT 1 `uc 1 Val 1 0 `S258 1 . 1 0 `S267 1 . 1 0 `S274 1 . 1 0 ]
+[s S283 . 4 `S278 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S288 . 4 `uc 1 . 1 0 :8:0 
+`uc 1 . 1 1 :8:0 
+`us 1 ADR 2 2 ]
+[u S292 __BDT 4 `S283 1 . 4 0 `S288 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBTransferOnePacket@handle handle `*.39VES292  1 a 2 5 ]
+"999
+[v USBTransferOnePacket@ep ep `uc  1 p 1 wreg ]
+[v USBTransferOnePacket@dir dir `uc  1 p 1 0 ]
+[v USBTransferOnePacket@data data `*.39uc  1 p 2 1 ]
+[v USBTransferOnePacket@len len `uc  1 p 1 3 ]
+"1004
+[v USBTransferOnePacket@ep ep `uc  1 p 1 4 ]
+"1051
+} 0
+"164 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[v _USB_CDC_Init USB_CDC_Init `(v  1 e 1 0 ]
+{
+"168
+} 0
+"281 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+[v _USBDeviceInit USBDeviceInit `(v  1 e 1 0 ]
+{
+"283
+[v USBDeviceInit@i i `uc  1 a 1 8 ]
+"375
+} 0
+"3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+{
+"5
+[v memset@p p `*.39uc  1 a 2 6 ]
+"3
+[v memset@dest dest `*.39v  1 p 2 0 ]
+[v memset@c c `i  1 p 2 2 ]
+[v memset@n n `ui  1 p 2 4 ]
+"10
+} 0
+"88 C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+[v _ResetCommunicationState ResetCommunicationState `(v  1 s 1 ResetCommunicationState ]
+{
+"98
+} 0

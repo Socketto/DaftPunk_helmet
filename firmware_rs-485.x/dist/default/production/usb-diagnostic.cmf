@@ -1,0 +1,1416 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist\default\production\usb-diagnostic.o
+cinit CODE 0 21CC 21CC 3A 1 2
+idloc IDLOC 5 200000 200000 8 1 1
+text0 CODE 0 2142 2142 48 1 2
+text1 CODE 0 1742 1742 F4 1 2
+text2 CODE 0 2302 2302 26 1 2
+text3 CODE 0 1C38 1C38 AA 1 2
+text4 CODE 0 AEC AEC 200 1 2
+text5 CODE 0 2206 2206 3A 1 2
+text6 CODE 0 22D8 22D8 2A 1 2
+text7 CODE 0 1F9E 1F9E 60 1 2
+text8 CODE 0 2278 2278 34 1 2
+text9 CODE 0 1ADA 1ADA B2 1 2
+text10 CODE 0 2056 2056 50 1 2
+text11 CODE 0 1EB4 1EB4 7A 1 2
+text12 CODE 0 10EC 10EC 134 1 2
+text13 CODE 0 1CE2 1CE2 A8 1 2
+text14 CODE 0 1648 1648 FA 1 2
+text15 CODE 0 1A06 1A06 D4 1 2
+text16 CODE 0 1836 1836 EE 1 2
+text17 CODE 0 FB6 FB6 136 1 2
+text18 CODE 0 85E 85E 28E 1 2
+text19 CODE 0 218A 218A 42 1 2
+text20 CODE 0 1924 1924 E2 1 2
+text21 CODE 0 1FFE 1FFE 58 1 2
+text22 CODE 0 20F6 20F6 4C 1 2
+text23 CODE 0 1E30 1E30 84 1 2
+text24 CODE 0 1F2E 1F2E 70 1 2
+text25 CODE 0 E7A E7A 13C 1 2
+text26 CODE 0 1B8C 1B8C AC 1 2
+text27 CODE 0 1548 1548 100 1 2
+text28 CODE 0 143E 143E 10A 1 2
+text29 CODE 0 20A6 20A6 50 1 2
+text30 CODE 0 1D8A 1D8A A6 1 2
+text31 CODE 0 22AC 22AC 2C 1 2
+text32 CODE 0 CEC CEC 18E 1 2
+text33 CODE 0 1330 1330 10E 1 2
+text34 CODE 0 233A 233A A 1 2
+text35 CODE 0 1220 1220 110 1 2
+text36 CODE 0 2240 2240 38 1 2
+text37 CODE 0 2328 2328 12 1 2
+cstackCOMRAM COMRAM 1 3D 3D 22 1 1
+bssBANK0 BANK0 1 60 60 6F 1 1
+bssBANK1 BANK1 1 100 100 E4 1 1
+bssBANK2 BANK2 1 200 200 80 1 1
+smallconst SMALLCONST 0 800 800 5E 1 2
+bssCOMRAM COMRAM 1 1 1 3C 1 1
+config CONFIG 4 300000 300000 E 1 1
+$C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+idloc IDLOC 5 200000 200000 8 1 1
+init CODE 0 7FFC 7FFC 4 1 2
+reset_vec CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 E 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM CF-FF 1
+RAM 1E4-1FF 1
+RAM 280-3FF 1
+RAM 420-457 1
+RAM 498-7FF 1
+SFR F60-FFF 1
+BANK0 CF-FF 1
+BANK1 1E4-1FF 1
+BANK2 280-2FF 1
+BANK3 300-3FF 1
+BANK4 420-457 1
+BANK4 498-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 4-7FF 1
+CONST 2344-7FFB 1
+SMALLCONST 2344-7FFB 1
+CODE 4-7FF 1
+CODE 2344-7FFB 1
+BIGRAM 5F-5F 1
+BIGRAM CF-FF 1
+BIGRAM 1E4-1FF 1
+BIGRAM 280-3FF 1
+BIGRAM 420-457 1
+BIGRAM 498-7FF 1
+BIGSFR F60-FFF 1
+COMRAM 5F-5F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 2344-7FFB 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist\default\production\usb-diagnostic.o
+2328 text37 CODE >88:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2328 text37 CODE >90:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+232A text37 CODE >91:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+232C text37 CODE >92:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+232E text37 CODE >93:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2330 text37 CODE >94:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2332 text37 CODE >95:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2334 text37 CODE >96:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2336 text37 CODE >97:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2338 text37 CODE >98:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2240 text36 CODE >3:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+2240 text36 CODE >5:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+2248 text36 CODE >6:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+224C text36 CODE >7:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+225C text36 CODE >6:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+2276 text36 CODE >10:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
+1220 text35 CODE >281:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1220 text35 CODE >285:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1222 text35 CODE >292:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1224 text35 CODE >295:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1226 text35 CODE >298:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1228 text35 CODE >300:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1244 text35 CODE >302:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1250 text35 CODE >311:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1252 text35 CODE >313:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+126A text35 CODE >314:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+127C text35 CODE >317:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+127E text35 CODE >320:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1280 text35 CODE >323:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1282 text35 CODE >326:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1284 text35 CODE >331:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1286 text35 CODE >333:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1288 text35 CODE >334:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+128A text35 CODE >335:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1292 text35 CODE >336:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12A0 text35 CODE >340:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12A4 text35 CODE >341:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12A8 text35 CODE >343:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12AA text35 CODE >344:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12AC text35 CODE >345:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12AE text35 CODE >349:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12B0 text35 CODE >351:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12C0 text35 CODE >352:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12D0 text35 CODE >353:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12DA text35 CODE >354:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12E4 text35 CODE >355:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12F6 text35 CODE >358:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+12FE text35 CODE >360:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1302 text35 CODE >362:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+130C text35 CODE >363:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1310 text35 CODE >364:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1314 text35 CODE >365:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1316 text35 CODE >368:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1318 text35 CODE >370:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+132A text35 CODE >371:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+132C text35 CODE >374:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+132E text35 CODE >375:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+233A text34 CODE >164:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+233A text34 CODE >166:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+233E text34 CODE >167:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2342 text34 CODE >168:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1330 text33 CODE >999:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1332 text33 CODE >1004:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1342 text33 CODE >1007:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1356 text33 CODE >1008:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+135A text33 CODE >1012:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+136E text33 CODE >1017:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1380 text33 CODE >1019:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+138C text33 CODE >1024:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1398 text33 CODE >1033:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+13AC text33 CODE >1034:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+13BC text33 CODE >1035:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+13C8 text33 CODE >1036:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+13D4 text33 CODE >1037:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+13E0 text33 CODE >1040:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+13F0 text33 CODE >1043:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1410 text33 CODE >1044:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1414 text33 CODE >1048:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1434 text33 CODE >1050:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+143C text33 CODE >1051:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CEC text32 CODE >837:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+CEC text32 CODE >846:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D18 text32 CODE >857:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D2A text32 CODE >858:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D2C text32 CODE >863:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D40 text32 CODE >872:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D52 text32 CODE >874:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D70 text32 CODE >876:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D74 text32 CODE >877:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D78 text32 CODE >878:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D88 text32 CODE >883:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+D98 text32 CODE >884:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DA0 text32 CODE >885:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DA0 text32 CODE >886:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DA4 text32 CODE >891:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DAA text32 CODE >893:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DB4 text32 CODE >895:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DB8 text32 CODE >896:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DCC text32 CODE >900:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DE0 text32 CODE >901:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DE4 text32 CODE >902:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DE8 text32 CODE >903:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DEA text32 CODE >898:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+DFE text32 CODE >910:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E12 text32 CODE >911:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E16 text32 CODE >912:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E1A text32 CODE >913:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E1C text32 CODE >908:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E2C text32 CODE >921:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E3C text32 CODE >923:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E4E text32 CODE >924:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E56 text32 CODE >926:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E5A text32 CODE >928:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+E78 text32 CODE >933:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+22AC text31 CODE >116:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+22AC text31 CODE >120:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+22BC text31 CODE >121:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+22BE text31 CODE >122:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+22D0 text31 CODE >124:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+22D2 text31 CODE >126:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+22D4 text31 CODE >127:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+22D6 text31 CODE >128:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1D8A text30 CODE >130:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1D8A text30 CODE >134:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1D8E text30 CODE >136:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1D94 text30 CODE >137:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DA4 text30 CODE >139:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DA8 text30 CODE >140:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DC8 text30 CODE >142:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DCA text30 CODE >143:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DCE text30 CODE >144:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DCE text30 CODE >146:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DD2 text30 CODE >147:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DD6 text30 CODE >148:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DDA text30 CODE >151:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DEA text30 CODE >152:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DEC text30 CODE >153:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1DFE text30 CODE >155:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1E02 text30 CODE >156:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1E06 text30 CODE >157:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1E08 text30 CODE >158:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1E0E text30 CODE >134:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1E0E text30 CODE >161:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1E2E text30 CODE >162:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20A6 text29 CODE >100:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20A6 text29 CODE >104:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20AC text29 CODE >106:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20C8 text29 CODE >107:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20CA text29 CODE >108:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20DC text29 CODE >110:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20DE text29 CODE >112:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20E0 text29 CODE >113:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+20F4 text29 CODE >114:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+143E text28 CODE >1775:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+143E text28 CODE >1781:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1442 text28 CODE >1782:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1458 text28 CODE >1784:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+145C text28 CODE >1791:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+146C text28 CODE >1793:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1470 text28 CODE >1794:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1474 text28 CODE >1795:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1484 text28 CODE >1797:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1488 text28 CODE >1803:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1490 text28 CODE >1808:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+14A0 text28 CODE >1812:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+14A8 text28 CODE >1813:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+14BA text28 CODE >1817:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+14EC text28 CODE >1818:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+14EE text28 CODE >1815:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1502 text28 CODE >1825:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1534 text28 CODE >1826:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1536 text28 CODE >1823:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1546 text28 CODE >1829:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1548 text27 CODE >2599:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1548 text27 CODE >2603:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1558 text27 CODE >2606:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1560 text27 CODE >2611:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1572 text27 CODE >2613:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+157A text27 CODE >2614:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+158A text27 CODE >2616:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+158E text27 CODE >2617:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1592 text27 CODE >2620:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1596 text27 CODE >2625:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15A6 text27 CODE >2627:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15BA text27 CODE >2628:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15BE text27 CODE >2634:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15D0 text27 CODE >2638:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15DC text27 CODE >2639:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15E8 text27 CODE >2640:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15EC text27 CODE >2643:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+15FC text27 CODE >2645:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1608 text27 CODE >2646:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1614 text27 CODE >2647:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1618 text27 CODE >2650:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1624 text27 CODE >2651:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1634 text27 CODE >2655:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1634 text27 CODE >2660:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1642 text27 CODE >2665:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1642 text27 CODE >2666:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1644 text27 CODE >2667:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1644 text27 CODE >2669:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1646 text27 CODE >2674:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B8C text26 CODE >1420:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B8C text26 CODE >1427:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B9C text26 CODE >1429:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BA0 text26 CODE >1430:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BB0 text26 CODE >1432:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BB4 text26 CODE >1436:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BC6 text26 CODE >1438:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BD4 text26 CODE >1439:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BE0 text26 CODE >1440:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BEC text26 CODE >1441:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1BF0 text26 CODE >1442:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1C00 text26 CODE >1444:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1C02 text26 CODE >1457:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1C12 text26 CODE >1458:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1C26 text26 CODE >1459:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1C36 text26 CODE >1461:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1C36 text26 CODE >1463:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+E7A text25 CODE >1856:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+E7A text25 CODE >1863:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+E8A text25 CODE >1869:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+EA0 text25 CODE >1871:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+EA4 text25 CODE >1874:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+EAC text25 CODE >1878:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+EB2 text25 CODE >1880:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+ECA text25 CODE >1881:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+EDE text25 CODE >1885:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+EF0 text25 CODE >1887:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F00 text25 CODE >1888:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F14 text25 CODE >1889:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F2A text25 CODE >1891:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F36 text25 CODE >1892:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F42 text25 CODE >1893:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F46 text25 CODE >1896:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F52 text25 CODE >1897:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F62 text25 CODE >1905:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F72 text25 CODE >1906:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F86 text25 CODE >1910:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F92 text25 CODE >1911:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F9E text25 CODE >1930:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+F9E text25 CODE >1931:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FA0 text25 CODE >1945:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FB0 text25 CODE >1947:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FB4 text25 CODE >1951:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F2E text24 CODE >2545:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F2E text24 CODE >2547:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F40 text24 CODE >2549:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F44 text24 CODE >2550:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F48 text24 CODE >2551:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F48 text24 CODE >2555:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F4A text24 CODE >2562:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F5A text24 CODE >2564:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F6A text24 CODE >2565:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F7E text24 CODE >2566:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F8A text24 CODE >2567:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F96 text24 CODE >2568:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F9A text24 CODE >2569:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F9A text24 CODE >2571:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F9C text24 CODE >2574:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E30 text23 CODE >1547:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E32 text23 CODE >1553:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E3A text23 CODE >1554:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E62 text23 CODE >1556:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E6C text23 CODE >1561:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E7C text23 CODE >1563:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E90 text23 CODE >1564:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1E94 text23 CODE >1567:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EA8 text23 CODE >1576:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EB2 text23 CODE >1589:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+20F6 text22 CODE >882:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+20F8 text22 CODE >888:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2106 text22 CODE >890:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2110 text22 CODE >892:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+211E text22 CODE >894:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2128 text22 CODE >903:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2134 text22 CODE >905:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2140 text22 CODE >906:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FFE text21 CODE >295:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1FFE text21 CODE >298:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2010 text21 CODE >299:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2012 text21 CODE >300:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2014 text21 CODE >301:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2018 text21 CODE >303:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+201A text21 CODE >316:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2024 text21 CODE >317:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+202E text21 CODE >319:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+204A text21 CODE >320:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2052 text21 CODE >347:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2054 text21 CODE >348:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1924 text20 CODE >148:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1924 text20 CODE >153:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+193E text20 CODE >158:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1958 text20 CODE >164:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+197C text20 CODE >172:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1982 text20 CODE >173:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+198A text20 CODE >174:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+198C text20 CODE >175:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+198E text20 CODE >176:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1992 text20 CODE >179:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+199C text20 CODE >185:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+199C text20 CODE >186:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19A4 text20 CODE >187:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19A8 text20 CODE >188:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19B0 text20 CODE >189:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19B2 text20 CODE >190:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19B6 text20 CODE >193:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19C8 text20 CODE >197:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19CC text20 CODE >199:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19CC text20 CODE >200:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19D0 text20 CODE >232:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19D2 text20 CODE >233:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19D6 text20 CODE >259:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19DA text20 CODE >259:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19E2 text20 CODE >259:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19EA text20 CODE >259:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19F2 text20 CODE >259:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+19FA text20 CODE >259:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1A04 text20 CODE >261:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+218A text19 CODE >71:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+218A text19 CODE >73:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+218E text19 CODE >76:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2192 text19 CODE >77:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2196 text19 CODE >79:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+219A text19 CODE >80:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+219E text19 CODE >83:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+21AA text19 CODE >83:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+21B8 text19 CODE >83:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+21C0 text19 CODE >83:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+21CA text19 CODE >86:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+85E text18 CODE >2761:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+85E text18 CODE >2772:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+884 text18 CODE >2775:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+886 text18 CODE >2776:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+898 text18 CODE >2777:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+8A0 text18 CODE >2778:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+8A0 text18 CODE >2779:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+8A2 text18 CODE >2783:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+902 text18 CODE >2790:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+904 text18 CODE >2793:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+912 text18 CODE >2795:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+928 text18 CODE >2796:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+93A text18 CODE >2797:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+93E text18 CODE >2800:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+954 text18 CODE >2801:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+966 text18 CODE >2820:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+974 text18 CODE >2822:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+98A text18 CODE >2823:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+98E text18 CODE >2826:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+9A4 text18 CODE >2830:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+9B6 text18 CODE >2832:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+9CC text18 CODE >2836:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+9DA text18 CODE >2838:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+9EC text18 CODE >2839:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+9F0 text18 CODE >2842:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A02 text18 CODE >2844:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A02 text18 CODE >2847:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A0E text18 CODE >2848:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A1A text18 CODE >2849:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A1E text18 CODE >2850:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A1E text18 CODE >2905:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A42 text18 CODE >2910:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A50 text18 CODE >2912:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A62 text18 CODE >2913:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A66 text18 CODE >2916:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A78 text18 CODE >2923:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A84 text18 CODE >2924:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+A90 text18 CODE >2928:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AAC text18 CODE >2929:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AB0 text18 CODE >2936:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+ABC text18 CODE >2937:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AC8 text18 CODE >2946:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+ADE text18 CODE >2950:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AEA text18 CODE >2953:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FB6 text17 CODE >2047:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FB6 text17 CODE >2049:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FCA text17 CODE >2051:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FCE text17 CODE >2053:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FD2 text17 CODE >2057:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FDE text17 CODE >2061:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FE6 text17 CODE >2062:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FEA text17 CODE >2067:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+FFA text17 CODE >2070:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1012 text17 CODE >2078:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1040 text17 CODE >2079:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+106E text17 CODE >2080:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1072 text17 CODE >2081:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1072 text17 CODE >2083:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1078 text17 CODE >2090:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1088 text17 CODE >2093:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10A0 text17 CODE >2095:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10C8 text17 CODE >2096:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10CC text17 CODE >2114:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10D0 text17 CODE >2114:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10D8 text17 CODE >2114:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10E0 text17 CODE >2114:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10EA text17 CODE >2116:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1836 text16 CODE >2133:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1836 text16 CODE >2135:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+183A text16 CODE >2136:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+183C text16 CODE >2138:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1840 text16 CODE >2140:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1840 text16 CODE >2141:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1842 text16 CODE >2151:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1852 text16 CODE >2153:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1858 text16 CODE >2156:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1858 text16 CODE >2157:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+185A text16 CODE >2158:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+185E text16 CODE >2159:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+185E text16 CODE >2160:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1860 text16 CODE >2164:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1874 text16 CODE >2168:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1882 text16 CODE >2170:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1898 text16 CODE >2171:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+189C text16 CODE >2174:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+18B2 text16 CODE >2177:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+18DE text16 CODE >2179:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+18E6 text16 CODE >2183:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+18EC text16 CODE >2183:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+18F4 text16 CODE >2183:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+18FC text16 CODE >2183:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1906 text16 CODE >2185:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1914 text16 CODE >2187:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+191C text16 CODE >2188:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+191E text16 CODE >2189:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1922 text16 CODE >2191:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A06 text15 CODE >1972:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A06 text15 CODE >1977:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A08 text15 CODE >1980:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A24 text15 CODE >1983:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A40 text15 CODE >1986:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A42 text15 CODE >1991:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A44 text15 CODE >1993:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A4E text15 CODE >1994:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A58 text15 CODE >1995:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A6A text15 CODE >1998:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A84 text15 CODE >2001:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A86 text15 CODE >2003:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A8E text15 CODE >2006:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A96 text15 CODE >2007:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1A9E text15 CODE >2010:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1AA2 text15 CODE >2013:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1AB2 text15 CODE >2016:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1AB6 text15 CODE >2017:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1ABA text15 CODE >2021:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1AD4 text15 CODE >2026:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1AD8 text15 CODE >2028:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1648 text14 CODE >2693:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1648 text14 CODE >2695:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1664 text14 CODE >2699:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1664 text14 CODE >2700:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1666 text14 CODE >2701:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+166A text14 CODE >2703:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+166E text14 CODE >2705:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1672 text14 CODE >2706:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1676 text14 CODE >2708:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+167A text14 CODE >2709:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+167E text14 CODE >2711:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1684 text14 CODE >2712:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1686 text14 CODE >2713:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+168A text14 CODE >2714:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+168C text14 CODE >2715:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1690 text14 CODE >2717:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1694 text14 CODE >2718:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1698 text14 CODE >2721:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+169C text14 CODE >2722:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16A0 text14 CODE >2724:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16B0 text14 CODE >2729:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16B0 text14 CODE >2730:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16B2 text14 CODE >2731:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16BE text14 CODE >2732:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16C2 text14 CODE >2734:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16DE text14 CODE >2735:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16E2 text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16E6 text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16EE text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16F6 text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+16FE text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1706 text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+170E text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1716 text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+171E text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1726 text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+172E text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1736 text14 CODE >2739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1740 text14 CODE >2740:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1CE2 text13 CODE >1492:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1CE2 text13 CODE >1494:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1CE4 text13 CODE >1495:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1CE6 text13 CODE >1497:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1CF8 text13 CODE >1500:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D08 text13 CODE >1501:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D1C text13 CODE >1502:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D28 text13 CODE >1503:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D34 text13 CODE >1504:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D38 text13 CODE >1509:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D50 text13 CODE >1511:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D58 text13 CODE >1513:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D5C text13 CODE >1518:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D70 text13 CODE >1519:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D7C text13 CODE >1520:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1D88 text13 CODE >1522:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10EC text12 CODE >1620:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10EC text12 CODE >1626:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10EE text12 CODE >1632:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+10FC text12 CODE >1634:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+110A text12 CODE >1636:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+110E text12 CODE >1647:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+111E text12 CODE >1649:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1122 text12 CODE >1654:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1124 text12 CODE >1655:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1126 text12 CODE >1656:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+112A text12 CODE >1663:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+113A text12 CODE >1664:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+114E text12 CODE >1665:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+115A text12 CODE >1666:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1166 text12 CODE >1667:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1172 text12 CODE >1668:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1182 text12 CODE >1671:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1182 text12 CODE >1673:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1192 text12 CODE >1675:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1196 text12 CODE >1689:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11A6 text12 CODE >1691:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11AA text12 CODE >1714:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11AC text12 CODE >1715:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11AE text12 CODE >1716:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11BE text12 CODE >1718:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11C6 text12 CODE >1733:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11CA text12 CODE >1736:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11DA text12 CODE >1737:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11EE text12 CODE >1738:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+11FA text12 CODE >1739:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1206 text12 CODE >1742:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1208 text12 CODE >1743:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+120A text12 CODE >1744:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+121E text12 CODE >1752:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EB4 text11 CODE >2472:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EB4 text11 CODE >2477:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EB6 text11 CODE >2478:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EB8 text11 CODE >2479:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EBA text11 CODE >2480:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EBC text11 CODE >2481:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EBE text11 CODE >2482:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EC0 text11 CODE >2491:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1ECC text11 CODE >2493:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1ED4 text11 CODE >2494:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EE0 text11 CODE >2495:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EE8 text11 CODE >2496:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EF4 text11 CODE >2498:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EF6 text11 CODE >2499:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1EFE text11 CODE >2500:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F00 text11 CODE >2501:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F08 text11 CODE >2507:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F0C text11 CODE >2508:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F28 text11 CODE >2521:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F2C text11 CODE >2522:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2056 text10 CODE >4:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+2056 text10 CODE >11:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+205E text10 CODE >12:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+2066 text10 CODE >13:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+206A text10 CODE >14:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+207A text10 CODE >15:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+208A text10 CODE >13:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+20A4 text10 CODE >18:C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memcpy.c
+1ADA text9 CODE >2379:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1ADA text9 CODE >2389:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1AF0 text9 CODE >2393:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B0C text9 CODE >2401:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B14 text9 CODE >2403:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B1C text9 CODE >2406:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B3A text9 CODE >2412:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B62 text9 CODE >2415:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B66 text9 CODE >2416:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B6A text9 CODE >2420:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B72 text9 CODE >2423:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B86 text9 CODE >2427:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1B8A text9 CODE >2430:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2278 text8 CODE >2998:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2278 text8 CODE >3006:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2286 text8 CODE >3007:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2296 text8 CODE >3009:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2298 text8 CODE >3011:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22A8 text8 CODE >3013:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22AA text8 CODE >3016:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F9E text7 CODE >2209:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1F9E text7 CODE >2221:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FAC text7 CODE >2224:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FE0 text7 CODE >2227:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FEC text7 CODE >2228:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FF8 text7 CODE >2230:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FFA text7 CODE >2231:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FFA text7 CODE >2233:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1FFC text7 CODE >2234:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22D8 text6 CODE >2252:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22D8 text6 CODE >2277:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22DA text6 CODE >2278:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22DC text6 CODE >2281:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22DE text6 CODE >2284:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22E2 text6 CODE >2285:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+22E4 text6 CODE >2292:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2300 text6 CODE >2293:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2206 text5 CODE >2310:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2206 text5 CODE >2312:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2208 text5 CODE >2318:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2224 text5 CODE >2325:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2226 text5 CODE >2330:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+2228 text5 CODE >2348:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+222C text5 CODE >2351:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+222E text5 CODE >2348:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+223C text5 CODE >2354:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+223E text5 CODE >2356:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AEC text4 CODE >481:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AEC text4 CODE >509:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AEC text4 CODE >570:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AFC text4 CODE >573:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+AFE text4 CODE >576:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B00 text4 CODE >580:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B0C text4 CODE >583:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B20 text4 CODE >586:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B24 text4 CODE >594:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B34 text4 CODE >605:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B42 text4 CODE >612:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B44 text4 CODE >616:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B46 text4 CODE >618:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B48 text4 CODE >619:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B4A text4 CODE >620:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B4E text4 CODE >638:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B6A text4 CODE >640:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B6C text4 CODE >644:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B70 text4 CODE >651:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B7E text4 CODE >653:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B80 text4 CODE >654:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B84 text4 CODE >655:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+B84 text4 CODE >667:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BA0 text4 CODE >669:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BA4 text4 CODE >675:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BA8 text4 CODE >685:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BAA text4 CODE >691:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BC6 text4 CODE >698:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BCA text4 CODE >712:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BD8 text4 CODE >715:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+BE6 text4 CODE >717:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C02 text4 CODE >719:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C04 text4 CODE >722:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C08 text4 CODE >755:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C24 text4 CODE >757:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C28 text4 CODE >760:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C44 text4 CODE >762:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C5E text4 CODE >763:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C60 text4 CODE >778:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C70 text4 CODE >780:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C72 text4 CODE >781:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C76 text4 CODE >782:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C76 text4 CODE >787:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C84 text4 CODE >789:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C86 text4 CODE >791:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C94 text4 CODE >794:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+C98 text4 CODE >795:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CA2 text4 CODE >797:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CA4 text4 CODE >814:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CB4 text4 CODE >816:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CB8 text4 CODE >817:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CBC text4 CODE >820:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CD6 text4 CODE >827:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CE8 text4 CODE >828:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CE8 text4 CODE >830:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+CEA text4 CODE >831:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device.c
+1C38 text3 CODE >486:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1C38 text3 CODE >488:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1C3A text3 CODE >490:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1C62 text3 CODE >496:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1C80 text3 CODE >497:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1C90 text3 CODE >502:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1C96 text3 CODE >503:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1CC2 text3 CODE >509:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1CDE text3 CODE >513:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1CE0 text3 CODE >515:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2302 text2 CODE >557:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2302 text2 CODE >583:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2312 text2 CODE >585:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+2326 text2 CODE >588:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\usb\mla_usb\src\usb_device_cdc.c
+1742 text1 CODE >175:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1742 text1 CODE >179:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1746 text1 CODE >181:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1756 text1 CODE >183:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+175E text1 CODE >185:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+175E text1 CODE >187:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1770 text1 CODE >192:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1790 text1 CODE >194:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+17A0 text1 CODE >195:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+17A2 text1 CODE >198:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+17A6 text1 CODE >199:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+17AA text1 CODE >200:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+17BE text1 CODE >205:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+17FA text1 CODE >208:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+180C text1 CODE >209:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+181C text1 CODE >211:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+182C text1 CODE >212:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1830 text1 CODE >216:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+1834 text1 CODE >217:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\USB_CDC.c
+2142 text0 CODE >43:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+2142 text0 CODE >47:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+2144 text0 CODE >48:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+2146 text0 CODE >49:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+2148 text0 CODE >51:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+2150 text0 CODE >53:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+2160 text0 CODE >54:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+217A text0 CODE >56:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+217E text0 CODE >60:C:\Users\CamillaMarco\Documents\DaftPunk_helmet\firmware_rs-485.x\UsbDiag.c
+21CC cinit CODE >1705:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21CC cinit CODE >1707:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21CC cinit CODE >1710:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21CC cinit CODE >1883:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21D0 cinit CODE >1884:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21D2 cinit CODE >1885:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21D2 cinit CODE >1886:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21D4 cinit CODE >1887:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21D6 cinit CODE >1888:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21D8 cinit CODE >1891:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21DC cinit CODE >1892:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21DE cinit CODE >1893:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21DE cinit CODE >1894:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21E0 cinit CODE >1895:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21E2 cinit CODE >1896:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21E4 cinit CODE >1899:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21E8 cinit CODE >1900:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21EA cinit CODE >1901:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21EA cinit CODE >1902:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21EC cinit CODE >1903:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21EE cinit CODE >1904:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21F0 cinit CODE >1907:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21F4 cinit CODE >1908:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21F6 cinit CODE >1909:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21F6 cinit CODE >1910:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21F8 cinit CODE >1911:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21FA cinit CODE >1912:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21FC cinit CODE >1918:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21FC cinit CODE >1921:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+21FE cinit CODE >1922:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+2200 cinit CODE >1923:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+2202 cinit CODE >1924:C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_1.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist\default\production\usb-diagnostic.o
+USBStdGetStatusHandler@p 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Hspace_0 8000 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Hspace_1 280 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Hspace_2 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Hspace_4 60000E 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_USB1msTickCount 72 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+USBTransferOnePacket@dir 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USBTransferOnePacket@len 40 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Hibigdata 0 0 CODE 0 ibigdata dist\default\production\usb-diagnostic.o
+__mediumconst 800 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist\default\production\usb-diagnostic.o
+__end_of_USBStdSetCfgHandler 1ADA 0 CODE 0 text15 dist\default\production\usb-diagnostic.o
+USBEnableEndpoint@options 43 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__L__absolute__ 0 0 ABS 0 __absolute__ dist\default\production\usb-diagnostic.o
+_CDCTxService CEC 0 CODE 0 text32 dist\default\production\usb-diagnostic.o
+__Lsmallconst 800 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+_UCFG F6F 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UCON F6D 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UEIE F6B 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UEIR F6A 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UEP0 F70 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UEP1 F71 0 ABS 0 - dist\default\production\usb-diagnostic.o
+___sp 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+_main 2142 0 CODE 0 text0 dist\default\production\usb-diagnostic.o
+_pDst 19 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+___stack_hi 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+___stack_lo 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+start 7FFC 0 CODE 0 init C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+_transmitBuffer 180 0 BANK1 1 bssBANK1 dist\default\production\usb-diagnostic.o
+_USBTransferOnePacket 1330 0 CODE 0 text33 dist\default\production\usb-diagnostic.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist\default\production\usb-diagnostic.o
+_USBDeviceInit 1220 0 CODE 0 text35 dist\default\production\usb-diagnostic.o
+_pBDTEntryEP0OutNext 1B 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+USBCtrlTrfInHandler@lastDTS 3E 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_USBConfigureEndpoint 1E30 0 CODE 0 text23 dist\default\production\usb-diagnostic.o
+__Hpowerup 0 0 CODE 0 powerup dist\default\production\usb-diagnostic.o
+_UEP0bits F70 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_CDCDataOutHandle 15 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_CtrlTrfData 458 0 ABS 1 - dist\default\production\usb-diagnostic.o
+_frameReady 32 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__accesstop 60 0 ABS 0 - C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+intlevel0 0 0 CODE 0 text C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+intlevel1 0 0 CODE 0 text C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+intlevel2 0 0 CODE 0 text C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+intlevel3 0 0 CODE 0 text C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+_configurationDescriptor 803 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist\default\production\usb-diagnostic.o
+_receiveFrame 1B2 0 BANK1 1 bssBANK1 dist\default\production\usb-diagnostic.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist\default\production\usb-diagnostic.o
+_pBDTEntryIn 8 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_configurationDescriptor 846 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+_CDCDataInHandle 13 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_transmitLength 30 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__Hifardata 0 0 CODE 0 ifardata dist\default\production\usb-diagnostic.o
+_controlTransferState 2E 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_USBCtrlTrfTxService 143E 0 CODE 0 text28 dist\default\production\usb-diagnostic.o
+__Hclrtext 0 0 ABS 0 clrtext dist\default\production\usb-diagnostic.o
+USBDeviceInit@i 45 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_line_coding C6 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+__end_of_USBCtrlEPServiceComplete 1220 0 CODE 0 text12 dist\default\production\usb-diagnostic.o
+__end_of_CDCTxService E7A 0 CODE 0 text32 dist\default\production\usb-diagnostic.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist\default\production\usb-diagnostic.o
+_transmitPending 31 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_receiveFrameLength 35 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+?_USBTransferOnePacket 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USBStdGetStatusHandler 1924 0 CODE 0 text16 dist\default\production\usb-diagnostic.o
+QueueReceivedBytes@data 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist\default\production\usb-diagnostic.o
+_SetupPkt 418 0 ABS 1 - dist\default\production\usb-diagnostic.o
+__end_of_languageDescriptor 85C 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+USBEnableEndpoint@ep 46 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist\default\production\usb-diagnostic.o
+__Hintcodelo 18 0 CODE 0 intcodelo dist\default\production\usb-diagnostic.o
+__end_of_USBStallHandler 1FFE 0 CODE 0 text7 dist\default\production\usb-diagnostic.o
+_USBCtrlTrfSetupHandler 1EB4 0 CODE 0 text11 dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlEPAllowStatusStage 1C38 0 CODE 0 text26 dist\default\production\usb-diagnostic.o
+_USBCtrlTrfRxService E7A 0 CODE 0 text25 dist\default\production\usb-diagnostic.o
+USBStdFeatureReqHandler@pUEP 51 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USBCtrlTrfRxService@byteToRead 3E 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+ParseReceivedBytes@value 3E 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlTrfOutHandler 1F9E 0 CODE 0 text24 dist\default\production\usb-diagnostic.o
+_USBBusIsSuspended 2C 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+memcpy@tmp 47 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_USBDeferOUTDataStagePackets 24 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__Lintcodelo 18 0 CODE 0 intcodelo dist\default\production\usb-diagnostic.o
+start_initialization 21CC 0 CODE 0 cinit dist\default\production\usb-diagnostic.o
+_languageDescriptor 858 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist\default\production\usb-diagnostic.o
+__end_of_USBCheckStdRequest 1742 0 CODE 0 text14 dist\default\production\usb-diagnostic.o
+___rparam_used 1 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_device_dsc 846 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+__end_of_memcpy 20A6 0 CODE 0 text10 dist\default\production\usb-diagnostic.o
+__end_of_memset 2278 0 CODE 0 text36 dist\default\production\usb-diagnostic.o
+_USBTicksSinceSuspendEnd 23 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USBDeviceInit 1330 0 CODE 0 text35 dist\default\production\usb-diagnostic.o
+_USBStdGetDscHandler FB6 0 CODE 0 text17 dist\default\production\usb-diagnostic.o
+__end_of_USER_USB_CALLBACK_EVENT_HANDLER 21CC 0 CODE 0 text19 dist\default\production\usb-diagnostic.o
+_expectedFrameLength 34 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlTrfTxService 1548 0 CODE 0 text28 dist\default\production\usb-diagnostic.o
+_USBStallHandler 1F9E 0 CODE 0 text7 dist\default\production\usb-diagnostic.o
+_cdc_data_rx 7E 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+_cdc_data_tx 100 0 BANK1 1 bssBANK1 dist\default\production\usb-diagnostic.o
+_getsUSBUSART 1C38 0 CODE 0 text3 dist\default\production\usb-diagnostic.o
+isa$xinst 0 0 ABS 0 - C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+__end_of_USBEnableEndpoint 2142 0 CODE 0 text22 dist\default\production\usb-diagnostic.o
+_UIEbits F69 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UIRbits F68 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Hbank0 0 0 ABS 0 bank0 dist\default\production\usb-diagnostic.o
+__Hbank1 0 0 ABS 0 bank1 dist\default\production\usb-diagnostic.o
+__Hbank2 0 0 ABS 0 bank2 dist\default\production\usb-diagnostic.o
+__Hbank3 0 0 ABS 0 bank3 dist\default\production\usb-diagnostic.o
+__Hbank4 0 0 ABS 0 bank4 dist\default\production\usb-diagnostic.o
+__Hbank5 0 0 ABS 0 bank5 dist\default\production\usb-diagnostic.o
+__Hbank6 0 0 ABS 0 bank6 dist\default\production\usb-diagnostic.o
+__Hbank7 0 0 ABS 0 bank7 dist\default\production\usb-diagnostic.o
+__Hcinit 0 0 ABS 0 cinit dist\default\production\usb-diagnostic.o
+__Hconst 0 0 CONST 0 const dist\default\production\usb-diagnostic.o
+__end_of_USBWakeFromSuspend 2240 0 CODE 0 text5 dist\default\production\usb-diagnostic.o
+__Hidata 0 0 CODE 0 idata dist\default\production\usb-diagnostic.o
+__Hidloc 200008 0 IDLOC 5 idloc dist\default\production\usb-diagnostic.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist\default\production\usb-diagnostic.o
+__Hparam 0 0 COMRAM 1 rparam dist\default\production\usb-diagnostic.o
+__Hrdata 0 0 COMRAM 1 rdata dist\default\production\usb-diagnostic.o
+__Hstack 0 0 STACK 2 stack dist\default\production\usb-diagnostic.o
+__Htext0 0 0 ABS 0 text0 dist\default\production\usb-diagnostic.o
+__Htext1 0 0 ABS 0 text1 dist\default\production\usb-diagnostic.o
+__Htext2 0 0 ABS 0 text2 dist\default\production\usb-diagnostic.o
+__Htext3 0 0 ABS 0 text3 dist\default\production\usb-diagnostic.o
+__Htext4 0 0 ABS 0 text4 dist\default\production\usb-diagnostic.o
+__Htext5 0 0 ABS 0 text5 dist\default\production\usb-diagnostic.o
+__Htext6 0 0 ABS 0 text6 dist\default\production\usb-diagnostic.o
+__Htext7 0 0 ABS 0 text7 dist\default\production\usb-diagnostic.o
+__Htext8 0 0 ABS 0 text8 dist\default\production\usb-diagnostic.o
+__Htext9 0 0 ABS 0 text9 dist\default\production\usb-diagnostic.o
+_USBCtrlEPService 1ADA 0 CODE 0 text9 dist\default\production\usb-diagnostic.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist\default\production\usb-diagnostic.o
+__Hbigram 0 0 ABS 0 bigram dist\default\production\usb-diagnostic.o
+__Hbigsfr 0 0 ABS 0 bigsfr dist\default\production\usb-diagnostic.o
+__smallconst 800 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+_USBCheckStdRequest 1648 0 CODE 0 text14 dist\default\production\usb-diagnostic.o
+_USBIncrement1msInternalTimers 2278 0 CODE 0 text8 dist\default\production\usb-diagnostic.o
+USBStdFeatureReqHandler@p 54 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Hcomram 0 0 ABS 0 comram dist\default\production\usb-diagnostic.o
+__Hconfig 30000E 0 CONFIG 4 config dist\default\production\usb-diagnostic.o
+USER_USB_CALLBACK_EVENT_HANDLER@event 47 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USER_USB_CALLBACK_EVENT_HANDLER@size 4B 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USBTransferOnePacket@handle 42 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USER_USB_CALLBACK_EVENT_HANDLER@pdata 49 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_cdc_notice 60 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+__Lbank0 0 0 ABS 0 bank0 dist\default\production\usb-diagnostic.o
+__Lbank1 0 0 ABS 0 bank1 dist\default\production\usb-diagnostic.o
+__Lbank2 0 0 ABS 0 bank2 dist\default\production\usb-diagnostic.o
+__Lbank3 0 0 ABS 0 bank3 dist\default\production\usb-diagnostic.o
+__Lbank4 0 0 ABS 0 bank4 dist\default\production\usb-diagnostic.o
+__Lbank5 0 0 ABS 0 bank5 dist\default\production\usb-diagnostic.o
+__Lbank6 0 0 ABS 0 bank6 dist\default\production\usb-diagnostic.o
+__Lbank7 0 0 ABS 0 bank7 dist\default\production\usb-diagnostic.o
+__Lcinit 0 0 ABS 0 cinit dist\default\production\usb-diagnostic.o
+__Lconst 0 0 CONST 0 const dist\default\production\usb-diagnostic.o
+__Lidata 0 0 CODE 0 idata dist\default\production\usb-diagnostic.o
+__Lidloc 0 0 IDLOC 5 idloc dist\default\production\usb-diagnostic.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist\default\production\usb-diagnostic.o
+__Lparam 0 0 COMRAM 1 rparam dist\default\production\usb-diagnostic.o
+__Lrdata 0 0 COMRAM 1 rdata dist\default\production\usb-diagnostic.o
+__Lstack 0 0 STACK 2 stack dist\default\production\usb-diagnostic.o
+__Ltext0 0 0 ABS 0 text0 dist\default\production\usb-diagnostic.o
+__Ltext1 0 0 ABS 0 text1 dist\default\production\usb-diagnostic.o
+__Ltext2 0 0 ABS 0 text2 dist\default\production\usb-diagnostic.o
+__Ltext3 0 0 ABS 0 text3 dist\default\production\usb-diagnostic.o
+__Ltext4 0 0 ABS 0 text4 dist\default\production\usb-diagnostic.o
+__Ltext5 0 0 ABS 0 text5 dist\default\production\usb-diagnostic.o
+__Ltext6 0 0 ABS 0 text6 dist\default\production\usb-diagnostic.o
+__Ltext7 0 0 ABS 0 text7 dist\default\production\usb-diagnostic.o
+__Ltext8 0 0 ABS 0 text8 dist\default\production\usb-diagnostic.o
+__Ltext9 0 0 ABS 0 text9 dist\default\production\usb-diagnostic.o
+__Hfarbss 0 0 FARRAM 0 farbss dist\default\production\usb-diagnostic.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlTrfRxService FB6 0 CODE 0 text25 dist\default\production\usb-diagnostic.o
+memcpy@d1 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+memcpy@s1 3F 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_pCDCDst 7C 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+_pCDCSrc 17 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+CDCTxService@i 44 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Habs1 0 0 ABS 0 abs1 dist\default\production\usb-diagnostic.o
+__Hdata 0 0 ABS 0 data dist\default\production\usb-diagnostic.o
+__Hheap 0 0 HEAP 7 heap dist\default\production\usb-diagnostic.o
+__Hinit 8000 0 CODE 0 init dist\default\production\usb-diagnostic.o
+__Hrbit 0 0 COMRAM 1 rbit dist\default\production\usb-diagnostic.o
+__Hrbss 0 0 COMRAM 1 rbss dist\default\production\usb-diagnostic.o
+__Htemp 0 0 COMRAM 1 temp dist\default\production\usb-diagnostic.o
+__Htext 0 0 ABS 0 text dist\default\production\usb-diagnostic.o
+__Labs1 0 0 ABS 0 abs1 dist\default\production\usb-diagnostic.o
+__Ldata 0 0 ABS 0 data dist\default\production\usb-diagnostic.o
+__Lheap 0 0 HEAP 7 heap dist\default\production\usb-diagnostic.o
+__Linit 7FFC 0 CODE 0 init dist\default\production\usb-diagnostic.o
+__Lrbit 0 0 COMRAM 1 rbit dist\default\production\usb-diagnostic.o
+__Lrbss 0 0 COMRAM 1 rbss dist\default\production\usb-diagnostic.o
+__Ltemp 0 0 COMRAM 1 temp dist\default\production\usb-diagnostic.o
+__Ltext 0 0 ABS 0 text dist\default\production\usb-diagnostic.o
+memcpy@d 43 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+memcpy@n 41 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+memcpy@s 45 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+memset@dest 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+memset@c 3F 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+memset@n 41 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+memset@p 43 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_cdc_rx_len 22 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_device_dsc 858 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+__Hintret 0 0 ABS 0 intret dist\default\production\usb-diagnostic.o
+_USBSuspend 22D8 0 CODE 0 text6 dist\default\production\usb-diagnostic.o
+_cdc_trf_state 39 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__Hirdata 0 0 CODE 0 irdata dist\default\production\usb-diagnostic.o
+_BDT 400 0 ABS 1 - dist\default\production\usb-diagnostic.o
+_UIE F69 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UIR F68 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__S0 8000 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__S1 280 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__S4 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__S5 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_USBWakeFromSuspend 2206 0 CODE 0 text5 dist\default\production\usb-diagnostic.o
+_readyFrameLength 33 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_cdc_tx_len 21 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_USBStdFeatureReqHandler 85E 0 CODE 0 text18 dist\default\production\usb-diagnostic.o
+_streamHead 38 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_BothEP0OutUOWNsSet 2A 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_streamTail 37 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_UCONbits F6D 0 ABS 0 - dist\default\production\usb-diagnostic.o
+USBCtrlTrfRxService@i 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USBStdFeatureReqHandler AEC 0 CODE 0 text18 dist\default\production\usb-diagnostic.o
+_streamCount 36 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_putUSBUSART 2302 0 CODE 0 text2 dist\default\production\usb-diagnostic.o
+_BaudRateGen 6E 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist\default\production\usb-diagnostic.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist\default\production\usb-diagnostic.o
+__end_of_getsUSBUSART 1CE2 0 CODE 0 text3 dist\default\production\usb-diagnostic.o
+QueueReceivedBytes@index 40 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_USBAlternateInterface CD 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+_USBDeviceState 3A 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_USBDeviceTasks AEC 0 CODE 0 text4 dist\default\production\usb-diagnostic.o
+__end_of_USBStdGetDscHandler 10EC 0 CODE 0 text17 dist\default\production\usb-diagnostic.o
+__Lintentry 0 0 ABS 0 intentry dist\default\production\usb-diagnostic.o
+_USB_CDC_Init 233A 0 CODE 0 text34 dist\default\production\usb-diagnostic.o
+_USB_CDC_Task 1742 0 CODE 0 text1 dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlTrfSetupHandler 1F2E 0 CODE 0 text11 dist\default\production\usb-diagnostic.o
+__Hramtop 800 0 RAM 0 ramtop dist\default\production\usb-diagnostic.o
+__Hrparam 0 0 COMRAM 1 rparam dist\default\production\usb-diagnostic.o
+_USBEnableEndpoint 20F6 0 CODE 0 text22 dist\default\production\usb-diagnostic.o
+__activetblptr 2 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Hstruct 0 0 COMRAM 1 struct dist\default\production\usb-diagnostic.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist\default\production\usb-diagnostic.o
+__LbssBANK1 0 0 ABS 0 bssBANK1 dist\default\production\usb-diagnostic.o
+__LbssBANK2 0 0 ABS 0 bssBANK2 dist\default\production\usb-diagnostic.o
+__Htext10 0 0 ABS 0 text10 dist\default\production\usb-diagnostic.o
+__Htext11 0 0 ABS 0 text11 dist\default\production\usb-diagnostic.o
+__Htext12 0 0 ABS 0 text12 dist\default\production\usb-diagnostic.o
+__Htext13 0 0 ABS 0 text13 dist\default\production\usb-diagnostic.o
+__Htext14 0 0 ABS 0 text14 dist\default\production\usb-diagnostic.o
+__Htext15 0 0 ABS 0 text15 dist\default\production\usb-diagnostic.o
+__Htext16 0 0 ABS 0 text16 dist\default\production\usb-diagnostic.o
+__Htext17 0 0 ABS 0 text17 dist\default\production\usb-diagnostic.o
+__Htext18 0 0 ABS 0 text18 dist\default\production\usb-diagnostic.o
+__Htext19 0 0 ABS 0 text19 dist\default\production\usb-diagnostic.o
+__Htext20 0 0 ABS 0 text20 dist\default\production\usb-diagnostic.o
+__Htext21 0 0 ABS 0 text21 dist\default\production\usb-diagnostic.o
+__Htext22 0 0 ABS 0 text22 dist\default\production\usb-diagnostic.o
+__Htext23 0 0 ABS 0 text23 dist\default\production\usb-diagnostic.o
+__Htext24 0 0 ABS 0 text24 dist\default\production\usb-diagnostic.o
+__Htext25 0 0 ABS 0 text25 dist\default\production\usb-diagnostic.o
+__Htext26 0 0 ABS 0 text26 dist\default\production\usb-diagnostic.o
+__Htext27 0 0 ABS 0 text27 dist\default\production\usb-diagnostic.o
+__Htext28 0 0 ABS 0 text28 dist\default\production\usb-diagnostic.o
+__Htext29 0 0 ABS 0 text29 dist\default\production\usb-diagnostic.o
+__Htext30 0 0 ABS 0 text30 dist\default\production\usb-diagnostic.o
+__Htext31 0 0 ABS 0 text31 dist\default\production\usb-diagnostic.o
+__Htext32 0 0 ABS 0 text32 dist\default\production\usb-diagnostic.o
+__Htext33 0 0 ABS 0 text33 dist\default\production\usb-diagnostic.o
+__Htext34 0 0 ABS 0 text34 dist\default\production\usb-diagnostic.o
+__Htext35 0 0 ABS 0 text35 dist\default\production\usb-diagnostic.o
+__Htext36 0 0 ABS 0 text36 dist\default\production\usb-diagnostic.o
+__Htext37 0 0 ABS 0 text37 dist\default\production\usb-diagnostic.o
+_control_signal_bitmap 1F 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlEPService 1B8C 0 CODE 0 text9 dist\default\production\usb-diagnostic.o
+_USBCtrlTrfInHandler 1548 0 CODE 0 text27 dist\default\production\usb-diagnostic.o
+_PIE2bits FA0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_memcpy 2056 0 CODE 0 text10 dist\default\production\usb-diagnostic.o
+_memset 2240 0 CODE 0 text36 dist\default\production\usb-diagnostic.o
+USBConfigureEndpoint@handle 41 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__ptext10 2056 0 CODE 0 text10 dist\default\production\usb-diagnostic.o
+__ptext11 1EB4 0 CODE 0 text11 dist\default\production\usb-diagnostic.o
+__ptext12 10EC 0 CODE 0 text12 dist\default\production\usb-diagnostic.o
+__ptext13 1CE2 0 CODE 0 text13 dist\default\production\usb-diagnostic.o
+__ptext14 1648 0 CODE 0 text14 dist\default\production\usb-diagnostic.o
+__ptext15 1A06 0 CODE 0 text15 dist\default\production\usb-diagnostic.o
+__ptext16 1836 0 CODE 0 text16 dist\default\production\usb-diagnostic.o
+__ptext17 FB6 0 CODE 0 text17 dist\default\production\usb-diagnostic.o
+__ptext18 85E 0 CODE 0 text18 dist\default\production\usb-diagnostic.o
+__ptext19 218A 0 CODE 0 text19 dist\default\production\usb-diagnostic.o
+__ptext20 1924 0 CODE 0 text20 dist\default\production\usb-diagnostic.o
+__ptext21 1FFE 0 CODE 0 text21 dist\default\production\usb-diagnostic.o
+__ptext22 20F6 0 CODE 0 text22 dist\default\production\usb-diagnostic.o
+__ptext23 1E30 0 CODE 0 text23 dist\default\production\usb-diagnostic.o
+__ptext24 1F2E 0 CODE 0 text24 dist\default\production\usb-diagnostic.o
+__ptext25 E7A 0 CODE 0 text25 dist\default\production\usb-diagnostic.o
+__ptext26 1B8C 0 CODE 0 text26 dist\default\production\usb-diagnostic.o
+__ptext27 1548 0 CODE 0 text27 dist\default\production\usb-diagnostic.o
+__ptext28 143E 0 CODE 0 text28 dist\default\production\usb-diagnostic.o
+__ptext29 20A6 0 CODE 0 text29 dist\default\production\usb-diagnostic.o
+__ptext30 1D8A 0 CODE 0 text30 dist\default\production\usb-diagnostic.o
+__ptext31 22AC 0 CODE 0 text31 dist\default\production\usb-diagnostic.o
+__ptext32 CEC 0 CODE 0 text32 dist\default\production\usb-diagnostic.o
+__ptext33 1330 0 CODE 0 text33 dist\default\production\usb-diagnostic.o
+__ptext34 233A 0 CODE 0 text34 dist\default\production\usb-diagnostic.o
+__ptext35 1220 0 CODE 0 text35 dist\default\production\usb-diagnostic.o
+__ptext36 2240 0 CODE 0 text36 dist\default\production\usb-diagnostic.o
+__ptext37 2328 0 CODE 0 text37 dist\default\production\usb-diagnostic.o
+__end_of_USBSuspend 2302 0 CODE 0 text6 dist\default\production\usb-diagnostic.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist\default\production\usb-diagnostic.o
+__Lbigram 0 0 ABS 0 bigram dist\default\production\usb-diagnostic.o
+__Lbigsfr 0 0 ABS 0 bigsfr dist\default\production\usb-diagnostic.o
+_USB_CD_Ptr 802 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+_ep_data_in 79 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+_USBActiveConfiguration 3C 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_USBCtrlEPAllowStatusStage 1B8C 0 CODE 0 text26 dist\default\production\usb-diagnostic.o
+__Lcomram 0 0 ABS 0 comram dist\default\production\usb-diagnostic.o
+__Lconfig 0 0 CONFIG 4 config dist\default\production\usb-diagnostic.o
+__end_of_USBTransferOnePacket 143E 0 CODE 0 text33 dist\default\production\usb-diagnostic.o
+__Lsivt_hi 0 0 CODE 0 sivt_hi dist\default\production\usb-diagnostic.o
+__Lsivt_lo 18 0 CODE 0 sivt_lo dist\default\production\usb-diagnostic.o
+_RemoteWakeup 2D 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__Lfarbss 0 0 FARRAM 0 farbss dist\default\production\usb-diagnostic.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+__end_of_USBDeviceTasks CEC 0 CODE 0 text4 dist\default\production\usb-diagnostic.o
+_ep_data_out 76 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+__Lfardata 0 0 FARRAM 0 fardata dist\default\production\usb-diagnostic.o
+isa$std 1 0 ABS 0 - C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+USBEnableEndpoint@p 44 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_dummy_encapsulated_cmd_response BE 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+putUSBUSART@length 3F 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_DequeueReceivedByte 22AC 0 CODE 0 text31 dist\default\production\usb-diagnostic.o
+stackhi 0 0 ABS 0 - C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+stacklo 0 0 ABS 0 - C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+_cdc_mem_type 20 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USBConfigureEndpoint 1EB4 0 CODE 0 text23 dist\default\production\usb-diagnostic.o
+_USBCtrlEPAllowDataStage 1CE2 0 CODE 0 text13 dist\default\production\usb-diagnostic.o
+__Lintcode 8 0 CODE 0 intcode dist\default\production\usb-diagnostic.o
+__Lintret 0 0 ABS 0 intret dist\default\production\usb-diagnostic.o
+__Lirdata 0 0 CODE 0 irdata dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlEPAllowDataStage 1D8A 0 CODE 0 text13 dist\default\production\usb-diagnostic.o
+putUSBUSART@data 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+getsUSBUSART@len 46 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Lspace_0 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Lspace_1 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Lspace_2 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Lspace_4 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_USBCtrlTrfOutHandler 1F2E 0 CODE 0 text24 dist\default\production\usb-diagnostic.o
+_PIR2bits FA1 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__end_of_USB_CDC_Init 2344 0 CODE 0 text34 dist\default\production\usb-diagnostic.o
+__end_of_USB_CDC_Task 1836 0 CODE 0 text1 dist\default\production\usb-diagnostic.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist\default\production\usb-diagnostic.o
+getsUSBUSART@buffer 44 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USBStdSetCfgHandler@i 4F 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+DequeueReceivedByte@value 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+end_of_initialization 21FC 0 CODE 0 cinit dist\default\production\usb-diagnostic.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist\default\production\usb-diagnostic.o
+__Hintentry 0 0 ABS 0 intentry dist\default\production\usb-diagnostic.o
+_USBDeferStatusStagePacket 28 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_CDCInitEP 2056 0 CODE 0 text21 dist\default\production\usb-diagnostic.o
+_USER_USB_CALLBACK_EVENT_HANDLER 218A 0 CODE 0 text19 dist\default\production\usb-diagnostic.o
+__Hreset_vec 4 0 CODE 0 reset_vec dist\default\production\usb-diagnostic.o
+_inPipes E 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_shortPacketStatus 2F 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_USB_CD_Ptr 803 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+USBTransferOnePacket@ep 41 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist\default\production\usb-diagnostic.o
+__HbssBANK1 0 0 ABS 0 bssBANK1 dist\default\production\usb-diagnostic.o
+__HbssBANK2 0 0 ABS 0 bssBANK2 dist\default\production\usb-diagnostic.o
+_endpoint_number 2B 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_ResetCommunicationState 2328 0 CODE 0 text37 dist\default\production\usb-diagnostic.o
+__Lramtop 800 0 RAM 0 ramtop dist\default\production\usb-diagnostic.o
+USBConfigureEndpoint@EPNum 40 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Lrparam 0 0 COMRAM 1 rparam dist\default\production\usb-diagnostic.o
+_USB_SD_Ptr 801 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+__pcinit 21CC 0 CODE 0 cinit dist\default\production\usb-diagnostic.o
+__end_of_ResetCommunicationState 233A 0 CODE 0 text37 dist\default\production\usb-diagnostic.o
+__ptext0 2142 0 CODE 0 text0 dist\default\production\usb-diagnostic.o
+__ptext1 1742 0 CODE 0 text1 dist\default\production\usb-diagnostic.o
+__ptext2 2302 0 CODE 0 text2 dist\default\production\usb-diagnostic.o
+__ptext3 1C38 0 CODE 0 text3 dist\default\production\usb-diagnostic.o
+__ptext4 AEC 0 CODE 0 text4 dist\default\production\usb-diagnostic.o
+__ptext5 2206 0 CODE 0 text5 dist\default\production\usb-diagnostic.o
+__ptext6 22D8 0 CODE 0 text6 dist\default\production\usb-diagnostic.o
+__ptext7 1F9E 0 CODE 0 text7 dist\default\production\usb-diagnostic.o
+__ptext8 2278 0 CODE 0 text8 dist\default\production\usb-diagnostic.o
+__ptext9 1ADA 0 CODE 0 text9 dist\default\production\usb-diagnostic.o
+__Lstruct 0 0 COMRAM 1 struct dist\default\production\usb-diagnostic.o
+__end_of_USBIncrement1msInternalTimers 22AC 0 CODE 0 text8 dist\default\production\usb-diagnostic.o
+__Ltext10 0 0 ABS 0 text10 dist\default\production\usb-diagnostic.o
+__Ltext11 0 0 ABS 0 text11 dist\default\production\usb-diagnostic.o
+__Ltext12 0 0 ABS 0 text12 dist\default\production\usb-diagnostic.o
+__Ltext13 0 0 ABS 0 text13 dist\default\production\usb-diagnostic.o
+__Ltext14 0 0 ABS 0 text14 dist\default\production\usb-diagnostic.o
+__Ltext15 0 0 ABS 0 text15 dist\default\production\usb-diagnostic.o
+__Ltext16 0 0 ABS 0 text16 dist\default\production\usb-diagnostic.o
+__Ltext17 0 0 ABS 0 text17 dist\default\production\usb-diagnostic.o
+__Ltext18 0 0 ABS 0 text18 dist\default\production\usb-diagnostic.o
+__Ltext19 0 0 ABS 0 text19 dist\default\production\usb-diagnostic.o
+__Ltext20 0 0 ABS 0 text20 dist\default\production\usb-diagnostic.o
+__Ltext21 0 0 ABS 0 text21 dist\default\production\usb-diagnostic.o
+__Ltext22 0 0 ABS 0 text22 dist\default\production\usb-diagnostic.o
+__Ltext23 0 0 ABS 0 text23 dist\default\production\usb-diagnostic.o
+__Ltext24 0 0 ABS 0 text24 dist\default\production\usb-diagnostic.o
+__Ltext25 0 0 ABS 0 text25 dist\default\production\usb-diagnostic.o
+__Ltext26 0 0 ABS 0 text26 dist\default\production\usb-diagnostic.o
+__Ltext27 0 0 ABS 0 text27 dist\default\production\usb-diagnostic.o
+__Ltext28 0 0 ABS 0 text28 dist\default\production\usb-diagnostic.o
+__Ltext29 0 0 ABS 0 text29 dist\default\production\usb-diagnostic.o
+__Ltext30 0 0 ABS 0 text30 dist\default\production\usb-diagnostic.o
+__Ltext31 0 0 ABS 0 text31 dist\default\production\usb-diagnostic.o
+__Ltext32 0 0 ABS 0 text32 dist\default\production\usb-diagnostic.o
+__Ltext33 0 0 ABS 0 text33 dist\default\production\usb-diagnostic.o
+__Ltext34 0 0 ABS 0 text34 dist\default\production\usb-diagnostic.o
+__Ltext35 0 0 ABS 0 text35 dist\default\production\usb-diagnostic.o
+__Ltext36 0 0 ABS 0 text36 dist\default\production\usb-diagnostic.o
+__Ltext37 0 0 ABS 0 text37 dist\default\production\usb-diagnostic.o
+__end_of_USBCheckCDCRequest 1A06 0 CODE 0 text20 dist\default\production\usb-diagnostic.o
+__end_of_USBCtrlTrfInHandler 1648 0 CODE 0 text27 dist\default\production\usb-diagnostic.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+_CDCInitEP 1FFE 0 CODE 0 text21 dist\default\production\usb-diagnostic.o
+_USBCtrlEPServiceComplete 10EC 0 CODE 0 text12 dist\default\production\usb-diagnostic.o
+__Lpowerup 0 0 CODE 0 powerup dist\default\production\usb-diagnostic.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist\default\production\usb-diagnostic.o
+_packetBuffer 140 0 BANK1 1 bssBANK1 dist\default\production\usb-diagnostic.o
+__H__absolute__ 0 0 ABS 0 __absolute__ dist\default\production\usb-diagnostic.o
+USBStdFeatureReqHandler@current_ep_data 53 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USB_CDC_Task@receivedLength 5B 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__psmallconst 800 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+_pBDTEntryEP0OutCurrent 1D 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+USBTransferOnePacket@data 3E 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+QueueReceivedBytes@length 3F 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist\default\production\usb-diagnostic.o
+_pBDTEntryOut 68 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+___heap_hi 0 0 ABS 0 - C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+___heap_lo 0 0 ABS 0 - C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+__end_of_ParseReceivedBytes 1E30 0 CODE 0 text30 dist\default\production\usb-diagnostic.o
+___param_bank 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\CAMILL~1\AppData\Local\Temp\xcAsad4.\driver_tmp_22.o
+_USBStdSetCfgHandler 1A06 0 CODE 0 text15 dist\default\production\usb-diagnostic.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist\default\production\usb-diagnostic.o
+__end_of__initialization 21FC 0 CODE 0 cinit dist\default\production\usb-diagnostic.o
+__Libigdata 0 0 CODE 0 ibigdata dist\default\production\usb-diagnostic.o
+USBCtrlTrfTxService@byteToSend 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+_USTATcopy 3B 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__Lclrtext 0 0 ABS 0 clrtext dist\default\production\usb-diagnostic.o
+_USBCheckCDCRequest 1924 0 CODE 0 text20 dist\default\production\usb-diagnostic.o
+_outPipes 1 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_DequeueReceivedByte 22D8 0 CODE 0 text31 dist\default\production\usb-diagnostic.o
+_USBStatusStageTimeoutCounter 29 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__pcstackCOMRAM 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__end_of_QueueReceivedBytes 20F6 0 CODE 0 text29 dist\default\production\usb-diagnostic.o
+__end_of_USB_SD_Ptr 802 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+__end_of_main 218A 0 CODE 0 text0 dist\default\production\usb-diagnostic.o
+__end_of_putUSBUSART 2328 0 CODE 0 text2 dist\default\production\usb-diagnostic.o
+_ParseReceivedBytes 1D8A 0 CODE 0 text30 dist\default\production\usb-diagnostic.o
+_TRISA F92 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_TRISB F93 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_TRISC F94 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_UADDR F6E 0 ABS 0 - dist\default\production\usb-diagnostic.o
+_USTAT F6C 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__HRAM 0 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Hbss 0 0 RAM 1 bss dist\default\production\usb-diagnostic.o
+__Hram 0 0 ABS 0 ram dist\default\production\usb-diagnostic.o
+__Hsfr 0 0 ABS 0 sfr dist\default\production\usb-diagnostic.o
+__LRAM 1 0 ABS 0 - dist\default\production\usb-diagnostic.o
+__Lbss 0 0 RAM 1 bss dist\default\production\usb-diagnostic.o
+__Lram 0 0 ABS 0 ram dist\default\production\usb-diagnostic.o
+__Lsfr 0 0 ABS 0 sfr dist\default\production\usb-diagnostic.o
+_USBStdGetStatusHandler 1836 0 CODE 0 text16 dist\default\production\usb-diagnostic.o
+_USBDeferINDataStagePackets 25 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+__Hsivt_hi 0 0 CODE 0 sivt_hi dist\default\production\usb-diagnostic.o
+__Hsivt_lo 18 0 CODE 0 sivt_lo dist\default\production\usb-diagnostic.o
+__initialization 21CC 0 CODE 0 cinit dist\default\production\usb-diagnostic.o
+__pbssBANK0 60 0 BANK0 1 bssBANK0 dist\default\production\usb-diagnostic.o
+__pbssBANK1 100 0 BANK1 1 bssBANK1 dist\default\production\usb-diagnostic.o
+__pbssBANK2 200 0 BANK2 1 bssBANK2 dist\default\production\usb-diagnostic.o
+USBDeviceTasks@i 58 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+USBConfigureEndpoint@direction 3D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Hfardata 0 0 FARRAM 0 fardata dist\default\production\usb-diagnostic.o
+__Hsmallconst 85E 0 SMALLCONST 0 smallconst dist\default\production\usb-diagnostic.o
+_QueueReceivedBytes 20A6 0 CODE 0 text29 dist\default\production\usb-diagnostic.o
+__Lifardata 0 0 CODE 0 ifardata dist\default\production\usb-diagnostic.o
+_streamBuffer 200 0 BANK2 1 bssBANK2 dist\default\production\usb-diagnostic.o
+CDCTxService@byte_to_send 45 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+main@startupDelay 5D 0 COMRAM 1 cstackCOMRAM dist\default\production\usb-diagnostic.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist\default\production\usb-diagnostic.o
+__Hintcode 8 0 CODE 0 intcode dist\default\production\usb-diagnostic.o
+_USBStatusStageEnabledFlag1 27 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+_USBStatusStageEnabledFlag2 26 0 COMRAM 1 bssCOMRAM dist\default\production\usb-diagnostic.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+_CtrlTrfData 1 458 40
+_SetupPkt 1 418 8
+_BDT 1 400 18
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text18 0 85E 85E 1AE6 1
+init 0 7FFC 7FFC 4 1
+reset_vec 0 0 0 4 1
+bssBANK0 1 60 60 6F 1
+bssBANK1 1 100 100 E4 1
+bssBANK2 1 200 200 80 1
+smallconst 0 800 800 5E 1
+bssCOMRAM 1 1 1 5E 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

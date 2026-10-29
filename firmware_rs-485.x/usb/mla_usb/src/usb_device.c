@@ -166,6 +166,18 @@ volatile bool USBDeferOUTDataStagePackets;
 USB_VOLATILE uint32_t USB1msTickCount;
 USB_VOLATILE uint8_t USBTicksSinceSuspendEnd;
 
+#if defined(USB_STATE_DIAGNOSTIC)
+volatile uint8_t USBStateDiagnosticHighest;
+
+static void USBRecordDiagnosticState(uint8_t rank)
+{
+    if(rank > USBStateDiagnosticHighest)
+    {
+        USBStateDiagnosticHighest = rank;
+    }
+}
+#endif
+
 /** USB FIXED LOCATION VARIABLES ***********************************/
 #if defined(COMPILER_MPLAB_C18)
     #pragma udata USB_BDT=USB_BDT_ADDRESS
@@ -584,6 +596,9 @@ void USBDeviceTasks(void)
 
         //moved to the attached state
         USBDeviceState = ATTACHED_STATE;
+#if defined(USB_STATE_DIAGNOSTIC)
+        USBRecordDiagnosticState(1);
+#endif
 
         #ifdef  USB_SUPPORT_OTG
             U1OTGCON |= USB_OTG_DPLUS_ENABLE | USB_OTG_ENABLE;
@@ -618,6 +633,9 @@ void USBDeviceTasks(void)
             USBResetIE = 1;             // Unmask RESET interrupt
             USBIdleIE = 1;             // Unmask IDLE interrupt
             USBDeviceState = POWERED_STATE;
+#if defined(USB_STATE_DIAGNOSTIC)
+            USBRecordDiagnosticState(2);
+#endif
         }
     }
 
@@ -673,6 +691,9 @@ void USBDeviceTasks(void)
         USBUnmaskInterrupts();
 
         USBDeviceState = DEFAULT_STATE;
+#if defined(USB_STATE_DIAGNOSTIC)
+        USBRecordDiagnosticState(3);
+#endif
 
         #ifdef USB_SUPPORT_OTG
              //Disable HNP
@@ -2024,6 +2045,9 @@ static void USBStdSetCfgHandler(void)
         //after performing all of the set configuration related initialization
         //tasks.
         USBDeviceState = CONFIGURED_STATE;
+#if defined(USB_STATE_DIAGNOSTIC)
+        USBRecordDiagnosticState(9);
+#endif
     }//end if(SetupPkt.bConfigurationValue == 0)
 }//end USBStdSetCfgHandler
 
@@ -2059,6 +2083,9 @@ static void USBStdGetDscHandler(void)
                     inPipes[0].pSrc.bRom = (const uint8_t*)USB_USER_DEVICE_DESCRIPTOR;
                 #endif
                 inPipes[0].wCount.Val = sizeof(device_dsc);
+#if defined(USB_STATE_DIAGNOSTIC)
+                USBRecordDiagnosticState(4);
+#endif
                 break;
             case USB_DESCRIPTOR_CONFIGURATION:
                 //First perform error case check, to make sure the host is requesting a
@@ -2550,6 +2577,13 @@ static void USBCtrlTrfOutHandler(void)
     }
     else //In this case the last OUT transaction must have been a status stage of a CTRL_TRF_TX (<setup><in><in>...<OUT>  <-- this last OUT just occurred as the status stage)
     {
+#if defined(USB_STATE_DIAGNOSTIC)
+        if(SetupPkt.bRequest == USB_REQUEST_GET_DESCRIPTOR &&
+           SetupPkt.bDescriptorType == USB_DESCRIPTOR_DEVICE)
+        {
+            USBRecordDiagnosticState(6);
+        }
+#endif
         //If the status stage is complete, this means we are done with the
         //control transfer.  Go back to the idle "WAIT_SETUP" state.
         controlTransferState = WAIT_SETUP;
@@ -2600,6 +2634,15 @@ static void USBCtrlTrfInHandler(void)
 {
     uint8_t lastDTS;
 
+#if defined(USB_STATE_DIAGNOSTIC)
+    if(SetupPkt.bRequest == USB_REQUEST_GET_DESCRIPTOR &&
+       SetupPkt.bDescriptorType == USB_DESCRIPTOR_DEVICE &&
+       controlTransferState == CTRL_TRF_TX)
+    {
+        USBRecordDiagnosticState(5);
+    }
+#endif
+
     lastDTS = pBDTEntryIn[0]->STAT.DTS;
 
     //switch to the next ping pong buffer
@@ -2614,6 +2657,9 @@ static void USBCtrlTrfInHandler(void)
         if(U1ADDR != 0u)
         {
             USBDeviceState=ADDRESS_STATE;
+#if defined(USB_STATE_DIAGNOSTIC)
+            USBRecordDiagnosticState(8);
+#endif
         }
         else
         {
@@ -2699,6 +2745,9 @@ static void USBCheckStdRequest(void)
         case USB_REQUEST_SET_ADDRESS:
             inPipes[0].info.bits.busy = 1;            // This will generate a zero length packet
             USBDeviceState = ADR_PENDING_STATE;       // Update state only
+#if defined(USB_STATE_DIAGNOSTIC)
+            USBRecordDiagnosticState(7);
+#endif
             /* See USBCtrlTrfInHandler() for the next step */
             break;
         case USB_REQUEST_GET_DESCRIPTOR:

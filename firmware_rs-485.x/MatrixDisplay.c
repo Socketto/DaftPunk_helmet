@@ -83,7 +83,10 @@ void Refresh()
 {
 	for(i = 0 ; i < MCP_COUNTS ; i++)
 	{
-		SetOutputs(MCPAddresses[i], /*reverseByte*/((unsigned char)(Display[ (unsigned char) (( i * 2 ) + 1) ])),reverseByte( Display[ (unsigned char) (i * 2) ]) );
+        if(MCPPresent[i])
+        {
+            SetOutputs(MCPAddresses[i], /*reverseByte*/((unsigned char)(Display[ (unsigned char) (( i * 2 ) + 1) ])),reverseByte( Display[ (unsigned char) (i * 2) ]) );
+        }
 	}
 }
 

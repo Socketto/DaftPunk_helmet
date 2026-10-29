@@ -8,7 +8,10 @@ are sent back on the transport that received the command.
 The firmware configuration assumes a 20 MHz crystal and uses the PIC18F2550
 PLL to provide the 48 MHz USB clock. Connect USB D- and D+ to RC4 and RC5, and
 fit the capacitor required by the PIC18F2550 VUSB pin when using its internal
-USB regulator.
+USB regulator. Software I2C uses RB0 for SDA and RB1 for SCL so it does not
+reconfigure RC4, which is also USB D-. Both I2C lines require external pull-up
+resistors. The USB stack runs in polling mode and assumes USB is attached; the
+main loop must keep calling `USB_CDC_Task()` for enumeration and transfers.
 
 The USB descriptors currently use the Microchip example VID/PID `04D8:000A`.
 Replace these with identifiers assigned to the product before distributing

@@ -10,8 +10,13 @@
 unsigned char EE_Init()
 {	
     unsigned char response;
+    unsigned char data;
     
-	i2c_start();
+    if(!i2c_start())
+    {
+        return 0;
+    }
+
     response = i2c_write(I2C_EEPROM_WRITE_ADDRESS);
     if(response == 0)
     {
@@ -25,16 +30,18 @@ unsigned char EE_Init()
         return 0;
     }
 
-	i2c_restart(); 
-    if(i2c_write(I2C_EEPROM_WRITE_ADDRESS + 1) == 0)
+    if(!i2c_restart() || i2c_write(I2C_EEPROM_WRITE_ADDRESS + 1) == 0)
     {
         i2c_stop();
         return 0;
     }
 
-    i2c_read(0);
-	i2c_stop();
-	return 1;
+    if(!i2c_read(0, &data) || !i2c_stop())
+    {
+        return 0;
+    }
+
+    return 1;
 }
 
 unsigned char EE_byte_read(unsigned short word, unsigned char *data)
@@ -44,7 +51,11 @@ unsigned char EE_byte_read(unsigned short word, unsigned char *data)
         return 0;
     }
     
-	i2c_start();
+    if(!i2c_start())
+    {
+        return 0;
+    }
+
     if(i2c_write(I2C_EEPROM_WRITE_ADDRESS) == 0 ||
        i2c_write((unsigned char)(word >> 8)) == 0 ||
        i2c_write((unsigned char)word) == 0)
@@ -52,16 +63,18 @@ unsigned char EE_byte_read(unsigned short word, unsigned char *data)
         i2c_stop();
         return 0;
     }
-	i2c_restart(); 
-    if(i2c_write(I2C_EEPROM_WRITE_ADDRESS + 1) == 0)
+    if(!i2c_restart() || i2c_write(I2C_EEPROM_WRITE_ADDRESS + 1) == 0)
     {
         i2c_stop();
         return 0;
     }
 
-    *data = i2c_read(0);
-	i2c_stop(); 
-	return 1;
+    if(!i2c_read(0, data) || !i2c_stop())
+    {
+        return 0;
+    }
+
+    return 1;
 }
 
 
@@ -75,7 +88,11 @@ unsigned char EE_byte_write(unsigned short word, unsigned char data)
         return 0;
     }
 
-	i2c_start(); 
+    if(!i2c_start())
+    {
+        return 0;
+    }
+
     if(i2c_write(I2C_EEPROM_WRITE_ADDRESS) == 0 ||
        i2c_write((unsigned char)(word >> 8)) == 0 ||
        i2c_write((unsigned char)word) == 0 ||
@@ -85,14 +102,20 @@ unsigned char EE_byte_write(unsigned short word, unsigned char data)
         return 0;
     }
 	
-	i2c_stop(); 
+    if(!i2c_stop())
+    {
+        return 0;
+    }
 
     for(retry = 0; retry < EEPROM_WRITE_TIMEOUT_MS; retry++)
     {
-        i2c_start();
+        if(!i2c_start())
+        {
+            return 0;
+        }
+
         acknowledged = i2c_write(I2C_EEPROM_WRITE_ADDRESS);
-        i2c_stop();
-        if(acknowledged != 0)
+        if(i2c_stop() && acknowledged != 0)
         {
             return 1;
         }

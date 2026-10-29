@@ -5,6 +5,10 @@
 #include "usb.h"
 #include "usb_device_cdc.h"
 
+typedef char USBDeviceDescriptorMustBe18Bytes[
+    sizeof(USB_DEVICE_DESCRIPTOR) == 18 ? 1 : -1
+];
+
 #define USB_STREAM_BUFFER_SIZE (2 * CDC_DATA_OUT_EP_SIZE)
 
 const USB_DEVICE_DESCRIPTOR device_dsc =
@@ -38,6 +42,10 @@ static const unsigned char configurationDescriptor[] =
     7, USB_DESCRIPTOR_ENDPOINT, 0x02, 0x02, CDC_DATA_OUT_EP_SIZE, 0, 0,
     7, USB_DESCRIPTOR_ENDPOINT, 0x82, 0x02, CDC_DATA_IN_EP_SIZE, 0, 0
 };
+
+typedef char USBConfigurationDescriptorMustBe67Bytes[
+    sizeof(configurationDescriptor) == 67 ? 1 : -1
+];
 
 static const unsigned char languageDescriptor[] =
 {
@@ -165,7 +173,11 @@ void USB_CDC_Init(void)
 {
     ResetCommunicationState();
     USBDeviceInit();
-    USBDeviceAttach();
+}
+
+unsigned char USB_CDC_IsConfigured(void)
+{
+    return (unsigned char)(USBGetDeviceState() >= CONFIGURED_STATE);
 }
 
 void USB_CDC_Task(void)

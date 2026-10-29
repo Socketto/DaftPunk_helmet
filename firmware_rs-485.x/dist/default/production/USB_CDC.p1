@@ -1,0 +1,900 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"72 usb\mla_usb\inc/usb_ch9.h
+[s S7 `uc 1 `uc 1 `us 1 `uc 1 `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S7 _USB_DEVICE_DESCRIPTOR bLength bDescriptorType bcdUSB bDeviceClass bDeviceSubClass bDeviceProtocol bMaxPacketSize0 idVendor idProduct bcdDevice iManufacturer iProduct iSerialNumber bNumConfigurations ]
+"79 USB_CDC.c
+[c E224 0 1 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 400 500 600 700 800 900 1000 10000 32767 .. ]
+[n E224 . EVENT_NONE EVENT_DEVICE_STACK_BASE EVENT_HOST_STACK_BASE EVENT_HUB_ATTACH EVENT_STALL EVENT_VBUS_SES_REQUEST EVENT_VBUS_OVERCURRENT EVENT_VBUS_REQUEST_POWER EVENT_VBUS_RELEASE_POWER EVENT_VBUS_POWER_AVAILABLE EVENT_UNSUPPORTED_DEVICE EVENT_CANNOT_ENUMERATE EVENT_CLIENT_INIT_ERROR EVENT_OUT_OF_MEMORY EVENT_UNSPECIFIED_ERROR EVENT_DETACH EVENT_TRANSFER EVENT_SOF EVENT_RESUME EVENT_SUSPEND EVENT_RESET EVENT_DATA_ISOC_READ EVENT_DATA_ISOC_WRITE EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION EVENT_1MS EVENT_ALT_INTERFACE EVENT_HOLD_BEFORE_CONFIGURATION EVENT_GENERIC_BASE EVENT_MSD_BASE EVENT_HID_BASE EVENT_PRINTER_BASE EVENT_CDC_BASE EVENT_CHARGER_BASE EVENT_AUDIO_BASE EVENT_USER_BASE EVENT_BUS_ERROR  ]
+"536 usb\mla_usb\inc/usb_device_cdc.h
+[v _CDCInitEP `(v ~T0 @X0 0 ef ]
+"562
+[v _USBCheckCDCRequest `(v ~T0 @X0 0 ef ]
+"91 USB_CDC.c
+[c E484 1 2 3 4 5 .. ]
+[n E484 . EVENT_CONFIGURED EVENT_SET_DESCRIPTOR EVENT_EP0_REQUEST EVENT_ATTACH EVENT_TRANSFER_TERMINATED  ]
+"199 usb\mla_usb\inc/usb_device.h
+[v _USBDeviceInit `(v ~T0 @X0 0 ef ]
+"180 USB_CDC.c
+[c E475 0 1 2 4 8 16 32 .. ]
+[n E475 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
+"2050 usb\mla_usb\inc/usb_device.h
+[v _USBDeviceState `E475 ~T0 @X0 0 e ]
+"303
+[v _USBDeviceTasks `(v ~T0 @X0 0 ef ]
+"455 C:\Program Files\Microchip\xc8\v3.00\pic\include\proc/pic18f2550.h
+[s S68 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S68 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
+"454
+[u S67 `S68 1 ]
+[n S67 . . ]
+"465
+[v _UCONbits `VS67 ~T0 @X0 0 e@3949 ]
+"951 usb\mla_usb\inc/usb_device_cdc.h
+[v _cdc_trf_state `uc ~T0 @X0 0 e ]
+"695
+[v _putUSBUSART `(v ~T0 @X0 0 ef2`*uc`uc ]
+"831
+[v _CDCTxService `(v ~T0 @X0 0 ef ]
+"653
+[v _getsUSBUSART `(uc ~T0 @X0 0 ef2`*uc`uc ]
+"29 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
+"27
+[v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
+"52 C:\Program Files\Microchip\xc8\v3.00\pic\include\proc/pic18f2550.h
+[; <" UFRM equ 0F66h ;# ">
+"59
+[; <" UFRML equ 0F66h ;# ">
+"137
+[; <" UFRMH equ 0F67h ;# ">
+"177
+[; <" UIR equ 0F68h ;# ">
+"233
+[; <" UIE equ 0F69h ;# ">
+"289
+[; <" UEIR equ 0F6Ah ;# ">
+"340
+[; <" UEIE equ 0F6Bh ;# ">
+"391
+[; <" USTAT equ 0F6Ch ;# ">
+"451
+[; <" UCON equ 0F6Dh ;# ">
+"502
+[; <" UADDR equ 0F6Eh ;# ">
+"566
+[; <" UCFG equ 0F6Fh ;# ">
+"645
+[; <" UEP0 equ 0F70h ;# ">
+"753
+[; <" UEP1 equ 0F71h ;# ">
+"861
+[; <" UEP2 equ 0F72h ;# ">
+"969
+[; <" UEP3 equ 0F73h ;# ">
+"1077
+[; <" UEP4 equ 0F74h ;# ">
+"1185
+[; <" UEP5 equ 0F75h ;# ">
+"1293
+[; <" UEP6 equ 0F76h ;# ">
+"1401
+[; <" UEP7 equ 0F77h ;# ">
+"1509
+[; <" UEP8 equ 0F78h ;# ">
+"1585
+[; <" UEP9 equ 0F79h ;# ">
+"1661
+[; <" UEP10 equ 0F7Ah ;# ">
+"1737
+[; <" UEP11 equ 0F7Bh ;# ">
+"1813
+[; <" UEP12 equ 0F7Ch ;# ">
+"1889
+[; <" UEP13 equ 0F7Dh ;# ">
+"1965
+[; <" UEP14 equ 0F7Eh ;# ">
+"2041
+[; <" UEP15 equ 0F7Fh ;# ">
+"2117
+[; <" PORTA equ 0F80h ;# ">
+"2256
+[; <" PORTB equ 0F81h ;# ">
+"2366
+[; <" PORTC equ 0F82h ;# ">
+"2508
+[; <" PORTE equ 0F84h ;# ">
+"2547
+[; <" LATA equ 0F89h ;# ">
+"2647
+[; <" LATB equ 0F8Ah ;# ">
+"2759
+[; <" LATC equ 0F8Bh ;# ">
+"2837
+[; <" TRISA equ 0F92h ;# ">
+"2842
+[; <" DDRA equ 0F92h ;# ">
+"3035
+[; <" TRISB equ 0F93h ;# ">
+"3040
+[; <" DDRB equ 0F93h ;# ">
+"3257
+[; <" TRISC equ 0F94h ;# ">
+"3262
+[; <" DDRC equ 0F94h ;# ">
+"3411
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"3470
+[; <" PIE1 equ 0F9Dh ;# ">
+"3541
+[; <" PIR1 equ 0F9Eh ;# ">
+"3612
+[; <" IPR1 equ 0F9Fh ;# ">
+"3683
+[; <" PIE2 equ 0FA0h ;# ">
+"3754
+[; <" PIR2 equ 0FA1h ;# ">
+"3825
+[; <" IPR2 equ 0FA2h ;# ">
+"3896
+[; <" EECON1 equ 0FA6h ;# ">
+"3962
+[; <" EECON2 equ 0FA7h ;# ">
+"3969
+[; <" EEDATA equ 0FA8h ;# ">
+"3976
+[; <" EEADR equ 0FA9h ;# ">
+"3983
+[; <" RCSTA equ 0FABh ;# ">
+"3988
+[; <" RCSTA1 equ 0FABh ;# ">
+"4193
+[; <" TXSTA equ 0FACh ;# ">
+"4198
+[; <" TXSTA1 equ 0FACh ;# ">
+"4449
+[; <" TXREG equ 0FADh ;# ">
+"4454
+[; <" TXREG1 equ 0FADh ;# ">
+"4461
+[; <" RCREG equ 0FAEh ;# ">
+"4466
+[; <" RCREG1 equ 0FAEh ;# ">
+"4473
+[; <" SPBRG equ 0FAFh ;# ">
+"4478
+[; <" SPBRG1 equ 0FAFh ;# ">
+"4485
+[; <" SPBRGH equ 0FB0h ;# ">
+"4492
+[; <" T3CON equ 0FB1h ;# ">
+"4613
+[; <" TMR3 equ 0FB2h ;# ">
+"4620
+[; <" TMR3L equ 0FB2h ;# ">
+"4627
+[; <" TMR3H equ 0FB3h ;# ">
+"4634
+[; <" CMCON equ 0FB4h ;# ">
+"4724
+[; <" CVRCON equ 0FB5h ;# ">
+"4809
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4814
+[; <" CCP1AS equ 0FB6h ;# ">
+"4939
+[; <" ECCP1DEL equ 0FB7h ;# ">
+"4944
+[; <" CCP1DEL equ 0FB7h ;# ">
+"4979
+[; <" BAUDCON equ 0FB8h ;# ">
+"4984
+[; <" BAUDCTL equ 0FB8h ;# ">
+"5159
+[; <" CCP2CON equ 0FBAh ;# ">
+"5223
+[; <" CCPR2 equ 0FBBh ;# ">
+"5230
+[; <" CCPR2L equ 0FBBh ;# ">
+"5237
+[; <" CCPR2H equ 0FBCh ;# ">
+"5244
+[; <" CCP1CON equ 0FBDh ;# ">
+"5308
+[; <" CCPR1 equ 0FBEh ;# ">
+"5315
+[; <" CCPR1L equ 0FBEh ;# ">
+"5322
+[; <" CCPR1H equ 0FBFh ;# ">
+"5329
+[; <" ADCON2 equ 0FC0h ;# ">
+"5400
+[; <" ADCON1 equ 0FC1h ;# ">
+"5485
+[; <" ADCON0 equ 0FC2h ;# ">
+"5604
+[; <" ADRES equ 0FC3h ;# ">
+"5611
+[; <" ADRESL equ 0FC3h ;# ">
+"5618
+[; <" ADRESH equ 0FC4h ;# ">
+"5625
+[; <" SSPCON2 equ 0FC5h ;# ">
+"5687
+[; <" SSPCON1 equ 0FC6h ;# ">
+"5757
+[; <" SSPSTAT equ 0FC7h ;# ">
+"6005
+[; <" SSPADD equ 0FC8h ;# ">
+"6012
+[; <" SSPBUF equ 0FC9h ;# ">
+"6019
+[; <" T2CON equ 0FCAh ;# ">
+"6117
+[; <" PR2 equ 0FCBh ;# ">
+"6122
+[; <" MEMCON equ 0FCBh ;# ">
+"6227
+[; <" TMR2 equ 0FCCh ;# ">
+"6234
+[; <" T1CON equ 0FCDh ;# ">
+"6337
+[; <" TMR1 equ 0FCEh ;# ">
+"6344
+[; <" TMR1L equ 0FCEh ;# ">
+"6351
+[; <" TMR1H equ 0FCFh ;# ">
+"6358
+[; <" RCON equ 0FD0h ;# ">
+"6507
+[; <" WDTCON equ 0FD1h ;# ">
+"6535
+[; <" HLVDCON equ 0FD2h ;# ">
+"6540
+[; <" LVDCON equ 0FD2h ;# ">
+"6805
+[; <" OSCCON equ 0FD3h ;# ">
+"6888
+[; <" T0CON equ 0FD5h ;# ">
+"6958
+[; <" TMR0 equ 0FD6h ;# ">
+"6965
+[; <" TMR0L equ 0FD6h ;# ">
+"6972
+[; <" TMR0H equ 0FD7h ;# ">
+"6979
+[; <" STATUS equ 0FD8h ;# ">
+"7050
+[; <" FSR2 equ 0FD9h ;# ">
+"7057
+[; <" FSR2L equ 0FD9h ;# ">
+"7064
+[; <" FSR2H equ 0FDAh ;# ">
+"7071
+[; <" PLUSW2 equ 0FDBh ;# ">
+"7078
+[; <" PREINC2 equ 0FDCh ;# ">
+"7085
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"7092
+[; <" POSTINC2 equ 0FDEh ;# ">
+"7099
+[; <" INDF2 equ 0FDFh ;# ">
+"7106
+[; <" BSR equ 0FE0h ;# ">
+"7113
+[; <" FSR1 equ 0FE1h ;# ">
+"7120
+[; <" FSR1L equ 0FE1h ;# ">
+"7127
+[; <" FSR1H equ 0FE2h ;# ">
+"7134
+[; <" PLUSW1 equ 0FE3h ;# ">
+"7141
+[; <" PREINC1 equ 0FE4h ;# ">
+"7148
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"7155
+[; <" POSTINC1 equ 0FE6h ;# ">
+"7162
+[; <" INDF1 equ 0FE7h ;# ">
+"7169
+[; <" WREG equ 0FE8h ;# ">
+"7176
+[; <" FSR0 equ 0FE9h ;# ">
+"7183
+[; <" FSR0L equ 0FE9h ;# ">
+"7190
+[; <" FSR0H equ 0FEAh ;# ">
+"7197
+[; <" PLUSW0 equ 0FEBh ;# ">
+"7204
+[; <" PREINC0 equ 0FECh ;# ">
+"7211
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"7218
+[; <" POSTINC0 equ 0FEEh ;# ">
+"7225
+[; <" INDF0 equ 0FEFh ;# ">
+"7232
+[; <" INTCON3 equ 0FF0h ;# ">
+"7324
+[; <" INTCON2 equ 0FF1h ;# ">
+"7401
+[; <" INTCON equ 0FF2h ;# ">
+"7518
+[; <" PROD equ 0FF3h ;# ">
+"7525
+[; <" PRODL equ 0FF3h ;# ">
+"7532
+[; <" PRODH equ 0FF4h ;# ">
+"7539
+[; <" TABLAT equ 0FF5h ;# ">
+"7548
+[; <" TBLPTR equ 0FF6h ;# ">
+"7555
+[; <" TBLPTRL equ 0FF6h ;# ">
+"7562
+[; <" TBLPTRH equ 0FF7h ;# ">
+"7569
+[; <" TBLPTRU equ 0FF8h ;# ">
+"7578
+[; <" PCLAT equ 0FF9h ;# ">
+"7585
+[; <" PC equ 0FF9h ;# ">
+"7592
+[; <" PCL equ 0FF9h ;# ">
+"7599
+[; <" PCLATH equ 0FFAh ;# ">
+"7606
+[; <" PCLATU equ 0FFBh ;# ">
+"7613
+[; <" STKPTR equ 0FFCh ;# ">
+"7689
+[; <" TOS equ 0FFDh ;# ">
+"7696
+[; <" TOSL equ 0FFDh ;# ">
+"7703
+[; <" TOSH equ 0FFEh ;# ">
+"7710
+[; <" TOSU equ 0FFFh ;# ">
+"14 USB_CDC.c
+[v _device_dsc `CS7 ~T0 @X0 1 e ]
+[i _device_dsc
+:U ..
+:U ..
+-> -> # `S7 `ui `uc
+-> -> 1 `i `uc
+-> -> 512 `i `us
+-> -> 2 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 64 `i `uc
+-> -> 1240 `i `us
+-> -> 10 `i `us
+-> -> 256 `i `us
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+..
+..
+]
+"32
+[v _configurationDescriptor `Cuc ~T0 @X0 -> 67 `i s ]
+[i _configurationDescriptor
+:U ..
+-> -> 9 `i `uc
+-> -> 2 `i `uc
+-> -> 67 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 128 `i `uc
+-> -> 50 `i `uc
+-> -> 9 `i `uc
+-> -> 4 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 5 `i `uc
+-> -> 36 `i `uc
+-> -> 0 `i `uc
+-> -> 16 `i `uc
+-> -> 1 `i `uc
+-> -> 5 `i `uc
+-> -> 36 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 4 `i `uc
+-> -> 36 `i `uc
+-> -> 2 `i `uc
+-> | | | -> 0 `i -> 0 `i -> 2 `i -> 0 `i `uc
+-> -> 5 `i `uc
+-> -> 36 `i `uc
+-> -> 6 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 7 `i `uc
+-> -> 5 `i `uc
+-> -> 129 `i `uc
+-> -> 3 `i `uc
+-> -> 8 `i `uc
+-> -> 0 `i `uc
+-> -> 16 `i `uc
+-> -> 9 `i `uc
+-> -> 4 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 2 `i `uc
+-> -> 10 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 5 `i `uc
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 7 `i `uc
+-> -> 5 `i `uc
+-> -> 130 `i `uc
+-> -> 2 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+"50
+[v _languageDescriptor `Cuc ~T0 @X0 -> 4 `i s ]
+[i _languageDescriptor
+:U ..
+-> -> 4 `i `uc
+-> -> 3 `i `uc
+-> -> 9 `i `uc
+-> -> 4 `i `uc
+..
+]
+[v F3746 `*Cuc ~T0 @X0 1 t ]
+"55
+[v _USB_CD_Ptr `C*Cuc ~T0 @X0 -> -> 1 `i `ux e ]
+[i _USB_CD_Ptr
+:U ..
+&U _configurationDescriptor
+..
+]
+[v F3749 `*Cuc ~T0 @X0 1 t ]
+"60
+[v _USB_SD_Ptr `C*Cuc ~T0 @X0 -> -> 1 `i `ux e ]
+[i _USB_SD_Ptr
+:U ..
+&U _languageDescriptor
+..
+]
+"65
+[v _streamBuffer `uc ~T0 @X0 -> 128 `i s ]
+"66
+[v _streamHead `uc ~T0 @X0 1 s ]
+"67
+[v _streamTail `uc ~T0 @X0 1 s ]
+"68
+[v _streamCount `uc ~T0 @X0 1 s ]
+"69
+[v _receiveFrame `uc ~T0 @X0 -> 50 `i s ]
+"70
+[v _receiveFrameLength `uc ~T0 @X0 1 s ]
+"71
+[v _expectedFrameLength `uc ~T0 @X0 1 s ]
+"72
+[v _readyFrameLength `uc ~T0 @X0 1 s ]
+"73
+[v _frameReady `uc ~T0 @X0 1 s ]
+"74
+[v _transmitPending `uc ~T0 @X0 1 s ]
+"75
+[v _transmitBuffer `uc ~T0 @X0 -> 50 `i s ]
+"76
+[v _transmitLength `uc ~T0 @X0 1 s ]
+"77
+[v _packetBuffer `uc ~T0 @X0 -> 64 `i s ]
+"79
+[v _USER_USB_CALLBACK_EVENT_HANDLER `(a ~T0 @X0 1 ef3`E224`*v`us ]
+"80
+{
+[e :U _USER_USB_CALLBACK_EVENT_HANDLER ]
+"79
+[v _event `E224 ~T0 @X0 1 r1 ]
+[v _pdata `*v ~T0 @X0 1 r2 ]
+[v _size `us ~T0 @X0 1 r3 ]
+"80
+[f ]
+"81
+[e $U 420  ]
+"82
+{
+"83
+[e :U 421 ]
+"84
+[e ( _CDCInitEP ..  ]
+"85
+[e $U 419  ]
+"86
+[e :U 422 ]
+"87
+[e ( _USBCheckCDCRequest ..  ]
+"88
+[e $U 419  ]
+"89
+[e :U 423 ]
+"90
+[e $U 419  ]
+"91
+}
+[e $U 419  ]
+[e :U 420 ]
+[e [\ -> -> _event `us `ui , $ -> . `E484 0 `ui 421
+ , $ -> . `E484 2 `ui 422
+ 423 ]
+[e :U 419 ]
+"93
+[e ) -> -> 1 `i `a ]
+[e $UE 418  ]
+"94
+[e :UE 418 ]
+}
+"96
+[v _ResetCommunicationState `(v ~T0 @X0 1 sf ]
+"97
+{
+[e :U _ResetCommunicationState ]
+[f ]
+"98
+[e = _streamHead -> -> 0 `i `uc ]
+"99
+[e = _streamTail -> -> 0 `i `uc ]
+"100
+[e = _streamCount -> -> 0 `i `uc ]
+"101
+[e = _receiveFrameLength -> -> 0 `i `uc ]
+"102
+[e = _expectedFrameLength -> -> 0 `i `uc ]
+"103
+[e = _readyFrameLength -> -> 0 `i `uc ]
+"104
+[e = _frameReady -> -> 0 `i `uc ]
+"105
+[e = _transmitPending -> -> 0 `i `uc ]
+"106
+[e :UE 424 ]
+}
+"108
+[v _QueueReceivedBytes `(v ~T0 @X0 1 sf2`*Cuc`uc ]
+"109
+{
+[e :U _QueueReceivedBytes ]
+"108
+[v _data `*Cuc ~T0 @X0 1 r1 ]
+[v _length `uc ~T0 @X0 1 r2 ]
+"109
+[f ]
+"110
+[v _index `uc ~T0 @X0 1 a ]
+"112
+{
+[e = _index -> -> 0 `i `uc ]
+[e $U 429  ]
+[e :U 426 ]
+"113
+{
+"114
+[e = *U + &U _streamBuffer * -> _streamTail `ux -> -> # *U &U _streamBuffer `ui `ux *U + _data * -> _index `ux -> -> # *U _data `ui `ux ]
+"115
+[e ++ _streamTail -> -> 1 `i `uc ]
+"116
+[e $ ! == -> _streamTail `i * -> 2 `i -> 64 `i 430  ]
+"117
+{
+"118
+[e = _streamTail -> -> 0 `i `uc ]
+"119
+}
+[e :U 430 ]
+"120
+[e ++ _streamCount -> -> 1 `i `uc ]
+"121
+}
+[e ++ _index -> -> 1 `i `uc ]
+[e :U 429 ]
+[e $ < -> _index `i -> _length `i 426  ]
+[e :U 427 ]
+}
+"122
+[e :UE 425 ]
+}
+"124
+[v _DequeueReceivedByte `(uc ~T0 @X0 1 sf ]
+"125
+{
+[e :U _DequeueReceivedByte ]
+[f ]
+"126
+[v _value `uc ~T0 @X0 1 a ]
+"128
+[e = _value *U + &U _streamBuffer * -> _streamHead `ux -> -> # *U &U _streamBuffer `ui `ux ]
+"129
+[e ++ _streamHead -> -> 1 `i `uc ]
+"130
+[e $ ! == -> _streamHead `i * -> 2 `i -> 64 `i 432  ]
+"131
+{
+"132
+[e = _streamHead -> -> 0 `i `uc ]
+"133
+}
+[e :U 432 ]
+"134
+[e -- _streamCount -> -> 1 `i `uc ]
+"135
+[e ) _value ]
+[e $UE 431  ]
+"136
+[e :UE 431 ]
+}
+"138
+[v _ParseReceivedBytes `(v ~T0 @X0 1 sf ]
+"139
+{
+[e :U _ParseReceivedBytes ]
+[f ]
+"140
+[v _value `uc ~T0 @X0 1 a ]
+"142
+[e $U 434  ]
+[e :U 435 ]
+"143
+{
+"144
+[e = _value ( _DequeueReceivedByte ..  ]
+"145
+[e $ ! == -> _receiveFrameLength `i -> 0 `i 437  ]
+"146
+{
+"147
+[e = _expectedFrameLength -> + -> _value `i -> 1 `i `uc ]
+"148
+[e $ ! || < -> _expectedFrameLength `i -> 2 `i > -> _expectedFrameLength `i -> 50 `i 438  ]
+"149
+{
+"150
+[e = _expectedFrameLength -> -> 0 `i `uc ]
+"151
+[e $U 434  ]
+"152
+}
+[e :U 438 ]
+"154
+[e = *U + &U _receiveFrame * -> -> -> 0 `i `ui `ux -> -> # *U &U _receiveFrame `ui `ux _value ]
+"155
+[e = _receiveFrameLength -> -> 1 `i `uc ]
+"156
+}
+[e $U 439  ]
+"157
+[e :U 437 ]
+"158
+{
+"159
+[e = *U + &U _receiveFrame * -> _receiveFrameLength `ux -> -> # *U &U _receiveFrame `ui `ux _value ]
+"160
+[e ++ _receiveFrameLength -> -> 1 `i `uc ]
+"161
+[e $ ! == -> _receiveFrameLength `i -> _expectedFrameLength `i 440  ]
+"162
+{
+"163
+[e = _frameReady -> -> 1 `i `uc ]
+"164
+[e = _readyFrameLength _receiveFrameLength ]
+"165
+[e = _receiveFrameLength -> -> 0 `i `uc ]
+"166
+[e = _expectedFrameLength -> -> 0 `i `uc ]
+"167
+}
+[e :U 440 ]
+"168
+}
+[e :U 439 ]
+"169
+}
+[e :U 434 ]
+"142
+[e $ && > -> _streamCount `i -> 0 `i == -> _frameReady `i -> 0 `i 435  ]
+[e :U 436 ]
+"170
+[e :UE 433 ]
+}
+"172
+[v _USB_CDC_Init `(v ~T0 @X0 1 ef ]
+"173
+{
+[e :U _USB_CDC_Init ]
+[f ]
+"174
+[e ( _ResetCommunicationState ..  ]
+"175
+[e ( _USBDeviceInit ..  ]
+"176
+[e :UE 441 ]
+}
+"178
+[v _USB_CDC_IsConfigured `(uc ~T0 @X0 1 ef ]
+"179
+{
+[e :U _USB_CDC_IsConfigured ]
+[f ]
+"180
+[e ) -> -> >= -> _USBDeviceState `ui -> . `E475 6 `ui `i `uc ]
+[e $UE 442  ]
+"181
+[e :UE 442 ]
+}
+"183
+[v _USB_CDC_Task `(v ~T0 @X0 1 ef ]
+"184
+{
+[e :U _USB_CDC_Task ]
+[f ]
+"185
+[v _receivedLength `uc ~T0 @X0 1 a ]
+"187
+[e ( _USBDeviceTasks ..  ]
+"189
+[e $ ! < -> _USBDeviceState `ui -> . `E475 6 `ui 444  ]
+"190
+{
+"191
+[e ( _ResetCommunicationState ..  ]
+"192
+[e $UE 443  ]
+"193
+}
+[e :U 444 ]
+"195
+[e $ ! != -> . . _UCONbits 0 1 `i -> 0 `i 445  ]
+"196
+{
+"197
+[e $UE 443  ]
+"198
+}
+[e :U 445 ]
+"200
+[e $ ! && != -> _transmitPending `i -> 0 `i == -> _cdc_trf_state `i -> 0 `i 446  ]
+"201
+{
+"202
+[e ( _putUSBUSART (2 , &U _transmitBuffer _transmitLength ]
+"203
+[e = _transmitPending -> -> 0 `i `uc ]
+"204
+}
+[e :U 446 ]
+"206
+[e ( _CDCTxService ..  ]
+"207
+[e ( _ParseReceivedBytes ..  ]
+"208
+[e $ ! != -> _frameReady `i -> 0 `i 447  ]
+"209
+{
+"210
+[e $UE 443  ]
+"211
+}
+[e :U 447 ]
+"213
+[e $ ! && == -> _transmitPending `i -> 0 `i >= - * -> 2 `i -> 64 `i -> _streamCount `i -> 64 `i 448  ]
+"215
+{
+"216
+[e = _receivedLength ( _getsUSBUSART (2 , &U _packetBuffer -> -> # _packetBuffer `ui `uc ]
+"217
+[e $ ! > -> _receivedLength `i -> 0 `i 449  ]
+"218
+{
+"219
+[e ( _QueueReceivedBytes (2 , -> &U _packetBuffer `*Cuc _receivedLength ]
+"220
+[e ( _ParseReceivedBytes ..  ]
+"221
+}
+[e :U 449 ]
+"222
+}
+[e :U 448 ]
+"224
+[e ( _CDCTxService ..  ]
+"225
+[e :UE 443 ]
+}
+"227
+[v _USB_CDC_FrameReady `(uc ~T0 @X0 1 ef ]
+"228
+{
+[e :U _USB_CDC_FrameReady ]
+[f ]
+"229
+[e ) -> -> && != -> _frameReady `i -> 0 `i == -> _transmitPending `i -> 0 `i `i `uc ]
+[e $UE 450  ]
+"230
+[e :UE 450 ]
+}
+"232
+[v _USB_CDC_GetFrame `(v ~T0 @X0 1 ef1`*uc ]
+"233
+{
+[e :U _USB_CDC_GetFrame ]
+"232
+[v _frame `*uc ~T0 @X0 1 r1 ]
+"233
+[f ]
+"234
+[e $ ! != -> ( _USB_CDC_FrameReady ..  `i -> 0 `i 452  ]
+"235
+{
+"236
+[e ( _memset (3 , , -> _frame `*v -> 0 `i -> -> 50 `i `ui ]
+"237
+[e ( _memcpy (3 , , -> _frame `*v -> &U _receiveFrame `*Cv -> _readyFrameLength `ui ]
+"238
+[e = _frameReady -> -> 0 `i `uc ]
+"239
+[e = _readyFrameLength -> -> 0 `i `uc ]
+"240
+[e ( _ParseReceivedBytes ..  ]
+"241
+}
+[e :U 452 ]
+"242
+[e :UE 451 ]
+}
+"244
+[v _USB_CDC_Send `(uc ~T0 @X0 1 ef2`*Cuc`uc ]
+"245
+{
+[e :U _USB_CDC_Send ]
+"244
+[v _data `*Cuc ~T0 @X0 1 r1 ]
+[v _length `uc ~T0 @X0 1 r2 ]
+"245
+[f ]
+"246
+[e $ ! || || == -> _length `i -> 0 `i > -> _length `i -> 50 `i != -> _transmitPending `i -> 0 `i 454  ]
+"247
+{
+"248
+[e ) -> -> 0 `i `uc ]
+[e $UE 453  ]
+"249
+}
+[e :U 454 ]
+"251
+[e ( _memcpy (3 , , -> &U _transmitBuffer `*v -> _data `*Cv -> _length `ui ]
+"252
+[e = _transmitLength _length ]
+"253
+[e = _transmitPending -> -> 1 `i `uc ]
+"254
+[e ) -> -> 1 `i `uc ]
+[e $UE 453  ]
+"255
+[e :UE 453 ]
+}

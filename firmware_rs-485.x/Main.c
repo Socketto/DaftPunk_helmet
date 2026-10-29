@@ -94,41 +94,70 @@ extern char EarRandom;
 unsigned char Frase[100];
 unsigned char tempUnsignedChar;
 unsigned char EEPROM = 0;
-unsigned int idd = 0;
 unsigned short ShortTemp;
 void Init()
 {
+    unsigned int startupDelay;
+
     TRISA = 0b00000000;//all output
     TRISB = 0b00000011;//all output
     TRISC = 0b10000000;//PortC7 input RX
     TRISC |= 0b00110000;
-	
-    for (idd = 0; idd < 100; idd++) {
-        __delay_ms(5);
+
+#ifdef USB_STATE_DIAGNOSTIC
+    TRISCbits.TRISC1 = 0;
+    LATCbits.LATC1 = 0;
+    clock_indicator_init();
+    for(startupDelay = 0; startupDelay < 500; startupDelay++)
+    {
+        __delay_ms(1);
     }
-    
-	i2c_init(); 
-    
-	EEPROM = EE_Init();
-	
+    USB_CDC_Init();
+#else
+#ifdef CLOCK_TEST
+    TRISCbits.TRISC1 = 0;
+    LATCbits.LATC1 = 0;
+    clock_indicator_init();
+#endif
+
+    for(startupDelay = 0; startupDelay < 500; startupDelay++)
+    {
+        __delay_ms(1);
+    }
+
+    USB_CDC_Init();
+
+    for(startupDelay = 0;
+        startupDelay < 5000 && !USB_CDC_IsConfigured();
+        startupDelay++)
+    {
+        USB_CDC_Task();
+        __delay_ms(1);
+    }
+
 #if HC06
     UART_Init(9600);
 #else
     UART_Init(19200);
     LATCbits.LATC2 = 0; //for RS-485
 #endif
-    USB_CDC_Init();
+
+    i2c_init();
+    EEPROM = EE_Init();
+
     for(tempUnsignedChar = 0 ; tempUnsignedChar < MCP_COUNTS ; tempUnsignedChar++)
 	{
         Init_MCP(MCPAddresses[tempUnsignedChar]);
+        USB_CDC_Task();
     }
     
     interrupt_init();
-	
+
     //SetRGB_Blink(BLINK_NO);
     //SetRGB(BLACK);
 	SetEarRandom();
 	SetRGB_Blink(BLINK_500_mSecond);
+#endif
 }
 
 void SendByte()
@@ -173,6 +202,16 @@ unsigned char MusicValue;
 extern unsigned char PhoneConnected;
 unsigned char SignedError = 0;
 extern unsigned char AllowDisplayCommunication;
+#ifdef USB_STATE_DIAGNOSTIC
+void main(void)
+{
+    Init();
+    while(1)
+    {
+        USB_CDC_Task();
+    }
+}
+#else
 void main(void) {
     unsigned char commandFrame[BYTE_BUFFER_COM];
     unsigned char commandResponse[BYTE_BUFFER_COM];
@@ -201,6 +240,7 @@ void main(void) {
             SignedError = 100;
         }
         
+#if !defined(CLOCK_TEST) && !defined(USB_STATE_DIAGNOSTIC)
         if(SignedError>0)
         {
             SignedError--;
@@ -210,6 +250,7 @@ void main(void) {
         {
             SetLed(0);
         }
+#endif
         
 		if(BancataRicevuta || USB_CDC_FrameReady())
 		{
@@ -311,6 +352,9 @@ void main(void) {
                             break;
                         case 0x03:
                             AllowDisplayCommunication = 0;
+                            ClearScreen();
+                            SetRGB(BLACK);
+                            Refresh();
                             break;
                         case 0x04:
                             AllowDisplayCommunication = 1;
@@ -393,3 +437,4 @@ void main(void) {
     }
     return;
 }
+#endif

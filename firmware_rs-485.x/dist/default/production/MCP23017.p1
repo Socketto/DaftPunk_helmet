@@ -1,0 +1,192 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"5 ./I2C.h
+[v _i2c_start `(uc ~T0 @X0 0 ef ]
+"6
+[v _i2c_write `(uc ~T0 @X0 0 ef1`uc ]
+"8
+[v _i2c_stop `(uc ~T0 @X0 0 ef ]
+"22 MCP23017.c
+[v _MCPAddresses `uc ~T0 @X0 -> 8 `i e ]
+[i _MCPAddresses
+:U ..
+-> -> 64 `i `uc
+-> -> 66 `i `uc
+-> -> 68 `i `uc
+-> -> 70 `i `uc
+-> -> 72 `i `uc
+-> -> 74 `i `uc
+-> -> 76 `i `uc
+-> -> 78 `i `uc
+..
+]
+"23
+[v _MCPPresent `uc ~T0 @X0 -> 8 `i e ]
+[i _MCPPresent
+:U ..
+-> -> 0 `i `uc
+..
+]
+"25
+[v _Init_MCP `(uc ~T0 @X0 1 ef1`uc ]
+"26
+{
+[e :U _Init_MCP ]
+"25
+[v _Address `uc ~T0 @X0 1 r1 ]
+"26
+[f ]
+"27
+[v _index `uc ~T0 @X0 1 a ]
+"28
+[v _addrRW `uc ~T0 @X0 1 a ]
+"30
+{
+[e = _index -> -> 0 `i `uc ]
+[e $ < -> _index `i -> 8 `i 2  ]
+[e $U 3  ]
+[e :U 2 ]
+"31
+{
+"32
+[e $ ! == -> *U + &U _MCPAddresses * -> _index `ux -> -> # *U &U _MCPAddresses `ui `ux `i -> _Address `i 5  ]
+"33
+{
+"34
+[e = *U + &U _MCPPresent * -> _index `ux -> -> # *U &U _MCPPresent `ui `ux -> -> 0 `i `uc ]
+"35
+[e $U 3  ]
+"36
+}
+[e :U 5 ]
+"37
+}
+[e ++ _index -> -> 1 `i `uc ]
+[e $ < -> _index `i -> 8 `i 2  ]
+[e :U 3 ]
+}
+"39
+[e $ ! || == -> _index `i -> 8 `i ! != -> ( _i2c_start ..  `i -> 0 `i 6  ]
+"40
+{
+"41
+[e ) -> -> 0 `i `uc ]
+[e $UE 1  ]
+"42
+}
+[e :U 6 ]
+"44
+[e = _addrRW _Address ]
+"45
+[e $ ! ! != -> ( _i2c_write (1 _addrRW `i -> 0 `i 7  ]
+"46
+{
+"47
+[e ( _i2c_stop ..  ]
+"48
+[e ) -> -> 0 `i `uc ]
+[e $UE 1  ]
+"49
+}
+[e :U 7 ]
+"51
+[e $ ! ! != -> ( _i2c_stop ..  `i -> 0 `i 8  ]
+"52
+{
+"53
+[e ) -> -> 0 `i `uc ]
+[e $UE 1  ]
+"54
+}
+[e :U 8 ]
+"56
+[e $ ! ! != -> ( _i2c_start ..  `i -> 0 `i 9  ]
+"57
+{
+"58
+[e ) -> -> 0 `i `uc ]
+[e $UE 1  ]
+"59
+}
+[e :U 9 ]
+"61
+[e $ ! || || || ! != -> ( _i2c_write (1 _addrRW `i -> 0 `i ! != -> ( _i2c_write (1 -> -> 1 `i `uc `i -> 0 `i ! != -> ( _i2c_write (1 -> -> 0 `i `uc `i -> 0 `i ! != -> ( _i2c_stop ..  `i -> 0 `i 10  ]
+"65
+{
+"66
+[e ( _i2c_stop ..  ]
+"67
+[e ) -> -> 0 `i `uc ]
+[e $UE 1  ]
+"68
+}
+[e :U 10 ]
+"70
+[e $ ! ! != -> ( _i2c_start ..  `i -> 0 `i 11  ]
+"71
+{
+"72
+[e ) -> -> 0 `i `uc ]
+[e $UE 1  ]
+"73
+}
+[e :U 11 ]
+"75
+[e $ ! || || || ! != -> ( _i2c_write (1 _addrRW `i -> 0 `i ! != -> ( _i2c_write (1 -> -> 0 `i `uc `i -> 0 `i ! != -> ( _i2c_write (1 -> -> 0 `i `uc `i -> 0 `i ! != -> ( _i2c_stop ..  `i -> 0 `i 12  ]
+"79
+{
+"80
+[e ( _i2c_stop ..  ]
+"81
+[e ) -> -> 0 `i `uc ]
+[e $UE 1  ]
+"82
+}
+[e :U 12 ]
+"84
+[e = *U + &U _MCPPresent * -> _index `ux -> -> # *U &U _MCPPresent `ui `ux -> -> 1 `i `uc ]
+"85
+[e ) -> -> 1 `i `uc ]
+[e $UE 1  ]
+"86
+[e :UE 1 ]
+}
+"90
+[v _SetOutputs `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"91
+{
+[e :U _SetOutputs ]
+"90
+[v _Address `uc ~T0 @X0 1 r1 ]
+[v _PortA `uc ~T0 @X0 1 r2 ]
+[v _PortB `uc ~T0 @X0 1 r3 ]
+"91
+[f ]
+"92
+[v _addrRW `uc ~T0 @X0 1 a ]
+"93
+[e ( _i2c_start ..  ]
+"95
+[e = _addrRW _Address ]
+"97
+[e ( _i2c_write (1 _addrRW ]
+"100
+[e ( _i2c_write (1 -> -> 18 `i `uc ]
+"102
+[e ( _i2c_write (1 _PortA ]
+"104
+[e ( _i2c_stop ..  ]
+"106
+[e ( _i2c_start ..  ]
+"108
+[e = _addrRW _Address ]
+"110
+[e ( _i2c_write (1 _addrRW ]
+"113
+[e ( _i2c_write (1 -> -> 19 `i `uc ]
+"115
+[e ( _i2c_write (1 _PortB ]
+"117
+[e ( _i2c_stop ..  ]
+"118
+[e :UE 13 ]
+}
